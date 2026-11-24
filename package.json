@@ -1,0 +1,45 @@
+{
+  "name": "pnle-study-hub",
+  "version": "1.0.0",
+  "description": "Unofficial PNLE/NLE self-study app (practice, mock exam, reviewer, return-demo steps, case log). Not affiliated with the PRC.",
+  "author": "PNLE Study Hub",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --publish never",
+    "android:add": "cap add android",
+    "android:sync": "cap sync android",
+    "android:open": "cap open android"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.1.0",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.1.0",
+    "@capacitor/core": "^6.1.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "@capacitor/share": "^6.0.0",
+    "electron": "^31.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "ph.pnlestudyhub.desktop",
+    "productName": "PNLE Study Hub",
+    "directories": { "output": "dist" },
+    "files": ["electron/**", "www/**", "build/icon.png", "package.json"],
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "PNLE-Study-Hub-Setup-${version}.${ext}"
+    },
+    "portable": { "artifactName": "PNLE-Study-Hub-Portable-${version}.${ext}" }
+  }
+}

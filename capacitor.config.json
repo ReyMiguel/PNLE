@@ -1,0 +1,6 @@
+{
+  "appId": "ph.pnlestudyhub.app",
+  "appName": "PNLE Study Hub",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
