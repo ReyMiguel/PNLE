@@ -7,30 +7,6 @@ The whole app is one file: `www/index.html`. This repo wraps it as:
 - an **Android app** (Capacitor) → `.apk`
 - a **Windows app** (Electron) → installer `.exe` and portable `.exe`
 
-GitHub Actions builds both for you and attaches them to a GitHub Release. You do not need Android Studio or Windows.
-
-## Release in 5 steps
-
-1. Create a new empty repository on GitHub (private or public).
-2. Upload this project. The hidden `.github` folder must be included, so using git is the safest way:
-   ```bash
-   cd pnle-study-hub
-   git init && git add -A && git commit -m "PNLE Study Hub v1.0.0"
-   git branch -M main
-   git remote add origin https://github.com/<your-user>/<your-repo>.git
-   git push -u origin main
-   ```
-   (If you use the web uploader, make sure `.github/workflows/release.yml` ends up in the repo.)
-3. Create a version tag to trigger the build and release:
-   ```bash
-   git tag v1.0.0
-   git push origin v1.0.0
-   ```
-4. Open the repo → **Actions** and wait about 10–15 minutes for *Build Android APK and Windows EXE* to finish.
-5. Open **Releases**: the APK, `PNLE-Study-Hub-Setup-1.0.0.exe` and `PNLE-Study-Hub-Portable-1.0.0.exe` are attached.
-
-To test without releasing, run the workflow manually (Actions → *Run workflow*); files appear under the run's **Artifacts**.
-
 ## Notes
 
 - **Android:** the APK is *debug-signed*, which is fine for sideloading (turn on "Install unknown apps"). Publishing to Google Play requires a
