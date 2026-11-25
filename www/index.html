@@ -818,6 +818,1358 @@ Q(5,'em',2,"Which nursing measure reduces the risk of ventilator-associated pneu
  "Flat positioning raises aspiration risk; routine saline instillation and daily circuit changes are not recommended.",
  "Itaas ang ulo ng kama 30–45° at maglinis ng bibig nang regular.","openstax","Follow the current facility ventilator bundle.");
 
+/* ---------- Nursing Practice I: expansion to 100 items (appended so existing question IDs stay unchanged) ---------- */
+const NP1q=(t,d,q,o,r,w,f,s)=>Q(1,t,d,q,o,0,r,w,f,s);
+NP1q('phc',1,"Which 1978 declaration made primary health care the key strategy for achieving Health for All?",
+ ["Alma-Ata Declaration","Ottawa Charter","Geneva Convention","Declaration of Helsinki"],
+ "The Declaration of Alma-Ata (1978) identified primary health care as the key to Health for All.",
+ "The Ottawa Charter concerns health promotion; the Geneva Convention concerns humanitarian law; the Declaration of Helsinki concerns research ethics.",
+ "Ang Alma-Ata Declaration ang nagtakda ng primary health care bilang susi sa Health for All.","doh");
+NP1q('phc',1,"A nurse conducts a Pap smear screening in a barangay. At which level of prevention is this?",
+ ["Secondary prevention","Primary prevention","Tertiary prevention","Health promotion only"],
+ "Screening detects disease early, which is secondary prevention.",
+ "Primary prevention stops disease before onset; tertiary prevention limits disability after disease is established.",
+ "Ang screening ay maagang pagtuklas ng sakit kaya secondary prevention.","doh");
+NP1q('phc',1,"A community health nurse teaches stroke survivors home exercises to regain function. Which level of prevention is this?",
+ ["Tertiary prevention","Primary prevention","Secondary prevention","Case finding"],
+ "Rehabilitation to limit disability and restore function is tertiary prevention.",
+ "Primary prevention occurs before disease; secondary prevention is early detection; case finding is a screening activity.",
+ "Ang rehabilitasyon upang maibalik ang kakayahan ay tertiary prevention.","doh");
+NP1q('phc',2,"Under the Local Government Code (RA 7160), which change affected delivery of basic health services?",
+ ["Basic health services were devolved to local government units","All hospitals were transferred to private owners","PhilHealth took over barangay health stations","Health services were centralized at the DOH only"],
+ "RA 7160 devolved many basic health services to local government units (provinces, cities, municipalities).",
+ "Hospitals were not privatized, PhilHealth is an insurer rather than a service provider, and the law decentralized rather than centralized services.",
+ "Inilipat ng RA 7160 sa mga LGU ang maraming batayang serbisyong pangkalusugan.","doh");
+NP1q('phc',1,"Which facility is the first point of contact between residents and the government health system in a barangay?",
+ ["Barangay health station","Provincial hospital","Medical center","Regional laboratory"],
+ "The barangay health station is the first-level, closest facility, staffed mainly by midwives and barangay health workers.",
+ "Provincial hospitals and medical centers are higher referral levels; a regional laboratory is not a point of primary contact.",
+ "Ang barangay health station ang pinakamalapit at unang pinupuntahan ng mamamayan.","doh");
+NP1q('phc',2,"Which law aims to provide all Filipinos automatic PhilHealth coverage and access to a comprehensive health benefit package?",
+ ["RA 11223, Universal Health Care Act","RA 9173, Philippine Nursing Act","RA 10173, Data Privacy Act","RA 10028, Expanded Breastfeeding Promotion Act"],
+ "RA 11223 (Universal Health Care Act) automatically enrolls all Filipinos in the national health insurance program.",
+ "RA 9173 regulates nursing practice, RA 10173 protects personal data, and RA 10028 supports breastfeeding.",
+ "Ang RA 11223 ang awtomatikong nag-eenrol sa lahat ng Pilipino sa PhilHealth.","doh");
+NP1q('phc',2,"A nurse lives in a community for several weeks to learn its culture, leaders and daily routines before organizing activities. Which phase of community organizing is this?",
+ ["Integration","Evaluation","Sustenance","Mobilization"],
+ "Living with and learning from the community to gain trust and understanding is integration.",
+ "Evaluation and sustenance come after programs run; mobilization acts on identified problems.",
+ "Ang pakikipamuhay at pag-aaral sa komunidad ay integration.","openrn");
+NP1q('phc',2,"The Department of Education and the DOH jointly implement school-based deworming. Which primary health care principle is best illustrated?",
+ ["Intersectoral collaboration","Appropriate technology","Self-reliance","Equity in distribution"],
+ "Different sectors working together on a health goal is intersectoral collaboration.",
+ "Appropriate technology concerns suitable tools, self-reliance concerns community independence, and equity concerns fair access.",
+ "Ang magkasamang gawain ng DepEd at DOH ay intersectoral collaboration.","doh");
+NP1q('phc',1,"A free outreach clinic is arranged for an island barangay that has no health facility. Which primary health care principle does this address best?",
+ ["Equity","Community participation","Intersectoral collaboration","Self-reliance"],
+ "Bringing services to underserved people addresses equity of access.",
+ "The other principles do not center on fair access to services for those without them.",
+ "Ang paghatid ng serbisyo sa mga walang akses ay equity.","doh");
+NP1q('phc',1,"Community members organize daily Zumba sessions at the plaza on the nurse's advice. This activity is mainly:",
+ ["Health promotion","Tertiary prevention","Case finding","Rehabilitation"],
+ "Encouraging physical activity to build healthy habits is health promotion.",
+ "Tertiary prevention and rehabilitation address existing disease; case finding is identification of cases.",
+ "Ang pagsasanay ng malusog na gawi ay health promotion.","doh");
+NP1q('phc',2,"The public health nurse in a rural health unit commonly supervises which health worker?",
+ ["Rural health midwife","Municipal mayor","Hospital chief","Barangay captain"],
+ "The public health nurse supervises rural health midwives, who in turn guide barangay health workers.",
+ "The other people are not part of the technical nursing supervision line in the RHU.",
+ "Pinangangasiwaan ng public health nurse ang rural health midwife.","doh");
+NP1q('phc',2,"A nurse partners with barangay health workers to monitor household water sources. This approach primarily strengthens:",
+ ["Community participation","Hospital referral","Private insurance","Tertiary care"],
+ "Involving residents in monitoring builds community participation and local ownership.",
+ "The other options do not describe involvement of residents in health action.",
+ "Pinapalakas nito ang pakikilahok ng komunidad.","doh");
+NP1q('epi',2,"In a barangay of 1,000 people at risk, 30 new dengue cases occur in a month. What is the incidence rate?",
+ ["30 per 1,000","3 per 1,000","300 per 1,000","0.3 per 1,000"],
+ "Incidence = new cases ÷ population at risk = 30 ÷ 1,000, or 30 per 1,000.",
+ "The other values are arithmetic errors.",
+ "30 bagong kaso ÷ 1,000 ang nasa panganib = 30 sa bawat 1,000.","openstax");
+NP1q('epi',2,"Which formula gives the infant mortality rate?",
+ ["Deaths under 1 year ÷ live births × 1,000","Deaths under 5 years ÷ population × 1,000","Fetal deaths ÷ total births × 1,000","Maternal deaths ÷ live births × 100,000"],
+ "Infant mortality rate = deaths of infants under 1 year ÷ live births in the same period × 1,000.",
+ "The other formulas describe under-five mortality, fetal death, and maternal mortality ratio.",
+ "Ang infant mortality rate ay namatay na wala pang 1 taon ÷ ipinanganak na buhay × 1,000.","prc_tos");
+NP1q('epi',2,"The maternal mortality ratio is usually expressed per how many live births?",
+ ["100,000","1,000","10,000","10"],
+ "The maternal mortality ratio is conventionally expressed per 100,000 live births.",
+ "Smaller bases are used for other indicators such as infant mortality rate (per 1,000).",
+ "Ang maternal mortality ratio ay sa bawat 100,000 buhay na ipinanganak.","prc_tos");
+NP1q('epi',2,"A screening test correctly identifies 95 of 100 people who truly have the disease. This describes the test's:",
+ ["Sensitivity","Specificity","Incidence","Prevalence"],
+ "Sensitivity is the ability to correctly identify those with the disease (true positive rate).",
+ "Specificity concerns correctly identifying those without disease; incidence and prevalence are disease frequencies.",
+ "Ang sensitivity ay kakayahang tukuyin ang may sakit.","openstax");
+NP1q('epi',2,"A test that correctly rules out disease in people who are healthy has high:",
+ ["Specificity","Sensitivity","Incidence","Case fatality"],
+ "Specificity is the ability to correctly identify those without disease (true negative rate).",
+ "Sensitivity identifies those with disease; incidence and case fatality are not test properties.",
+ "Ang specificity ay tamang pagtukoy sa walang sakit.","openstax");
+NP1q('epi',3,"Researchers follow smokers and non-smokers for 10 years to compare lung cancer occurrence. Which design is this?",
+ ["Cohort study","Case-control study","Cross-sectional survey","Case report"],
+ "A cohort study follows groups defined by exposure forward in time to compare outcomes.",
+ "A case-control study starts with outcomes and looks back; a cross-sectional survey measures at one time; a case report describes one patient.",
+ "Ang cohort study ay sumusubaybay sa mga grupo pasulong sa panahon.","openstax");
+NP1q('epi',3,"Researchers compare past exposures of people with a disease to people without it. Which design is this?",
+ ["Case-control study","Cohort study","Randomized controlled trial","Cross-sectional survey"],
+ "Case-control studies start with those with and without the outcome and look back at exposure.",
+ "Cohort studies follow forward; randomized trials assign interventions; cross-sectional surveys measure at one time point.",
+ "Ang case-control ay nagsisimula sa kinalabasan at tumitingin paatras.","openstax");
+NP1q('epi',1,"The epidemiologic triad consists of:",
+ ["Agent, host and environment","Person, place and time","Incidence, prevalence and mortality","Source, route and sink"],
+ "The triad describes disease causation through agent, host and environment.",
+ "Person, place and time describe descriptive epidemiology; the others are not the triad.",
+ "Ang epidemiologic triad ay agent, host at environment.","openstax");
+NP1q('epi',2,"At the start of a suspected outbreak investigation, the nurse's first priority is to:",
+ ["Verify the diagnosis and confirm that an outbreak exists","Close all schools","Begin mass treatment","Publish the findings"],
+ "Investigation begins by verifying diagnoses and confirming that cases exceed the expected number.",
+ "Control measures and reporting follow confirmation and case definition.",
+ "Una ang pagkumpirma ng diagnosis at ng outbreak.","doh");
+NP1q('epi',2,"Thirty guests become ill with vomiting within hours of eating the same buffet at a party. This epidemic pattern suggests:",
+ ["A common point-source exposure","A continuous common source","Person-to-person spread only","Endemic disease"],
+ "A sudden cluster after one shared exposure suggests a point-source outbreak.",
+ "Continuous or person-to-person patterns show cases over a longer or staggered period; endemic means usual presence.",
+ "Biglaang kumpol ng kaso mula sa iisang pagkain ay point-source.","openstax");
+NP1q('epi',2,"A research team gives every resident in a barangay list an equal chance of selection. This is:",
+ ["Simple random sampling","Convenience sampling","Quota sampling","Purposive sampling"],
+ "Giving every member an equal, independent chance of selection is simple random sampling.",
+ "The other methods rely on availability or judgment, not equal chance.",
+ "Pantay ang tsansang mapili ang bawat isa sa simple random sampling.","openrn");
+NP1q('epi',2,"Number of deaths from all causes in a year ÷ midyear population × 1,000 is the:",
+ ["Crude death rate","Case fatality rate","Infant mortality rate","Maternal mortality ratio"],
+ "That formula defines the crude death rate.",
+ "Case fatality concerns deaths among those with a specific disease; the other two are specific rates.",
+ "Ito ang crude death rate.","prc_tos");
+NP1q('cd',1,"A child with dengue has fever. Which medicine is appropriate for the fever?",
+ ["Paracetamol","Aspirin","Ibuprofen","Mefenamic acid"],
+ "Paracetamol is recommended; aspirin and NSAIDs increase bleeding risk.",
+ "Aspirin, ibuprofen and mefenamic acid are NSAIDs and should be avoided in dengue.",
+ "Paracetamol ang ligtas; iwasan ang aspirin at NSAIDs.","who_dengue");
+NP1q('cd',2,"Which finding in a dengue client around the time the fever subsides requires urgent referral?",
+ ["Persistent vomiting and severe abdominal pain","Mild headache","Mild muscle aches","Runny nose"],
+ "Persistent vomiting and severe abdominal pain are warning signs of severe dengue.",
+ "Mild headache, myalgia and rhinorrhea are common and not warning signs.",
+ "Ang patuloy na pagsusuka at matinding pananakit ng tiyan ay warning signs.","who_dengue");
+NP1q('cd',1,"Which measure is the most effective community-level prevention of dengue?",
+ ["Search and destroy mosquito breeding sites","Routine antibiotics for all residents","Quarantine of all households","Fogging only after cases rise"],
+ "Eliminating Aedes breeding sites such as stagnant water in containers is the key preventive measure.",
+ "Antibiotics do not prevent a viral disease; quarantine is not recommended; fogging is a limited supplementary measure.",
+ "Ang pagsira ng pinamumugaran ng lamok ang pinakamabisa.","who_dengue");
+NP1q('cd',2,"A newly diagnosed drug-susceptible TB client starts the intensive phase. Which drugs are included?",
+ ["Isoniazid, rifampicin, pyrazinamide and ethambutol","Isoniazid and rifampicin only","Streptomycin only","Amoxicillin and rifampicin"],
+ "The standard intensive phase uses four drugs: isoniazid, rifampicin, pyrazinamide and ethambutol.",
+ "Fewer drugs risk resistance; the other combinations are not standard.",
+ "Apat na gamot ang intensive phase: isoniazid, rifampicin, pyrazinamide, ethambutol.","who_tb");
+NP1q('cd',1,"A client taking rifampicin reports orange-red urine. The nurse should say:",
+ ["This is an expected harmless effect","Stop the medicine immediately","This signals kidney failure","This signals a drug allergy"],
+ "Rifampicin colors urine, sweat and tears orange-red; it is expected and harmless.",
+ "Stopping the drug risks resistance; the color change is not renal failure or allergy.",
+ "Normal ang kulay kahel na ihi sa rifampicin.","who_tb");
+NP1q('cd',2,"Which vitamin is given with isoniazid to prevent peripheral neuropathy?",
+ ["Pyridoxine (vitamin B6)","Vitamin C","Vitamin K","Vitamin D"],
+ "Pyridoxine helps prevent isoniazid-related peripheral neuropathy.",
+ "The other vitamins do not address this adverse effect.",
+ "Ang pyridoxine (B6) ay pumipigil sa neuropathy mula sa isoniazid.","who_tb");
+NP1q('cd',2,"A client on TB therapy reports blurred vision and difficulty seeing colors. Which drug is most likely responsible?",
+ ["Ethambutol","Rifampicin","Pyrazinamide","Isoniazid"],
+ "Ethambutol can cause optic neuritis; vision changes should be reported promptly.",
+ "Rifampicin colors fluids, pyrazinamide raises uric acid, and isoniazid may cause neuropathy and hepatotoxicity.",
+ "Ang ethambutol ay maaaring magdulot ng optic neuritis.","who_tb");
+NP1q('cd',1,"The main purpose of directly observed treatment (DOT) in TB is to:",
+ ["Ensure adherence and prevent drug resistance","Reduce the cost of drugs","Replace sputum testing","Shorten the treatment to one month"],
+ "A health worker watches the client swallow each dose to ensure adherence and prevent resistance.",
+ "DOT does not change drug cost or replace testing, and does not shorten therapy.",
+ "Tinitiyak ng DOT na iniinom ang gamot at napipigilan ang resistensya.","who_tb");
+NP1q('cd',1,"For sputum collection to detect TB, the best specimen is:",
+ ["An early-morning specimen","A specimen after meals","Saliva only","A specimen after using mouthwash"],
+ "An early-morning specimen contains pooled secretions and gives the best yield.",
+ "Saliva and specimens contaminated by food or mouthwash reduce diagnostic quality.",
+ "Pinakamainam ang plema sa umaga.","who_tb");
+NP1q('cd',2,"Which preventive measure may be given to high-risk persons after flood exposure to reduce leptospirosis risk?",
+ ["Doxycycline prophylaxis as directed by health authorities","Aspirin","Oral rehydration solution only","Vitamin A"],
+ "Doxycycline chemoprophylaxis is used for high-risk exposure to flood water contaminated by animal urine.",
+ "The other options do not prevent leptospirosis.",
+ "Doxycycline ang prophylaxis ayon sa direksyon ng health authority.","doh");
+NP1q('cd',1,"First aid for an animal bite wound includes:",
+ ["Washing with soap and running water for at least 15 minutes","Applying tobacco or herbs","Tight tourniquet above the wound","Suturing the wound immediately"],
+ "Thorough washing with soap and running water for at least 15 minutes reduces virus load.",
+ "Folk remedies and tourniquets are harmful; immediate suturing is discouraged.",
+ "Hugasan nang may sabon at tubig nang hindi bababa sa 15 minuto.","who_rabies");
+NP1q('cd',2,"A stray dog bites a child, breaking the skin and causing bleeding. This is Category III exposure. Management includes:",
+ ["Wound washing, rabies vaccine and rabies immunoglobulin","Wound washing only","Observation only","Antibiotics only"],
+ "Category III exposure requires wound care, vaccine series and immunoglobulin.",
+ "Washing alone or observation is insufficient for transdermal exposure.",
+ "Sa Category III, kailangan ng pagpapahid, bakuna at RIG.","who_rabies");
+NP1q('cd',2,"A resident in a malaria-endemic area asks how to prevent infection. The best advice is to:",
+ ["Sleep under insecticide-treated nets","Avoid eating at night","Boil all drinking water","Use only oral rehydration"],
+ "Malaria is spread by night-biting Anopheles mosquitoes; insecticide-treated nets reduce bites.",
+ "Diet, boiling water and rehydration do not prevent mosquito-borne infection.",
+ "Gumamit ng kulambo na may insecticide.","doh");
+NP1q('cd',2,"Which statement about schistosomiasis prevention is correct?",
+ ["Avoid contact with water in snail-infested areas","Avoid undercooked pork","Eliminate Aedes breeding sites","Wear a mask in crowded places"],
+ "Infection occurs through skin contact with water containing cercariae released by snails; avoiding such water prevents it.",
+ "The other measures relate to other diseases.",
+ "Iwasan ang tubig na may suso na nagdadala ng parasito.","doh");
+NP1q('cd',1,"Koplik spots are characteristic of which disease?",
+ ["Measles","Varicella","Pertussis","Mumps"],
+ "Koplik spots on the buccal mucosa are a hallmark of measles.",
+ "Varicella causes vesicles, pertussis causes paroxysmal cough, and mumps causes parotid swelling.",
+ "Ang Koplik spots ay palatandaan ng tigdas.","cdc_iso");
+NP1q('cd',2,"A child with watery diarrhea and some dehydration is brought to the health center. Initial management is:",
+ ["Oral rehydration solution with zinc supplementation","Antibiotics for all cases","Withholding fluids","Antidiarrheal drugs"],
+ "ORS replaces fluid and electrolytes, and zinc reduces duration and severity.",
+ "Most watery diarrhea does not need antibiotics; fluids should not be withheld; antidiarrheals are not recommended in children.",
+ "ORS at zinc ang unang gamutan.","who_peds");
+NP1q('imm',1,"What is the recommended storage temperature for most vaccines?",
+ ["2–8 °C","-20 °C","15–25 °C","Above 30 °C"],
+ "Most vaccines are stored at 2–8 °C in the refrigerator.",
+ "Freezing or heat damages many vaccines.",
+ "Imbak ang bakuna sa 2–8 °C.","doh");
+NP1q('imm',2,"Which vaccine must never be frozen because freezing damages it?",
+ ["Hepatitis B vaccine","Oral polio vaccine","BCG","Measles vaccine"],
+ "Hepatitis B vaccine and other adjuvanted vaccines are freeze-sensitive.",
+ "OPV, BCG and measles vaccines are freeze-dried or tolerate freezing.",
+ "Ang hepatitis B vaccine ay nasisira kapag na-freeze.","doh");
+NP1q('imm',1,"BCG vaccine is given by which route?",
+ ["Intradermal","Subcutaneous","Intramuscular","Oral"],
+ "BCG is injected intradermally, forming a small wheal.",
+ "Other routes would not give the intended local response.",
+ "Intradermal ang BCG.","doh");
+NP1q('imm',1,"When should the hepatitis B birth dose be given?",
+ ["Within 24 hours of birth","At 6 months","At 1 year","At school entry"],
+ "The birth dose is given within 24 hours to prevent perinatal transmission.",
+ "Later doses miss the critical window.",
+ "Ibigay ang hepatitis B sa loob ng 24 oras mula kapanganakan.","doh");
+NP1q('imm',1,"A child has a mild cold with a low-grade fever and is due for immunization. The nurse should:",
+ ["Proceed with vaccination","Postpone for 3 months","Refuse all vaccines","Prescribe antibiotics first"],
+ "Mild illness is not a contraindication to vaccination.",
+ "Delaying or refusing causes missed opportunities.",
+ "Ang banayad na sipon ay hindi hadlang sa bakuna.","doh");
+NP1q('imm',2,"Which condition is a true contraindication to further doses of a vaccine?",
+ ["Anaphylaxis after the previous dose","Mild fever","Mild diarrhea","Mild cough"],
+ "A severe allergic reaction to a previous dose is a true contraindication.",
+ "The other conditions are minor illnesses and not contraindications.",
+ "Anaphylaxis sa nakaraang dosis ay tunay na contraindication.","doh");
+NP1q('imm',2,"Which vaccine should be avoided during pregnancy?",
+ ["MMR (live attenuated)","Tetanus toxoid","Inactivated influenza","Hepatitis B"],
+ "Live attenuated vaccines such as MMR are contraindicated in pregnancy because of theoretical fetal risk.",
+ "Tetanus toxoid, inactivated influenza and hepatitis B are non-live and acceptable.",
+ "Iwasan ang live vaccine tulad ng MMR sa buntis.","doh");
+NP1q('imm',1,"After giving a vaccine, the nurse should observe the client for at least:",
+ ["15 minutes","1 minute","3 hours","24 hours"],
+ "Observing for at least 15 minutes allows prompt recognition and management of allergic reactions.",
+ "The other durations are too short or unnecessarily long.",
+ "Obserbahan nang hindi bababa sa 15 minuto.","cdc_sp");
+NP1q('imm',1,"In the Philippine EPI schedule, the first dose of measles-containing vaccine is given at:",
+ ["9 months","6 weeks","15 months","5 years"],
+ "The first measles-containing dose is given at 9 months, followed by a second dose at 12 months.",
+ "Other ages do not match the schedule.",
+ "Ang unang dosis ng measles ay sa 9 na buwan.","doh");
+NP1q('imm',2,"On a vaccine vial monitor, the inner square becomes darker than the outer circle. The nurse should:",
+ ["Discard the vaccine","Use it first","Freeze it","Use it only for adults"],
+ "A darker inner square indicates cumulative heat exposure and the vaccine must be discarded.",
+ "Using, freezing or restricting it does not restore potency.",
+ "Itapon ang bakuna kapag mas maitim ang loob na parisukat.","doh");
+NP1q('fam',2,"A couple expecting their first baby is classified under the Bailon–Maglaya categories as:",
+ ["Foreseeable crisis","Health deficit","Health threat","Wellness state"],
+ "Anticipated stress points such as childbirth are foreseeable crises.",
+ "Health deficit means existing illness; health threat means conditions likely to cause disease; wellness means no problems.",
+ "Ang inaasahang pagbabago tulad ng panganganak ay foreseeable crisis.","openrn");
+NP1q('fam',2,"A family without a sanitary toilet is classified as having a:",
+ ["Health threat","Health deficit","Foreseeable crisis","Wellness state"],
+ "Conditions that may lead to disease, such as poor sanitation, are health threats.",
+ "A health deficit is an existing illness; a foreseeable crisis is an anticipated stress point.",
+ "Ang kakulangan sa kalinisan ay health threat.","openrn");
+NP1q('fam',2,"A father diagnosed with hypertension is a family problem classified as a:",
+ ["Health deficit","Health threat","Foreseeable crisis","Wellness state"],
+ "An actual diagnosed illness is a health deficit.",
+ "Health threat concerns conditions that may lead to disease.",
+ "Ang aktuwal na sakit ay health deficit.","openrn");
+NP1q('fam',1,"The main purpose of the bag technique during a home visit is to:",
+ ["Prevent cross-contamination","Show authority","Save time only","Replace hand washing"],
+ "The bag technique reduces transfer of microorganisms between homes and the nurse's bag.",
+ "It does not replace hand hygiene.",
+ "Pinipigilan ng bag technique ang paglipat ng mikrobyo.","openrn");
+NP1q('fam',1,"At the start of a home visit, the nurse should first:",
+ ["Greet the family and establish rapport","Start giving injections","Inspect the kitchen","Leave a leaflet"],
+ "Establishing rapport builds trust and cooperation.",
+ "The other actions skip rapport.",
+ "Magpakilala at bumuo ng tiwala sa simula.","openrn");
+NP1q('fam',2,"Which tool depicts a family's relationships and health patterns across generations?",
+ ["Genogram","Ecomap","Growth chart","Partograph"],
+ "A genogram diagrams family members and relationships over generations.",
+ "An ecomap shows links with outside systems; the others are unrelated.",
+ "Ang genogram ay larawan ng pamilya sa mga henerasyon.","openrn");
+NP1q('fam',2,"Which tool shows the family's connections with community resources and outside systems?",
+ ["Ecomap","Genogram","Partograph","Growth chart"],
+ "An ecomap depicts the family's relationships with external systems.",
+ "A genogram focuses on the family tree.",
+ "Ang ecomap ay koneksyon ng pamilya sa labas na sistema.","openrn");
+NP1q('fam',1,"A mother correctly demonstrates how to bathe her newborn. Which domain of learning is shown?",
+ ["Psychomotor","Cognitive","Affective","Receptive"],
+ "Performing a skill reflects psychomotor learning.",
+ "Cognitive is knowing; affective is attitudes and values.",
+ "Ang pagsasagawa ng kasanayan ay psychomotor.","openrn");
+NP1q('fam',2,"A nurse wants a mother to value exclusive breastfeeding. Which domain is targeted?",
+ ["Affective","Cognitive","Psychomotor","Receptive"],
+ "Developing values and attitudes is the affective domain.",
+ "Cognitive concerns knowledge and psychomotor concerns skills.",
+ "Ang pagpapahalaga ay affective.","openrn");
+NP1q('fam',1,"A client in severe pain is not ready to learn. The nurse should first:",
+ ["Relieve the pain, then teach","Teach quickly","Give a pamphlet only","Postpone indefinitely"],
+ "Readiness to learn requires that urgent physical needs be addressed first.",
+ "Teaching during severe pain is ineffective.",
+ "Alisin muna ang sakit bago magturo.","openrn");
+NP1q('fam',2,"Which best confirms that teaching about insulin injection was effective?",
+ ["Return demonstration of the technique","Client nods","Client says yes","Client takes a leaflet"],
+ "Return demonstration shows the client can perform the skill.",
+ "The other responses do not prove skill acquisition.",
+ "Ang return demonstration ang patunay.","openrn");
+NP1q('fam',2,"When teaching adult learners, the nurse should:",
+ ["Link content to their experience and immediate needs","Lecture only","Use complex terms","Avoid questions"],
+ "Adults learn best when content is relevant, practical and builds on experience.",
+ "The other approaches reduce engagement.",
+ "Iugnay ang aralin sa karanasan at pangangailangan ng matanda.","openrn");
+NP1q('prof',1,"Obtaining informed consent before a procedure respects which ethical principle?",
+ ["Autonomy","Justice","Fidelity","Veracity"],
+ "Informed consent honors the client's right to decide.",
+ "Justice is fairness; fidelity is promise-keeping; veracity is truth-telling.",
+ "Ang informed consent ay paggalang sa autonomy.","ra9173");
+NP1q('prof',2,"A nurse delegates a task to an assistive worker. Who remains accountable for the outcome?",
+ ["The delegating nurse","The assistive worker alone","The client","No one"],
+ "The delegator retains accountability for appropriate delegation and supervision.",
+ "Responsibility for the task may be shared, but accountability remains.",
+ "Nananatili ang pananagutan ng nars na nag-delegate.","ra9173");
+NP1q('prof',2,"A nurse posts a client's photo online without consent. This violates:",
+ ["Confidentiality and the Data Privacy Act (RA 10173)","The Nursing Act only","The EPI schedule","The Magna Carta of Women"],
+ "Sharing identifiable health information without consent breaches privacy and data protection law.",
+ "The other options do not address this action.",
+ "Paglabag ito sa privacy at RA 10173.","ra10173");
+NP1q('ic',1,"Hand hygiene primarily breaks which link in the chain of infection?",
+ ["Mode of transmission","Reservoir","Agent","Susceptible host"],
+ "Clean hands prevent transfer of microorganisms by contact.",
+ "The other links are not directly broken by hand hygiene.",
+ "Pinuputol ng hand hygiene ang mode of transmission.","who_hh");
+NP1q('ic',2,"Hands are visibly soiled, or the client has C. difficile. The nurse should use:",
+ ["Soap and water","Alcohol-based rub","Water only","Sanitizing wipes"],
+ "Soap and water are required for visible soil and for spore-forming organisms.",
+ "Alcohol rubs do not kill C. difficile spores.",
+ "Sabon at tubig ang gamitin.","who_hh");
+NP1q('ic',1,"Which personal protective equipment item is put on first?",
+ ["Gown","Mask","Goggles","Gloves"],
+ "The usual sequence is gown, mask or respirator, eye protection, then gloves.",
+ "Gloves go on last so they cover the gown cuffs.",
+ "Una ang gown, huli ang guwantes.","cdc_sp");
+NP1q('ic',1,"A client with suspected pulmonary TB should be placed on which precautions?",
+ ["Airborne precautions with N95 respirator","Contact precautions only","Droplet precautions with surgical mask","Standard precautions only"],
+ "TB spreads by airborne particles needing a respirator and, when available, negative-pressure room.",
+ "Surgical masks are inadequate for airborne spread.",
+ "Airborne precautions at N95 ang kailangan.","cdc_iso");
+NP1q('ic',1,"Pertussis requires which transmission-based precautions?",
+ ["Droplet precautions","Airborne precautions","Contact precautions only","None"],
+ "Pertussis spreads through large respiratory droplets, so a surgical mask is used within close range.",
+ "Airborne precautions apply to TB, measles and varicella.",
+ "Droplet precautions ang sa pertussis.","cdc_iso");
+NP1q('ic',1,"After giving an injection, the nurse should:",
+ ["Dispose of the needle uncapped in a puncture-resistant container","Recap with two hands","Throw it in regular trash","Bend the needle"],
+ "Do not recap; discard immediately in a sharps container.",
+ "The other actions risk needlestick injury.",
+ "Itapon ang karayom sa sharps container nang hindi tinatakpan.","cdc_sp");
+
+NP1q('phc',2,"According to the PRC table, Practice I covers non-communicable diseases. In adults, which BP reading is classified as hypertension?",
+ ["140/90 mmHg or higher on repeated measurements","120/80 mmHg","110/70 mmHg","100/60 mmHg"],
+ "Hypertension is generally defined as a BP of 140/90 mmHg or higher on repeated measurements.",
+ "The other readings are normal or low.",
+ "Ang hypertension ay 140/90 mmHg pataas sa paulit-ulit na sukat.","prc_tos");
+NP1q('phc',2,"Which fasting blood glucose value is diagnostic of diabetes mellitus?",
+ ["126 mg/dL or higher","90 mg/dL","100 mg/dL","70 mg/dL"],
+ "A fasting plasma glucose of 126 mg/dL or higher, confirmed, indicates diabetes.",
+ "The lower values are normal or only suggest impaired fasting glucose.",
+ "126 mg/dL pataas ang diabetes.","ada");
+NP1q('phc',1,"A nurse teaches a community that a sore that does not heal and unusual bleeding are cancer warning signs. Which mnemonic is used?",
+ ["CAUTION","FAST","APGAR","SOAP"],
+ "CAUTION lists the seven warning signs of cancer.",
+ "FAST is for stroke, APGAR for newborn assessment, and SOAP for charting.",
+ "Ang CAUTION ay mga babalang senyales ng kanser.","prc_tos");
+NP1q('phc',1,"Which advice best reduces risk factors for non-communicable diseases?",
+ ["Stop smoking, eat less salt, exercise and limit alcohol","Increase salt intake","Avoid all physical activity","Take antibiotics daily"],
+ "Tobacco, unhealthy diet, inactivity and harmful alcohol use are the main modifiable risk factors.",
+ "The other options raise risk or do nothing for NCDs.",
+ "Iwasan ang yosi, bawasan ang asin, mag-ehersisyo at limitahan ang alak.","who_diet");
+NP1q('phc',2,"A client says chest pain, sweating and shortness of breath started an hour ago. The nurse's priority is to:",
+ ["Refer immediately for emergency care","Advise rest at home","Give a herbal drink","Recheck tomorrow"],
+ "These signs suggest acute coronary syndrome and require immediate emergency referral.",
+ "Delay risks death.",
+ "Agarang i-refer sa emergency.","aha");
+NP1q('epi',2,"In a study of health education effects, the variable the researcher manipulates is called the:",
+ ["Independent variable","Dependent variable","Extraneous variable","Constant"],
+ "The independent variable is the intervention manipulated; the dependent variable is the outcome measured.",
+ "The other terms do not describe the manipulated factor.",
+ "Ang independent variable ang binabago ng mananaliksik.","openrn");
+NP1q('epi',1,"Before enrolling residents in a barangay research study, the researcher must first:",
+ ["Obtain informed consent","Publish results","Give incentives","Hide the purpose"],
+ "Voluntary informed consent is a basic ethical requirement of research.",
+ "The other actions do not protect participants.",
+ "Kailangan muna ang informed consent.","openrn");
+
+/* ---------- Nursing Practice II: expansion to 100 items (appended so existing question IDs stay unchanged) ---------- */
+const NP2q=(t,d,q,o,r,w,f,s)=>Q(2,t,d,q,o,0,r,w,f,s);
+NP2q('ante',2,"A client's last menstrual period began on March 10. Using Naegele's rule, what is her expected date of delivery?",
+ ["December 17","December 10","January 17","November 17"],
+ "Naegele's rule: subtract 3 months and add 7 days to the first day of the LMP, giving December 17.",
+ "The other dates are calculation errors.",
+ "LMP Marso 10: bawasan ng 3 buwan at dagdagan ng 7 araw = Disyembre 17.","openrn");
+NP2q('ante',2,"A nurse palpates the fundus at the level of the umbilicus. This usually corresponds to about how many weeks of gestation?",
+ ["20 weeks","12 weeks","28 weeks","36 weeks"],
+ "The fundus reaches the umbilicus at about 20 weeks; from 20 to 34 weeks fundal height in cm roughly equals weeks.",
+ "At 12 weeks it is just above the symphysis; later weeks are higher.",
+ "Sa 20 linggo ang fundus ay nasa pusod.","openrn");
+NP2q('ante',3,"A woman is pregnant for the fourth time. She has had two term deliveries, one abortion, and has two living children. What is her GTPAL?",
+ ["G4 T2 P0 A1 L2","G3 T2 P0 A1 L2","G4 T2 P1 A1 L2","G4 T1 P0 A2 L2"],
+ "G = 4 including the current pregnancy; T = 2; P = 0; A = 1; L = 2.",
+ "The other options miscount gravidity or parity components.",
+ "G4 dahil kasama ang kasalukuyang pagbubuntis; T2 P0 A1 L2.","openrn");
+NP2q('ante',2,"Bluish discoloration of the cervix and vagina (Chadwick's sign) is classified as which type of sign?",
+ ["Probable","Presumptive","Positive","Diagnostic"],
+ "Chadwick's sign is a probable sign because it can occur with other conditions.",
+ "Presumptive signs are subjective symptoms; positive signs are definite proof such as fetal heart tones.",
+ "Ang Chadwick's sign ay probable sign.","openrn");
+NP2q('ante',1,"Which finding is a positive sign of pregnancy?",
+ ["Fetal heart tones heard by the examiner","Amenorrhea","Nausea in the morning","Breast tenderness"],
+ "Fetal heart tones heard by the examiner (or ultrasound visualization of the fetus) are positive signs.",
+ "Amenorrhea, nausea and breast tenderness are presumptive signs.",
+ "Ang tunog ng puso ng sanggol ay positive sign.","openrn");
+NP2q('ante',1,"Folic acid supplementation before and early in pregnancy helps prevent:",
+ ["Neural tube defects","Rh isoimmunization","Gestational diabetes","Preterm labor"],
+ "Folic acid lowers the risk of neural tube defects such as spina bifida.",
+ "The other conditions are not prevented by folic acid.",
+ "Pinipigilan ng folic acid ang neural tube defect.","who_anc");
+NP2q('ante',1,"To improve absorption of an iron supplement, the nurse should advise taking it with:",
+ ["Orange juice","Milk","Tea","Coffee"],
+ "Vitamin C enhances iron absorption; milk, tea and coffee reduce it.",
+ "Calcium in milk and tannins in tea and coffee hinder absorption.",
+ "Inumin ang iron kasama ng vitamin C tulad ng orange juice.","who_anc");
+NP2q('ante',1,"Which fetal heart rate range is normal at term?",
+ ["110–160 beats per minute","60–100 beats per minute","170–200 beats per minute","80–100 beats per minute"],
+ "A normal baseline fetal heart rate is 110–160 beats per minute.",
+ "The other ranges indicate bradycardia or tachycardia.",
+ "Normal ang 110–160 beses kada minuto.","openrn");
+NP2q('ante',2,"A primigravida asks when she will first feel fetal movement. The nurse tells her it usually occurs at:",
+ ["16–20 weeks","6–8 weeks","10–12 weeks","30–32 weeks"],
+ "Quickening is usually felt at 16–20 weeks of gestation.",
+ "Earlier weeks are too early; later weeks are too late.",
+ "Ang quickening ay nararamdaman sa 16–20 linggo.","openrn");
+NP2q('ante',2,"According to WHO, the minimum number of antenatal care contacts recommended for a positive pregnancy experience is:",
+ ["Eight","Two","Four","Twelve"],
+ "WHO recommends a minimum of eight contacts with a health care provider during pregnancy.",
+ "Fewer contacts do not meet the current recommendation.",
+ "Walong kontak ang inirerekomenda ng WHO.","who_anc");
+NP2q('labor',1,"The first stage of labor ends when the cervix is:",
+ ["Fully dilated to 10 cm","Dilated 4 cm","Effaced 50%","Closed"],
+ "The first stage begins with regular contractions and ends at full dilation (10 cm).",
+ "Other findings occur earlier in labor.",
+ "Nagtatapos ang unang yugto sa 10 cm na dilation.","openrn");
+NP2q('labor',2,"A laboring client at 9 cm becomes irritable, nauseated and says she cannot go on. This is the:",
+ ["Transition phase","Latent phase","Active phase","Third stage"],
+ "Transition (8–10 cm) is marked by irritability, nausea, trembling and loss of control.",
+ "Latent and active phases come earlier; the third stage is placental delivery.",
+ "Ang transition phase ay 8–10 cm na may iritable at nasusuka.","openrn");
+NP2q('labor',2,"Which cardinal movement of labor occurs immediately after flexion?",
+ ["Internal rotation","Extension","External rotation","Restitution"],
+ "The order is engagement, descent, flexion, internal rotation, extension, restitution, external rotation and expulsion.",
+ "The other movements occur later in the sequence.",
+ "Pagkatapos ng flexion ay internal rotation.","openrn");
+NP2q('labor',1,"The fetal head is at station 0. This means the presenting part is:",
+ ["At the level of the ischial spines","Floating above the pelvis","Crowning at the perineum","At the pelvic outlet"],
+ "Station 0 is at the level of the ischial spines.",
+ "Floating is -5; crowning is about +4 to +5.",
+ "Station 0 ay nasa ischial spines.","openrn");
+NP2q('labor',3,"The nurse sees late decelerations on the fetal monitor. What is the priority action?",
+ ["Turn the client to her left side and give oxygen","Increase oxytocin","Prepare for discharge","Encourage pushing"],
+ "Late decelerations suggest uteroplacental insufficiency; reposition left, give oxygen, increase IV fluids and stop oxytocin.",
+ "Increasing oxytocin or pushing worsens fetal hypoxia.",
+ "Ilipat sa kaliwa at bigyan ng oxygen.","openrn");
+NP2q('labor',2,"Early decelerations during contractions are caused by:",
+ ["Head compression","Cord compression","Placental insufficiency","Maternal fever"],
+ "Early decelerations mirror contractions and reflect head compression; they are benign.",
+ "Cord compression produces variable decelerations; placental insufficiency produces late decelerations.",
+ "Ang early deceleration ay dulot ng pagdiin sa ulo.","openrn");
+NP2q('labor',2,"Variable decelerations are most often caused by:",
+ ["Umbilical cord compression","Head compression","Uteroplacental insufficiency","Maternal hypotension"],
+ "Variable decelerations vary in timing and shape and reflect cord compression; changing position may help.",
+ "The other causes produce early or late patterns.",
+ "Ang variable deceleration ay dulot ng pagipit sa pusod.","openrn");
+NP2q('labor',3,"The nurse sees a loop of cord protruding from the vagina. The priority action is to:",
+ ["Place her in knee-chest position and elevate the presenting part by hand","Push the cord back in","Encourage pushing","Apply fundal pressure"],
+ "Relieve cord compression by lifting the presenting part and using knee-chest or Trendelenburg position, then prepare for emergency delivery.",
+ "Pushing or fundal pressure worsens compression.",
+ "Itaas ang presenting part at knee-chest position.","openrn");
+NP2q('labor',2,"A client's membranes rupture spontaneously. Which action comes first?",
+ ["Check the fetal heart rate","Document the color only","Prepare for discharge","Begin an enema"],
+ "After rupture, first assess fetal heart rate for cord prolapse, then note fluid color, amount and odor.",
+ "The other actions do not address the immediate risk.",
+ "Unahin ang pagsuri sa tibok ng puso ng sanggol.","openrn");
+NP2q('labor',1,"Contraction frequency is measured from:",
+ ["The beginning of one contraction to the beginning of the next","The peak to the end","The end of one to the beginning of the next","The beginning to the end"],
+ "Frequency is timed from the start of one contraction to the start of the next; duration is start to end.",
+ "The other measures describe intervals or duration.",
+ "Sukatin mula simula ng isa hanggang simula ng susunod.","openrn");
+NP2q('pp',1,"One hour after delivery, the fundus is boggy. The first action is to:",
+ ["Massage the fundus","Apply ice to the perineum","Encourage ambulation","Document only"],
+ "A boggy fundus indicates uterine atony; fundal massage promotes contraction.",
+ "The other actions do not control atony.",
+ "Imasahe ang fundus kapag malambot.","openrn");
+NP2q('pp',1,"Normal lochia progresses in which order?",
+ ["Rubra, serosa, alba","Alba, serosa, rubra","Serosa, rubra, alba","Rubra, alba, serosa"],
+ "Lochia is red (rubra), then pink-brown (serosa), then white-yellow (alba).",
+ "The other sequences are incorrect.",
+ "Rubra, serosa, alba ang tamang pagkakasunod.","openrn");
+NP2q('pp',2,"Normally the fundus descends about how much per day after delivery?",
+ ["1 cm (one fingerbreadth)","5 cm","0.1 cm","3 cm"],
+ "The fundus descends about 1 cm daily and is not palpable by around 10–14 days.",
+ "The other rates are too fast or too slow.",
+ "Bumababa ang fundus nang mga 1 cm kada araw.","openrn");
+NP2q('pp',1,"The most common cause of early postpartum hemorrhage is:",
+ ["Uterine atony","Retained cotton","Infection","Hypertension"],
+ "Uterine atony is the leading cause of early postpartum hemorrhage.",
+ "The other options are less common causes.",
+ "Pangunahing sanhi ay uterine atony.","openrn");
+NP2q('pp',2,"An Rh-negative mother delivers an Rh-positive infant. Rh immune globulin should be given within:",
+ ["72 hours","7 days","1 month","6 weeks"],
+ "Rh immune globulin is given within 72 hours of birth to prevent sensitization.",
+ "Later times are less effective.",
+ "Ibigay ang Rh immune globulin sa loob ng 72 oras.","openrn");
+NP2q('pp',2,"A mother is tearful on day 4 but eating and caring for the baby. Symptoms usually resolve within 2 weeks. This is most consistent with:",
+ ["Postpartum blues","Postpartum depression","Postpartum psychosis","Bipolar disorder"],
+ "Blues peak around days 3–5 and resolve within about 2 weeks without treatment.",
+ "Depression and psychosis are more severe and persistent.",
+ "Postpartum blues ang naglalaho sa loob ng 2 linggo.","openrn");
+NP2q('pp',1,"To relieve breast engorgement in a breastfeeding mother, the nurse should advise:",
+ ["Frequent feeding or expressing milk","Stopping breastfeeding","Tight binding only","Restricting fluids"],
+ "Frequent emptying of the breasts relieves engorgement; warm compresses before and cold packs after feeding help.",
+ "Stopping or binding worsens engorgement and risks mastitis.",
+ "Madalas na pagpapasuso ang makakatulong.","who_bf");
+NP2q('pp',2,"A mother with mastitis asks about breastfeeding. The nurse should advise:",
+ ["Continue breastfeeding or expressing from the affected breast","Stop breastfeeding permanently","Wean abruptly","Avoid all fluids"],
+ "Continued milk removal helps resolve mastitis; the milk is safe for the infant.",
+ "Stopping milk flow worsens the condition.",
+ "Ipagpatuloy ang pagpapasuso.","who_bf");
+NP2q('pp',1,"For perineal pain after a vaginal delivery with episiotomy, the nurse applies ice packs during the first:",
+ ["24 hours","1 week","6 weeks","48 hours only after sitz bath"],
+ "Ice in the first 24 hours reduces swelling; warm sitz baths follow.",
+ "Later times are not the period for ice.",
+ "Yelo sa unang 24 oras.","openrn");
+NP2q('pp',2,"Postpartum, the first sign of hypovolemia from hemorrhage is often:",
+ ["Increased pulse rate","Decreased temperature","Elevated blood pressure","Increased urine output"],
+ "Tachycardia is an early compensatory sign; hypotension appears late.",
+ "Blood pressure falls late, and urine output decreases.",
+ "Pagtaas ng pulso ang unang palatandaan.","openrn");
+NP2q('nb',1,"The Apgar score is assessed at:",
+ ["1 and 5 minutes after birth","10 and 20 minutes","30 minutes only","1 hour"],
+ "Apgar is scored at 1 and 5 minutes (and again if low).",
+ "The other times are not standard.",
+ "Sinusuri ang Apgar sa 1 at 5 minuto.","openrn");
+NP2q('nb',1,"Immediately after birth, the nurse dries the newborn thoroughly to prevent heat loss by:",
+ ["Evaporation","Conduction","Convection","Radiation"],
+ "Wet skin loses heat by evaporation; drying and covering prevent it.",
+ "Conduction, convection and radiation are prevented by other measures.",
+ "Pinipigilan ng pagpupunas ang evaporation.","doh");
+NP2q('nb',1,"Vitamin K is given to the newborn to prevent:",
+ ["Hemorrhagic disease of the newborn","Jaundice","Infection","Hypoglycemia"],
+ "Newborns lack gut flora to make vitamin K; the injection prevents bleeding.",
+ "The other conditions are not prevented by vitamin K.",
+ "Pinipigilan ng vitamin K ang pagdurugo.","doh");
+NP2q('nb',1,"Erythromycin ointment is applied to the newborn's eyes to prevent:",
+ ["Ophthalmia neonatorum","Conjunctival bleeding","Glaucoma","Cataract"],
+ "Prophylaxis prevents infection from maternal gonorrhea and chlamydia.",
+ "The other options are not the purpose.",
+ "Pinipigilan ang ophthalmia neonatorum.","doh");
+NP2q('nb',2,"Which finding in a newborn requires immediate action?",
+ ["Jaundice within the first 24 hours","Jaundice on day 3","Acrocyanosis","Milia"],
+ "Jaundice in the first 24 hours is pathologic and needs evaluation.",
+ "Jaundice on day 3, acrocyanosis and milia are common normal findings.",
+ "Ang paninilaw sa unang 24 oras ay hindi normal.","openrn");
+NP2q('nb',2,"Under essential newborn care (Unang Yakap), cord clamping is delayed for about:",
+ ["1 to 3 minutes","10 seconds","10 minutes","30 minutes"],
+ "DOH essential newborn care advises waiting 1–3 minutes, after drying and skin-to-skin contact.",
+ "The other durations are not recommended.",
+ "Ipagpaliban ang pagputol ng pusod nang 1–3 minuto.","doh");
+NP2q('nb',1,"WHO recommends exclusive breastfeeding for the first:",
+ ["6 months","2 months","4 months","12 months"],
+ "Exclusive breastfeeding is recommended for the first 6 months, then complementary foods with continued breastfeeding.",
+ "The other durations are not the recommendation.",
+ "Eksklusibong pagpapasuso sa unang 6 na buwan.","who_bf");
+NP2q('nb',2,"Which sign shows a good breastfeeding latch?",
+ ["Wide-open mouth with chin touching the breast and lips flanged outward","Dimpled cheeks","Clicking sounds","Pain throughout the feed"],
+ "A wide mouth, chin touching and flanged lips indicate effective latch.",
+ "Dimpling, clicking and pain indicate poor latch.",
+ "Malapad na bibig at nakadikit ang baba.","who_bf");
+NP2q('nb',2,"Newborn screening is ideally collected:",
+ ["After 24 hours of life","Before birth","Within 5 minutes of birth","At 1 month"],
+ "Newborn screening is done after 24 hours of life (ideally 24–48 hours) so metabolic disorders can be detected.",
+ "Earlier samples may give false results; later is too late.",
+ "Kumuha pagkatapos ng 24 oras.","doh");
+NP2q('nb',1,"Which is the best way to keep a newborn warm right after birth?",
+ ["Skin-to-skin contact with the mother","Place under a cold fan","Wrap in wet cloth","Leave uncovered"],
+ "Skin-to-skin contact with mother maintains temperature and promotes breastfeeding.",
+ "The other options cause heat loss.",
+ "Skin-to-skin sa ina.","doh");
+NP2q('comp',2,"Preeclampsia is characterized by hypertension after 20 weeks of gestation with:",
+ ["Proteinuria","Glycosuria","Hematuria","Bacteriuria"],
+ "Preeclampsia: BP 140/90 mmHg or higher after 20 weeks with proteinuria or other organ dysfunction.",
+ "The other findings are not diagnostic.",
+ "May proteinuria ang preeclampsia.","openrn");
+NP2q('comp',3,"A woman receiving magnesium sulfate has absent deep tendon reflexes and a respiratory rate of 10. The nurse should give:",
+ ["Calcium gluconate","Naloxone","Vitamin K","Atropine"],
+ "These are signs of magnesium toxicity; calcium gluconate is the antidote.",
+ "The other drugs are not antidotes for magnesium.",
+ "Calcium gluconate ang antidote.","openrn");
+NP2q('comp',2,"Which environment is best for a client with severe preeclampsia?",
+ ["Quiet, dimly lit room with seizure precautions","Brightly lit room","Busy ward","Room with visitors"],
+ "Reducing stimulation lowers seizure risk.",
+ "The other environments increase stimulation.",
+ "Tahimik at madilim na silid.","openrn");
+NP2q('comp',3,"A woman at 32 weeks has painless bright red vaginal bleeding. Which action should the nurse avoid?",
+ ["Vaginal examination","Monitoring fetal heart rate","Recording vital signs","Starting an IV"],
+ "Painless bleeding suggests placenta previa; vaginal examination may cause hemorrhage.",
+ "The other actions are appropriate.",
+ "Iwasan ang vaginal examination sa placenta previa.","openrn");
+NP2q('comp',3,"Painful dark vaginal bleeding with a rigid, board-like abdomen suggests:",
+ ["Abruptio placentae","Placenta previa","Hydatidiform mole","Threatened abortion"],
+ "Abruptio placentae features painful bleeding and a rigid uterus.",
+ "Placenta previa bleeding is painless and bright red.",
+ "Abruptio placentae ang masakit at matigas na tiyan.","openrn");
+NP2q('comp',2,"Sudden unilateral lower abdominal pain with shoulder pain and amenorrhea suggests:",
+ ["Ruptured ectopic pregnancy","Appendicitis","Threatened abortion","Hydatidiform mole"],
+ "Shoulder pain from blood irritating the diaphragm suggests ruptured ectopic pregnancy.",
+ "The other conditions do not typically present this way.",
+ "Ruptured ectopic pregnancy ang may sakit sa balikat.","openrn");
+NP2q('comp',2,"The priority concern for a client with hyperemesis gravidarum is:",
+ ["Fluid and electrolyte imbalance","Constipation","Insomnia","Fatigue"],
+ "Persistent vomiting causes dehydration and electrolyte imbalance.",
+ "The other problems are less urgent.",
+ "Panganib ang dehydration.","openrn");
+NP2q('comp',2,"A glucose tolerance test to screen for gestational diabetes is usually done at:",
+ ["24–28 weeks","6–8 weeks","12 weeks","36–40 weeks"],
+ "Screening is generally done at 24–28 weeks.",
+ "Other times are not routine.",
+ "Isinasagawa sa 24–28 linggo.","ada");
+NP2q('comp',3,"Passage of grape-like vesicles, very high hCG and a uterus larger than expected suggest:",
+ ["Hydatidiform mole","Ectopic pregnancy","Placenta previa","Twin pregnancy"],
+ "These are classic findings of molar pregnancy.",
+ "The others do not produce grape-like vesicles.",
+ "Hydatidiform mole ang mala-ubas na bukol.","openrn");
+NP2q('comp',2,"A woman at 10 weeks has bleeding with a closed cervix and mild cramps. This is:",
+ ["Threatened abortion","Inevitable abortion","Complete abortion","Missed abortion"],
+ "Bleeding with a closed cervix and no tissue passed is a threatened abortion.",
+ "Inevitable abortion shows cervical dilation.",
+ "Threatened abortion ang sarado ang cervix.","openrn");
+NP2q('comp',3,"Painless cervical dilation in the second trimester with recurrent loss suggests:",
+ ["Incompetent cervix","Placenta previa","Abruptio placentae","Preeclampsia"],
+ "Incompetent cervix is managed with cerclage.",
+ "The others have different presentations.",
+ "Incompetent cervix ang walang sakit na pagbukas.","openrn");
+NP2q('gd',1,"A normal infant triples birth weight at about:",
+ ["12 months","3 months","6 months","24 months"],
+ "Birth weight doubles at about 5–6 months and triples at 12 months.",
+ "Other ages are too early or late.",
+ "Triple ang timbang sa 12 buwan.","who_peds");
+NP2q('gd',2,"The anterior fontanel normally closes by about:",
+ ["12–18 months","2 months","6 months","3 years"],
+ "The posterior closes at 2–3 months; the anterior at 12–18 months.",
+ "Other ages are incorrect.",
+ "Nagsasara ang anterior fontanel sa 12–18 buwan.","openrn");
+NP2q('gd',1,"According to Erikson, the developmental task of infancy is:",
+ ["Trust versus mistrust","Autonomy versus shame and doubt","Initiative versus guilt","Industry versus inferiority"],
+ "Infants develop trust when needs are consistently met.",
+ "The other tasks apply to later stages.",
+ "Trust vs mistrust sa sanggol.","openrn");
+NP2q('gd',1,"A toddler insists, \"I do it myself!\" Which Erikson stage is this?",
+ ["Autonomy versus shame and doubt","Trust versus mistrust","Identity versus role confusion","Generativity versus stagnation"],
+ "Toddlers assert independence in autonomy versus shame and doubt.",
+ "The others apply to different ages.",
+ "Autonomy vs shame sa toddler.","openrn");
+NP2q('gd',2,"A school-age child who completes projects and seeks recognition is working on:",
+ ["Industry versus inferiority","Initiative versus guilt","Intimacy versus isolation","Trust versus mistrust"],
+ "School-age children develop industry through competence and accomplishment.",
+ "The others fit different stages.",
+ "Industry vs inferiority sa school-age.","openrn");
+NP2q('gd',1,"An adolescent exploring different roles to form a self-concept is in:",
+ ["Identity versus role confusion","Industry versus inferiority","Autonomy versus shame","Initiative versus guilt"],
+ "Adolescents establish identity.",
+ "The others apply to earlier ages.",
+ "Identity vs role confusion sa kabataan.","openrn");
+NP2q('gd',2,"A baby searches for a toy hidden under a blanket. According to Piaget this shows:",
+ ["Object permanence","Conservation","Egocentrism","Abstract reasoning"],
+ "Object permanence develops in the sensorimotor stage.",
+ "The others occur in later stages.",
+ "Object permanence ang paghahanap sa nakatagong laruan.","openrn");
+NP2q('gd',2,"A 5-year-old believes thinking about a bad thing caused his sister's illness. This is:",
+ ["Magical thinking in the preoperational stage","Conservation","Object permanence","Deductive reasoning"],
+ "Preschoolers use magical thinking in the preoperational stage.",
+ "The others are different concepts.",
+ "Magical thinking sa preoperational stage.","openrn");
+NP2q('gd',3,"A 9-year-old understands that the amount of water stays the same when poured into a taller glass. This is:",
+ ["Conservation in the concrete operational stage","Object permanence","Magical thinking","Formal reasoning"],
+ "Conservation is mastered in the concrete operational stage (about 7–11 years).",
+ "The others are earlier or later abilities.",
+ "Conservation sa concrete operational stage.","openrn");
+NP2q('gd',1,"Stranger anxiety usually appears at about:",
+ ["6–8 months","1 month","2 months","3 years"],
+ "Stranger anxiety emerges at about 6–8 months.",
+ "Other ages are too early or late.",
+ "Lumilitaw ang stranger anxiety sa 6–8 buwan.","openrn");
+NP2q('gd',2,"A hospitalized toddler cries, then becomes withdrawn, then seems to accept caregivers. These are the stages of separation anxiety:",
+ ["Protest, despair, detachment","Denial, anger, acceptance","Trust, doubt, shame","Regression, repression, projection"],
+ "Separation anxiety progresses through protest, despair and detachment.",
+ "The others describe different models.",
+ "Protest, despair, detachment.","openrn");
+NP2q('gd',2,"Readiness for toilet training is usually seen at about:",
+ ["18–24 months","6 months","10 months","4 years"],
+ "Neuromuscular control and communication develop by 18–24 months.",
+ "Other ages are too early or late.",
+ "Handa sa toilet training sa 18–24 buwan.","openrn");
+NP2q('ped',1,"Which is a general danger sign in IMCI?",
+ ["Unable to drink or breastfeed","Mild cough","Runny nose","Normal sleep"],
+ "General danger signs: unable to drink or breastfeed, vomits everything, convulsions, lethargy or unconsciousness.",
+ "The others are not general danger signs.",
+ "Hindi makainom o makasuso ay danger sign.","who_peds");
+NP2q('ped',2,"An 18-month-old with cough has a respiratory rate of 44 per minute. According to IMCI, this is:",
+ ["Fast breathing","Normal breathing","Slow breathing","Apnea"],
+ "Fast breathing is 40 or more per minute for ages 12 months to 5 years.",
+ "The other options do not apply.",
+ "Mabilis ang paghinga kung 40 pataas sa edad na ito.","who_peds");
+NP2q('ped',2,"A child with cough, fast breathing and no danger signs is treated in IMCI with:",
+ ["Oral amoxicillin and home care advice","Hospital admission","Antibiotics by injection","No treatment"],
+ "Pneumonia without danger signs is treated with oral amoxicillin and follow-up.",
+ "Other options are for severe disease or viral colds.",
+ "Oral amoxicillin ang gamot.","who_peds");
+NP2q('ped',2,"In IMCI, ORS is given to a child with some dehydration at about:",
+ ["75 mL/kg over 4 hours","10 mL/kg over 1 hour","200 mL/kg over 12 hours","None"],
+ "Plan B gives 75 mL/kg of ORS over 4 hours with reassessment.",
+ "The other rates are incorrect.",
+ "75 mL/kg sa loob ng 4 na oras.","who_peds");
+NP2q('ped',2,"A child with fever and stiff neck is classified in IMCI as needing:",
+ ["Urgent referral","Home care only","Observation only","Routine follow-up"],
+ "Fever with stiff neck suggests meningitis and needs urgent referral.",
+ "The others delay care.",
+ "Agarang i-refer.","who_peds");
+NP2q('ped',1,"In the IMCI color-coding, a pink or red classification means:",
+ ["Urgent referral","Home care","Specific treatment at the clinic","No action"],
+ "Pink requires urgent referral; yellow requires treatment; green requires home care.",
+ "The other meanings belong to other colors.",
+ "Pink ay agarang referral.","who_peds");
+NP2q('ped',2,"The lactational amenorrhea method is effective only when the mother:",
+ ["Exclusively breastfeeds, has no menses, and the baby is under 6 months","Breastfeeds twice daily","Has menses","Baby is over 8 months"],
+ "All three conditions must be present.",
+ "The other options do not meet the criteria.",
+ "Kailangan eksklusibong pagpapasuso at wala pang regla.","doh");
+NP2q('ped',2,"With the Standard Days Method, the fertile days for women with 26–32 day cycles are:",
+ ["Days 8 to 19","Days 1 to 7","Days 20 to 26","Days 28 to 32"],
+ "Days 8–19 are considered fertile.",
+ "Other days are outside the fertile window.",
+ "Ika-8 hanggang ika-19 na araw.","doh");
+NP2q('ped',1,"A woman misses one combined oral contraceptive pill. She should:",
+ ["Take it as soon as she remembers and continue the next at the usual time","Skip the pack","Double next week","Stop the pill"],
+ "Take the missed pill as soon as remembered and continue as usual.",
+ "The others reduce protection.",
+ "Inumin agad kapag naalala.","doh");
+NP2q('ped',2,"Which family planning method also protects against sexually transmitted infections?",
+ ["Condom","Oral contraceptive pill","IUD","Injectable contraceptive"],
+ "Condoms reduce STI transmission.",
+ "The other methods do not.",
+ "Condom ang proteksyon sa STI.","doh");
+NP2q('ped',2,"A woman using the basal body temperature method notes ovulation by:",
+ ["A rise of about 0.3 to 0.6 °C","A fall in temperature","No change","A rise of 5 °C"],
+ "Temperature rises slightly after ovulation due to progesterone.",
+ "The other changes are not expected.",
+ "Tumataas nang bahagya pagkatapos ng obulasyon.","doh");
+NP2q('ped',2,"Fertile cervical mucus is typically:",
+ ["Clear, slippery and stretchy","Thick and sticky","Dry","Yellow and foul"],
+ "Fertile mucus resembles egg white.",
+ "The others indicate infertile or abnormal mucus.",
+ "Malinaw at malagkit na parang puti ng itlog.","doh");
+NP2q('ped',3,"A child with fever, drooling and tripod position is suspected to have epiglottitis. The nurse should:",
+ ["Avoid examining the throat and prepare for airway support","Examine the throat","Lay the child flat","Give oral fluids"],
+ "Throat examination may cause complete obstruction; keep calm and prepare for intubation.",
+ "The others risk airway obstruction.",
+ "Huwag suriin ang lalamunan.","openrn");
+NP2q('ped',2,"During a febrile seizure, the nurse should:",
+ ["Protect from injury and position on the side","Restrain firmly","Put an object in the mouth","Give oral fluids"],
+ "Protect and position to keep the airway clear.",
+ "Restraint and objects cause injury.",
+ "Ihiga nang patagilid at iwasang masaktan.","openrn");
+NP2q('ped',2,"Which food should be avoided in a toddler because of choking risk?",
+ ["Whole grapes","Mashed banana","Soft rice","Yogurt"],
+ "Round, firm foods such as whole grapes, nuts and hot dogs cause choking.",
+ "The others are soft.",
+ "Iwasan ang buong ubas.","who_peds");
+NP2q('ped',2,"Breast self-examination is best done:",
+ ["5–7 days after menstruation begins","During menses","Any time randomly","Before menstruation"],
+ "Breast tissue is least tender and lumpy after menses.",
+ "Other times have hormonal changes.",
+ "5–7 araw pagkatapos magsimula ang regla.","doh");
+
+/* ---------- Nursing Practice III: expansion to 100 items (appended so existing question IDs stay unchanged) ---------- */
+const NP3q=(t,d,q,o,r,w,f,s)=>Q(3,t,d,q,o,0,r,w,f,s);
+NP3q('periop',1,"Who is responsible for obtaining informed consent for a surgical procedure?",
+ ["The surgeon","The staff nurse","The dietitian","The pharmacist"],
+ "The surgeon explains the procedure, risks and alternatives; the nurse may witness the signature and confirm understanding.",
+ "The others are not responsible for explaining the procedure and risks.",
+ "Ang siruhano ang kumukuha ng informed consent.","openrn");
+NP3q('periop',1,"Why is the client kept NPO before general anesthesia?",
+ ["To reduce the risk of aspiration","To increase blood pressure","To prevent pain","To improve urine output"],
+ "An empty stomach lowers the risk of vomiting and aspiration during anesthesia.",
+ "The other effects are not the purpose.",
+ "Para mabawasan ang panganib ng aspirasyon.","ssc");
+NP3q('periop',1,"Which item should the nurse remove before a client goes to the operating room?",
+ ["Dentures and jewelry","Identification band","Allergy band","Hospital gown"],
+ "Dentures, jewelry, nail polish and prostheses are removed; identification and allergy bands stay.",
+ "The other items are required.",
+ "Alisin ang pustiso at alahas.","openrn");
+NP3q('periop',2,"During the surgical safety checklist, the 'time out' occurs:",
+ ["Before the skin incision","After closure","In the recovery room","On discharge"],
+ "The time out confirms patient, procedure and site before incision.",
+ "The other times are too late.",
+ "Bago ang hiwa.","ssc");
+NP3q('periop',2,"The first priority for a client arriving in the post-anesthesia care unit is:",
+ ["Maintaining a patent airway","Checking the dressing","Giving pain medicine","Updating the family"],
+ "Airway and breathing come first after anesthesia.",
+ "The other actions follow airway assessment.",
+ "Unahin ang daluyan ng hangin.","openrn");
+NP3q('periop',2,"Which findings suggest hypovolemic shock after surgery?",
+ ["Rapid weak pulse, falling BP and cool clammy skin","Slow bounding pulse","High BP and warm skin","Flushed face"],
+ "Tachycardia, hypotension and cool clammy skin suggest hemorrhage.",
+ "The other findings do not fit shock.",
+ "Mabilis na mahinang pulso at mababang BP.","openrn");
+NP3q('periop',3,"A client's surgical wound opens and bowel loops protrude. The nurse should first:",
+ ["Cover with sterile saline-moistened dressings and call the surgeon","Push the bowel back","Apply a dry dressing","Send the client to the ward"],
+ "Evisceration is an emergency: cover with moist sterile saline dressings, keep the client calm and notify the surgeon.",
+ "Pushing in or leaving it dry risks injury and infection.",
+ "Takpan ng basang sterile na gasa at tawagin ang siruhano.","openrn");
+NP3q('periop',2,"Increased serosanguineous drainage from an abdominal incision on day 7 may signal:",
+ ["Wound dehiscence","Normal healing","Dehydration","Allergy"],
+ "A sudden increase in pink drainage suggests the wound may be opening.",
+ "Normal healing drains less.",
+ "Maaaring bumubukas ang sugat.","openrn");
+NP3q('periop',1,"Early ambulation after surgery helps prevent:",
+ ["Thromboembolism and atelectasis","Hypertension","Dehydration","Hyperthermia"],
+ "Movement improves circulation and lung expansion.",
+ "The others are not directly prevented.",
+ "Pinipigilan ng maagang paglakad ang blood clot.","openrn");
+NP3q('periop',3,"Sudden high fever, muscle rigidity and tachycardia during anesthesia suggest malignant hyperthermia. Which drug is given?",
+ ["Dantrolene","Atropine","Naloxone","Vitamin K"],
+ "Dantrolene is the specific treatment.",
+ "The others do not treat it.",
+ "Dantrolene ang gamot.","openrn");
+NP3q('periop',2,"After surgery, which urine output is the minimum acceptable?",
+ ["30 mL per hour","10 mL per hour","5 mL per hour","None"],
+ "A minimum of 30 mL/hour (about 0.5 mL/kg/hour) shows adequate kidney perfusion.",
+ "The lower values indicate poor perfusion.",
+ "Hindi bababa sa 30 mL kada oras.","openrn");
+NP3q('periop',2,"A client has a headache after spinal anesthesia. The nurse should advise:",
+ ["Lie flat and increase fluids","Sit upright","Walk","Restrict fluids"],
+ "Post-dural puncture headache improves when lying flat with hydration.",
+ "Upright positions worsen it.",
+ "Humiga nang patag at uminom ng tubig.","openrn");
+NP3q('periop',1,"The nurse teaches a client to support the abdominal incision with a pillow when coughing. This is called:",
+ ["Splinting","Positioning","Tapping","Distraction"],
+ "Splinting reduces pain and stress on the wound.",
+ "The other terms are different techniques.",
+ "Splinting ang pag-aalalay sa sugat.","openrn");
+NP3q('periop',2,"In maintaining a sterile field, which item is considered contaminated?",
+ ["A wet sterile drape","The center of the field","An item held above the waist","A sterile gloved hand"],
+ "Moisture allows organisms to wick through; a wet drape is contaminated.",
+ "The others maintain sterility.",
+ "Ang basang drape ay kontaminado.","openrn");
+NP3q('resp',1,"Which technique helps a client with COPD prolong exhalation and reduce air trapping?",
+ ["Pursed-lip breathing","Rapid shallow breathing","Breath holding","Mouth breathing deeply"],
+ "Pursed-lip breathing keeps airways open longer.",
+ "The others worsen air trapping.",
+ "Pursed-lip breathing para sa COPD.","gold");
+NP3q('resp',1,"Which position best relieves dyspnea?",
+ ["High Fowler's","Supine","Trendelenburg","Prone"],
+ "Upright positions allow better lung expansion.",
+ "Flat positions worsen breathing.",
+ "Mataas na Fowler's ang pinakamainam.","openrn");
+NP3q('resp',1,"A normal oxygen saturation in a healthy adult is:",
+ ["95–100%","80–85%","70–75%","60%"],
+ "Normal SpO2 is 95–100%.",
+ "The others indicate hypoxemia.",
+ "Normal ang 95–100%.","openrn");
+NP3q('resp',3,"A chest tube becomes disconnected from the drainage system. The nurse should:",
+ ["Place the end in sterile water and call the provider","Clamp for several hours","Reinsert the tube","Ignore it"],
+ "Submerging the end in sterile water maintains a water seal until reconnection.",
+ "Prolonged clamping may cause tension pneumothorax.",
+ "Ilubog ang dulo sa sterile na tubig.","openrn");
+NP3q('resp',2,"Where should the chest drainage unit be kept?",
+ ["Below the level of the chest","Above the chest","On the bed","On the lap"],
+ "Keeping it lower allows drainage and prevents backflow.",
+ "Higher positions allow fluid to return.",
+ "Panatilihing mas mababa sa dibdib.","openrn");
+NP3q('resp',2,"When should a sputum culture be collected?",
+ ["Before starting antibiotics","After antibiotics","After meals","After exercise"],
+ "Collect before antibiotics for accurate results.",
+ "Antibiotics may suppress growth.",
+ "Kunin bago ang antibiotic.","openrn");
+NP3q('resp',2,"A client with asthma has a peak flow reading of 85% of personal best. This is the:",
+ ["Green zone","Yellow zone","Red zone","Black zone"],
+ "80–100% is the green zone.",
+ "Yellow is 50–80%; red is below 50%.",
+ "Green zone ang 80–100%.","openrn");
+NP3q('resp',1,"For an acute asthma attack, the first medicine to give is:",
+ ["A short-acting beta agonist such as albuterol","An inhaled corticosteroid","A cromolyn inhaler","Antibiotics"],
+ "Rescue inhalers relieve bronchospasm quickly.",
+ "The others are for long-term control.",
+ "Albuterol ang unang gamot.","openrn");
+NP3q('resp',2,"Sudden dyspnea and pleuritic chest pain after a long flight suggest:",
+ ["Pulmonary embolism","Asthma","Bronchitis","Pneumonia"],
+ "Sudden pleuritic pain and dyspnea after immobility suggest PE.",
+ "The others have different onsets.",
+ "Pulmonary embolism ang pinaghihinalaan.","openrn");
+NP3q('resp',2,"Tracheal suctioning should last no longer than:",
+ ["10–15 seconds","1 minute","2 minutes","5 minutes"],
+ "Prolonged suction causes hypoxia.",
+ "The others are too long.",
+ "Hindi lalampas sa 10–15 segundo.","openrn");
+NP3q('resp',2,"When is suction applied?",
+ ["While withdrawing the catheter","While inserting","Continuously","Never"],
+ "Applying suction on insertion damages mucosa and removes oxygen.",
+ "The others are incorrect.",
+ "Habang hinihila palabas.","openrn");
+NP3q('resp',3,"Which is the earliest sign of hypoxia?",
+ ["Restlessness","Cyanosis","Bradycardia","Lethargy"],
+ "Restlessness and anxiety appear early; cyanosis is late.",
+ "The others occur later.",
+ "Ang pagkabalisa ang maagang senyales.","openrn");
+NP3q('resp',3,"The hallmark of ARDS is:",
+ ["Refractory hypoxemia despite oxygen","Hypertension","Bradycardia","Polyuria"],
+ "Hypoxemia persists despite high oxygen concentrations.",
+ "The others are not features.",
+ "Hypoxemia kahit may oxygen.","openrn");
+NP3q('resp',2,"A nasal cannula typically delivers oxygen at:",
+ ["1–6 L/min","10–15 L/min","15–25 L/min","30 L/min"],
+ "Nasal cannula flows are 1–6 L/min giving about 24–44% oxygen.",
+ "Higher flows require masks.",
+ "1–6 L/min ang nasal cannula.","openrn");
+NP3q('resp',1,"Which safety measure applies in a room where oxygen is used?",
+ ["No smoking or open flames","Use of wool blankets","Spraying alcohol","Using electric razors"],
+ "Oxygen supports combustion.",
+ "The others increase risk.",
+ "Bawal ang paninigarilyo at apoy.","openrn");
+NP3q('resp',1,"A client has a nosebleed. The nurse should have the client:",
+ ["Lean forward and pinch the soft part of the nose for 10–15 minutes","Tilt head back","Lie flat","Blow the nose"],
+ "Leaning forward prevents swallowing blood; pressure stops bleeding.",
+ "Tilting back causes aspiration.",
+ "Sumandal pasulong at pisilin ang ilong.","openrn");
+NP3q('fe',2,"Which finding is associated with hypokalemia?",
+ ["Muscle weakness and U waves on ECG","Peaked T waves","Tetany","Hyperreflexia"],
+ "Low potassium causes weakness, arrhythmias and U waves.",
+ "Peaked T waves occur with hyperkalemia.",
+ "Panghihina at U wave sa ECG.","openrn");
+NP3q('fe',2,"Which ECG finding is typical of hyperkalemia?",
+ ["Tall peaked T waves","U waves","Flat P waves only","Short PR"],
+ "Hyperkalemia produces tall peaked T waves.",
+ "U waves occur in hypokalemia.",
+ "Matulis na T wave.","openrn");
+NP3q('fe',2,"Which manifestation suggests hyponatremia?",
+ ["Confusion and seizures","Thirst and dry mucosa","Flushed skin","Bradycardia"],
+ "Low sodium causes cerebral edema.",
+ "Thirst and dry mucosa suggest hypernatremia.",
+ "Pagkalito at kombulsyon.","openrn");
+NP3q('fe',2,"Which finding suggests hypernatremia?",
+ ["Thirst and dry sticky mucous membranes","Seizures","Edema","Headache"],
+ "High sodium draws water out of cells.",
+ "The others are linked to hyponatremia or fluid overload.",
+ "Uhaw at tuyong bibig.","openrn");
+NP3q('fe',2,"Positive Chvostek's and Trousseau's signs indicate:",
+ ["Hypocalcemia","Hypercalcemia","Hyperkalemia","Hyponatremia"],
+ "Both indicate neuromuscular irritability from low calcium.",
+ "The others do not cause these signs.",
+ "Senyales ng hypocalcemia.","openrn");
+NP3q('fe',2,"Which manifestation suggests hypercalcemia?",
+ ["Constipation and weak reflexes","Tetany","Hyperreflexia","Diarrhea"],
+ "High calcium slows neuromuscular activity.",
+ "Tetany is seen with low calcium.",
+ "Tibi at mahinang reflex.","openrn");
+NP3q('fe',1,"Calcium and phosphorus levels normally have what relationship?",
+ ["Inverse","Direct","None","Equal"],
+ "When one rises, the other tends to fall.",
+ "The others are incorrect.",
+ "Magkabaligtad ang calcium at phosphorus.","openrn");
+NP3q('fe',2,"Which IV solution is hypotonic?",
+ ["0.45% sodium chloride","0.9% sodium chloride","Lactated Ringer's","3% sodium chloride"],
+ "0.45% saline is hypotonic.",
+ "0.9% NaCl and LR are isotonic; 3% is hypertonic.",
+ "Hypotonic ang 0.45% NaCl.","openrn");
+NP3q('fe',3,"A client receives 3% sodium chloride. The nurse monitors closely for:",
+ ["Fluid overload and pulmonary edema","Dehydration","Hypoglycemia","Constipation"],
+ "Hypertonic saline draws fluid into the vessels.",
+ "The others are not main risks.",
+ "Bantayan ang fluid overload.","openrn");
+NP3q('fe',2,"A weight gain of 1 kg in a day corresponds to retention of about:",
+ ["1 liter of fluid","100 mL","500 mL","3 liters"],
+ "One kilogram equals about one liter.",
+ "The others are inaccurate.",
+ "1 kg ay halos 1 litro.","openrn");
+NP3q('fe',2,"Which finding suggests fluid volume excess?",
+ ["Crackles and distended neck veins","Poor skin turgor","Dry mouth","Flat neck veins"],
+ "Overload causes pulmonary congestion and venous distention.",
+ "The others suggest deficit.",
+ "Crackles at namamagang ugat sa leeg.","openrn");
+NP3q('fe',1,"A client on furosemide is at risk for:",
+ ["Hypokalemia","Hyperkalemia","Hypercalcemia","Hypernatremia"],
+ "Loop diuretics waste potassium.",
+ "The others are not typical.",
+ "Panganib ang hypokalemia.","openrn");
+NP3q('fe',2,"A low-sodium diet teaching should include avoiding:",
+ ["Processed and canned foods","Fresh vegetables","Fresh fruit","Plain rice"],
+ "Processed foods contain hidden sodium.",
+ "The others are naturally low in sodium.",
+ "Iwasan ang de-lata at processed.","openrn");
+NP3q('ab',2,"ABG: pH 7.30, PaCO2 52, HCO3 24. This is:",
+ ["Respiratory acidosis","Respiratory alkalosis","Metabolic acidosis","Metabolic alkalosis"],
+ "Low pH with high CO2 is respiratory acidosis.",
+ "The others have different patterns.",
+ "Respiratory acidosis.","openrn");
+NP3q('ab',2,"A client hyperventilating from anxiety has pH 7.50 and PaCO2 28. The first action is to:",
+ ["Coach slow breathing and calm the client","Give oxygen at high flow","Sedate","Intubate"],
+ "Reducing anxiety and slowing breathing corrects respiratory alkalosis.",
+ "The others are unnecessary.",
+ "Turuan ng mabagal na paghinga.","openrn");
+NP3q('ab',2,"Severe diarrhea commonly causes:",
+ ["Metabolic acidosis","Metabolic alkalosis","Respiratory acidosis","Respiratory alkalosis"],
+ "Bicarbonate is lost in stool.",
+ "The others are not typical.",
+ "Nawawala ang bicarbonate.","openrn");
+NP3q('ab',2,"Prolonged vomiting or NG suction commonly causes:",
+ ["Metabolic alkalosis","Metabolic acidosis","Respiratory acidosis","Normal ABG"],
+ "Loss of stomach acid raises pH.",
+ "The others are incorrect.",
+ "Nawawala ang asido ng tiyan.","openrn");
+NP3q('ab',1,"Normal arterial blood pH is:",
+ ["7.35–7.45","7.00–7.20","7.50–7.60","6.80–7.00"],
+ "Normal pH is 7.35–7.45.",
+ "The others are abnormal.",
+ "7.35–7.45 ang normal.","openrn");
+NP3q('ab',1,"Normal PaCO2 is:",
+ ["35–45 mm Hg","10–20 mm Hg","60–70 mm Hg","80–100 mm Hg"],
+ "Normal PaCO2 is 35–45 mm Hg.",
+ "The others are abnormal.",
+ "35–45 mm Hg.","openrn");
+NP3q('ab',2,"Kussmaul respirations are the body's compensation for:",
+ ["Metabolic acidosis","Metabolic alkalosis","Respiratory acidosis","Anemia"],
+ "Deep rapid breathing blows off CO2.",
+ "The others are not compensated this way.",
+ "Kompensasyon sa metabolic acidosis.","openrn");
+NP3q('ab',2,"A normal pH with abnormal PaCO2 and HCO3 suggests:",
+ ["Fully compensated imbalance","Normal ABG","Uncompensated","Laboratory error only"],
+ "The system has normalized pH.",
+ "The others are incorrect.",
+ "Fully compensated.","openrn");
+NP3q('inf',2,"A CD4 count below what level defines AIDS in an HIV-positive person?",
+ ["200 cells/mm³","500 cells/mm³","800 cells/mm³","1,200 cells/mm³"],
+ "A CD4 count below 200 defines AIDS.",
+ "The others are higher counts.",
+ "Mas mababa sa 200.","ml_hiv");
+NP3q('inf',1,"HIV is NOT transmitted by:",
+ ["Sharing a handshake","Unprotected sex","Sharing needles","Breastfeeding from an infected mother"],
+ "HIV is not spread by casual contact.",
+ "The others are routes of transmission.",
+ "Hindi naipapasa sa pakikipagkamay.","ml_hiv");
+NP3q('inf',2,"A positive HIV screening test is confirmed by:",
+ ["A confirmatory test","Repeat vital signs","A chest X-ray","Urinalysis"],
+ "Screening tests are confirmed with additional testing.",
+ "The others do not confirm HIV.",
+ "Kumpirmahin sa confirmatory test.","ml_hiv");
+NP3q('inf',2,"Which infection commonly occurs in advanced HIV?",
+ ["Pneumocystis pneumonia","Chickenpox only","Common cold only","Gout"],
+ "Opportunistic infections such as Pneumocystis occur with low CD4.",
+ "The others are not typical.",
+ "Pneumocystis pneumonia.","ml_hiv");
+NP3q('inf',2,"A tuberculin skin test reaction is which type of hypersensitivity?",
+ ["Type IV (delayed)","Type I","Type II","Type III"],
+ "Delayed hypersensitivity peaks at 48–72 hours.",
+ "Type I is immediate.",
+ "Type IV o delayed.","openrn");
+NP3q('inf',1,"A client with latex allergy should be cared for using:",
+ ["Non-latex gloves","Latex gloves","Powdered gloves","Rubber tourniquets"],
+ "Latex products must be avoided.",
+ "The others contain latex.",
+ "Gumamit ng hindi latex.","openrn");
+NP3q('inf',2,"A butterfly-shaped facial rash suggests:",
+ ["Systemic lupus erythematosus","Rheumatoid arthritis","Psoriasis","Measles"],
+ "A malar rash is characteristic of SLE.",
+ "The others have different rashes.",
+ "SLE ang butterfly rash.","openrn");
+NP3q('inf',2,"Rheumatoid arthritis commonly causes:",
+ ["Morning stiffness lasting over an hour","Stiffness after exercise only","Unilateral pain only","Back pain only"],
+ "RA causes prolonged morning stiffness and symmetric joint involvement.",
+ "The others are incorrect.",
+ "Paninigas sa umaga.","openrn");
+NP3q('inf',2,"A transplant client on immunosuppressants should be taught to:",
+ ["Avoid crowds and report fever","Skip doses","Share towels","Eat raw foods"],
+ "Immunosuppression raises infection risk.",
+ "The others increase risk.",
+ "Iwasan ang maraming tao.","openrn");
+NP3q('inf',1,"Which is a cardinal sign of inflammation?",
+ ["Redness, heat, swelling, pain","Pallor","Cyanosis","Bradycardia"],
+ "The cardinal signs are redness, heat, swelling, pain and loss of function.",
+ "The others are not cardinal signs.",
+ "Pamumula, init, pamamaga, sakit.","openrn");
+NP3q('inf',2,"An elevated eosinophil count is most associated with:",
+ ["Allergy or parasitic infection","Bacterial infection","Anemia","Dehydration"],
+ "Eosinophils increase in allergy and parasitic disease.",
+ "Neutrophils rise in bacterial infection.",
+ "Alerdyi o parasito.","openrn");
+NP3q('inf',3,"A client with suspected sepsis. The priority is to:",
+ ["Obtain cultures and start antibiotics promptly","Delay treatment","Restrict fluids","Apply heat"],
+ "Early cultures and antibiotics improve survival.",
+ "The others worsen outcomes.",
+ "Kumuha ng culture at magsimula ng antibiotic.","openrn");
+NP3q('inf',2,"Immunity from a vaccine is classified as:",
+ ["Artificial active","Natural active","Natural passive","Artificial passive"],
+ "Vaccines stimulate the body to make antibodies.",
+ "Passive immunity gives ready-made antibodies.",
+ "Artificial active ang bakuna.","openrn");
+NP3q('inf',1,"Which finding suggests a local wound infection?",
+ ["Warmth, purulent drainage and increased pain","Clear scant drainage","Pink edges","Mild itching"],
+ "Pus, warmth and pain suggest infection.",
+ "The others occur in normal healing.",
+ "May nana, init at sakit.","openrn");
+NP3q('inf',2,"A client with bacterial meningitis requires which precautions?",
+ ["Droplet precautions","Airborne only","No precautions","Contact only"],
+ "Meningococcal meningitis spreads by droplets.",
+ "The others are incorrect.",
+ "Droplet precautions.","cdc_iso");
+NP3q('onc',1,"A wound with edges that are approximated and sutured heals by:",
+ ["Primary intention","Secondary intention","Tertiary intention","None"],
+ "Closed edges heal by primary intention.",
+ "Open wounds heal by secondary intention.",
+ "Primary intention.","openrn");
+NP3q('onc',2,"A wound left open to heal with granulation tissue heals by:",
+ ["Secondary intention","Primary intention","Delayed closure only","None"],
+ "Wounds filling in from the base heal by secondary intention.",
+ "The others are different.",
+ "Secondary intention.","openrn");
+NP3q('onc',2,"A pressure ulcer with full-thickness skin loss and visible fat is stage:",
+ ["3","1","2","4"],
+ "Stage 3 shows subcutaneous fat; stage 4 shows muscle or bone.",
+ "Stages 1 and 2 are more superficial.",
+ "Stage 3.","openrn");
+NP3q('onc',1,"To prevent pressure ulcers, bedridden clients should be repositioned about every:",
+ ["2 hours","8 hours","12 hours","24 hours"],
+ "Turning every 2 hours relieves pressure.",
+ "Longer intervals allow tissue damage.",
+ "Bawat 2 oras.","openrn");
+NP3q('onc',2,"In TNM staging, 'N' stands for:",
+ ["Lymph node involvement","New growth","Necrosis","Number of tumors"],
+ "T = tumor size, N = nodes, M = metastasis.",
+ "The others are incorrect.",
+ "N ay lymph node.","ml_cancer");
+NP3q('onc',2,"For skin care during radiation therapy, the nurse should advise:",
+ ["Avoid washing off skin markings and avoid harsh lotions","Scrub the area","Apply heat","Use perfume"],
+ "Markings guide treatment, and irritation should be avoided.",
+ "The others damage skin.",
+ "Huwag burahin ang marka.","ml_cancer");
+NP3q('onc',2,"To reduce chemotherapy-induced nausea, antiemetics are best given:",
+ ["Before chemotherapy","After vomiting starts","Only on request","Never"],
+ "Prophylactic antiemetics are more effective.",
+ "The others are less effective.",
+ "Bago ang chemotherapy.","ml_cancer");
+NP3q('onc',2,"For stomatitis from chemotherapy, the nurse should advise:",
+ ["Soft toothbrush and avoid alcohol-based mouthwash","Hard toothbrush","Spicy foods","Hot drinks"],
+ "Gentle care limits irritation.",
+ "The others worsen irritation.",
+ "Malambot na sipilyo.","ml_cancer");
+NP3q('onc',2,"A client with thrombocytopenia should avoid:",
+ ["Intramuscular injections and hard toothbrushes","Soft diet","Rest","Fluids"],
+ "Bleeding precautions reduce risk.",
+ "The others are safe.",
+ "Iwasan ang IM na iniksyon.","ml_cancer");
+NP3q('onc',1,"Which solution is the only one compatible with blood products?",
+ ["0.9% sodium chloride","5% dextrose in water","Lactated Ringer's","0.45% sodium chloride"],
+ "Isotonic saline does not cause hemolysis.",
+ "The others may cause hemolysis or clotting.",
+ "0.9% NaCl lamang.","openrn");
+NP3q('onc',2,"The universal red cell donor is blood type:",
+ ["O negative","AB positive","A positive","B positive"],
+ "O negative lacks A, B and Rh antigens.",
+ "AB positive is the universal recipient.",
+ "O negative.","openrn");
+NP3q('onc',2,"Which characteristic distinguishes a malignant tumor?",
+ ["Invasion and metastasis","Slow encapsulated growth","Well-differentiated cells only","Never recurs"],
+ "Malignant cells invade tissue and spread.",
+ "The others describe benign tumors.",
+ "Kumakalat ang malignant.","ml_cancer");
+NP3q('onc',2,"For persistent cancer pain, analgesics should be given:",
+ ["Around the clock","Only when severe","Once daily","Never"],
+ "Scheduled dosing maintains steady relief.",
+ "Waiting for severe pain is less effective.",
+ "Ayon sa oras, hindi hinihintay ang matinding sakit.","ml_cancer");
+
+/* ---------- Nursing Practice IV and V: expansion to 100 items each (appended so existing question IDs stay unchanged) ---------- */
+const NP4c=(t,d,q,c,wr,r,s)=>Q(4,t,d,q,[c,...wr],0,r,"The other options are less appropriate or incorrect in this situation.","Tamang sagot: "+c+".",s);
+const NP5c=(t,d,q,c,wr,r,s)=>Q(5,t,d,q,[c,...wr],0,r,"The other options are less appropriate or incorrect in this situation.","Tamang sagot: "+c+".",s);
+NP4c('nut',1,"A client's BMI is 27. This is classified as:","Overweight",["Normal","Obese class II","Underweight"],"BMI 25–29.9 is overweight; 18.5–24.9 is normal.","who_diet");
+NP4c('nut',2,"A child has edema, a distended abdomen and thin hair from inadequate protein intake. This is:","Kwashiorkor",["Marasmus","Rickets","Scurvy"],"Kwashiorkor is protein deficiency with edema; marasmus is severe calorie deficiency with wasting.","who_diet");
+NP4c('nut',2,"A severely wasted infant with a 'old man' face and no edema most likely has:","Marasmus",["Kwashiorkor","Obesity","Beriberi"],"Marasmus results from overall calorie and protein deficiency.","who_diet");
+NP4c('nut',1,"Vitamin A deficiency commonly causes:","Night blindness",["Goiter","Scurvy","Rickets"],"Vitamin A is needed for vision; deficiency causes night blindness and xerophthalmia.","who_diet");
+NP4c('nut',1,"Iodine deficiency is associated with:","Goiter",["Anemia","Scurvy","Night blindness"],"Iodine is needed for thyroid hormone; iodized salt prevents goiter.","who_diet");
+NP4c('nut',2,"Vitamin B12 deficiency commonly causes:","Pernicious anemia",["Scurvy","Rickets","Night blindness"],"B12 needs intrinsic factor; deficiency causes pernicious (megaloblastic) anemia.","openrn");
+NP4c('nut',2,"Which food is a good source of iron for a client with iron-deficiency anemia?","Liver and red meat",["White rice","Butter","Soft drinks"],"Heme iron from liver and red meat is best absorbed.","who_diet");
+NP4c('nut',2,"Before every enteral tube feeding, the nurse should first:","Verify tube placement",["Warm the formula in a microwave","Lay the client flat","Flush with juice"],"Placement is verified to prevent aspiration; keep the head of bed at 30–45°.","openrn");
+NP4c('nut',3,"A client on total parenteral nutrition has the infusion stopped abruptly. The risk is:","Hypoglycemia",["Hyperkalemia","Hypertension","Fever"],"Sudden cessation of the high-dextrose solution causes rebound hypoglycemia.","openrn");
+NP4c('nut',2,"Which food should a client with gout limit?","Organ meats and sardines",["Rice","Apples","Skim milk"],"Purine-rich foods raise uric acid.","openrn");
+NP4c('nut',2,"A client with dysphagia should be fed:","Sitting upright with thickened liquids as ordered",["Lying flat","With thin liquids by straw","Quickly"],"Upright positioning and consistency modification reduce aspiration.","openrn");
+NP4c('gi',2,"First-line treatment for H. pylori-associated peptic ulcer includes:","A proton pump inhibitor plus two antibiotics",["Antacids only","Aspirin","Antidiarrheals"],"Triple therapy eradicates H. pylori and heals ulcers.","openrn");
+NP4c('gi',2,"Pain 2–3 hours after eating that is relieved by food suggests:","Duodenal ulcer",["Gastric ulcer","Appendicitis","Cholecystitis"],"Duodenal ulcer pain is relieved by eating; gastric ulcer pain worsens with food.","openrn");
+NP4c('gi',2,"A client with right lower quadrant pain at McBurney's point and suspected appendicitis should NOT receive:","A heating pad",["NPO status","IV fluids","Pain assessment"],"Heat may cause rupture; also avoid laxatives and enemas.","openrn");
+NP4c('gi',3,"After sudden relief of appendicitis pain, the client develops fever, rigid abdomen and tachycardia. This suggests:","Perforation with peritonitis",["Recovery","Constipation","Gastritis"],"Relief followed by rigidity signals rupture.","openrn");
+NP4c('gi',2,"High-pitched bowel sounds, vomiting and abdominal distention suggest:","Intestinal obstruction",["Paralytic ileus only","Appendicitis","Hepatitis"],"These signs fit mechanical obstruction; NG decompression is typical.","openrn");
+NP4c('gi',2,"A healthy colostomy stoma should be:","Pink to red and moist",["Dark purple","Black","Pale and dry"],"Dusky or black stoma suggests poor perfusion and must be reported.","openrn");
+NP4c('gi',2,"A client with a new ileostomy is at greatest risk for:","Fluid and electrolyte loss",["Constipation","Obesity","Hypertension"],"Ileostomy output is liquid and continuous.","openrn");
+NP4c('gi',2,"A client with Crohn's disease most commonly has:","Abdominal pain, diarrhea and weight loss",["Constipation only","Weight gain","Jaundice"],"Crohn's causes transmural inflammation with malabsorption.","openrn");
+NP4c('gi',1,"To prevent hemorrhoids and constipation the nurse advises:","High-fiber diet and fluids",["Low-fiber diet","Straining","Daily enemas"],"Fiber and fluids soften stools.","openrn");
+NP4c('gi',3,"During an acute diverticulitis attack the client is usually given:","A low-fiber or clear liquid diet",["High-fiber diet","Seeds and nuts","Laxatives"],"Bowel rest reduces inflammation; fiber resumes later.","openrn");
+NP4c('gi',2,"The most reliable method to confirm nasogastric tube placement before feeding is:","X-ray confirmation",["Listening for air","Asking the client to speak","Observing bubbles"],"Radiography is the gold standard.","openrn");
+NP4c('gi',3,"An inguinal hernia becomes painful, tender, non-reducible with vomiting. This suggests:","Strangulation needing emergency surgery",["Normal hernia","Gas","Muscle strain"],"Strangulation cuts off blood supply.","openrn");
+NP4c('hep',1,"Hepatitis B is mainly transmitted through:","Blood and body fluids",["Contaminated food","Mosquito bites","Casual contact"],"Hepatitis A is fecal-oral; hepatitis B is bloodborne.","who_hh");
+NP4c('hep',2,"Clay-colored stools and dark urine suggest:","Biliary obstruction",["Gastritis","Anemia","Dehydration"],"Bile fails to reach the intestine.","openrn");
+NP4c('hep',2,"A client with ascites from cirrhosis should be monitored with:","Daily weights and abdominal girth",["Weekly weights","Temperature only","Pulse oximetry only"],"These track fluid accumulation; a low-sodium diet is advised.","openrn");
+NP4c('hep',3,"A cirrhosis client vomits bright red blood. The nurse's first action is to:","Maintain the airway and call for help",["Give oral fluids","Ambulate","Obtain a stool sample"],"Variceal bleeding is life-threatening; airway first.","openrn");
+NP4c('hep',2,"Management of acute pancreatitis includes:","NPO status and pain relief",["High-fat diet","Alcohol","Oral feeding at once"],"Resting the pancreas reduces enzyme secretion.","openrn");
+NP4c('hep',2,"A position that may ease pancreatic pain is:","Side-lying with knees flexed",["Supine flat","Prone","Standing"],"Flexion relieves tension on the abdomen.","openrn");
+NP4c('hep',1,"A client with gallstones is advised to eat:","A low-fat diet",["High-fat diet","Fried foods","Chocolate-rich foods"],"Fat triggers gallbladder contraction and pain.","openrn");
+NP4c('hep',2,"A client with cirrhosis should avoid:","Alcohol and hepatotoxic drugs",["Vitamin B","Rest","Fluids"],"The liver is already damaged.","openrn");
+NP4c('hep',1,"Health care workers are advised to receive which vaccine?","Hepatitis B",["Typhoid only","Rabies only","Yellow fever"],"Hepatitis B vaccine protects against occupational exposure.","who_hh");
+NP4c('dm',2,"Type 1 diabetes is characterized by:","Autoimmune destruction of beta cells",["Insulin resistance","Overeating","Obesity only"],"Type 1 requires insulin.","ada");
+NP4c('dm',1,"The classic symptoms of diabetes are:","Polyuria, polydipsia, polyphagia",["Edema, fever, rash","Cough, fever, fatigue","Headache, nausea, chills"],"High glucose causes osmotic diuresis.","ada");
+NP4c('dm',2,"HbA1c reflects average blood glucose over about:","2–3 months",["1 day","1 week","1 year"],"Glycosylated hemoglobin reflects the red cell lifespan.","ada");
+NP4c('dm',2,"A diagnosis of diabetes is supported by HbA1c of at least:","6.5%",["4.5%","5.0%","5.7%"],"HbA1c of 6.5% or higher indicates diabetes.","ada");
+NP4c('dm',1,"Which findings suggest hypoglycemia?","Tremors, sweating and confusion",["Fruity breath","Kussmaul breathing","Dry skin"],"Adrenergic and neuroglycopenic signs.","ada");
+NP4c('dm',2,"An unconscious diabetic client with hypoglycemia receives:","Glucagon or IV dextrose",["Oral juice","Insulin","Nothing"],"Oral intake is unsafe when unconscious.","ada");
+NP4c('dm',2,"Rapid-acting insulin (lispro) should be given:","Within 15 minutes of a meal",["At bedtime only","Two hours after a meal","Weekly"],"Onset is about 10–30 minutes.","ada");
+NP4c('dm',2,"Unopened insulin vials are stored:","In the refrigerator",["In the freezer","In direct sunlight","In a hot car"],"Opened vials in use can be kept at room temperature for about 28 days.","ada");
+NP4c('dm',2,"To avoid lipodystrophy, insulin injection sites should be:","Rotated",["Repeated","Massaged vigorously","Left alone"],"Rotation within one area maintains consistent absorption.","ada");
+NP4c('dm',2,"During sick days a client with diabetes should:","Continue insulin, monitor glucose and drink fluids",["Stop insulin","Skip fluids","Avoid testing"],"Illness raises glucose.","ada");
+NP4c('dm',2,"Which is correct diabetic foot care?","Inspect daily and dry between toes",["Walk barefoot","Soak feet hot","Cut corners of nails"],"Prevent injury and infection.","ada");
+NP4c('dm',3,"The first intervention for diabetic ketoacidosis is:","IV isotonic fluids",["Insulin bolus only","Bicarbonate","Oral glucose"],"Fluids restore volume; insulin follows.","ada");
+NP4c('dm',2,"Metformin should be held before contrast studies because of risk of:","Lactic acidosis",["Hypoglycemia","Hypertension","Hyperkalemia"],"Metformin with renal injury raises lactic acidosis risk.","ada");
+NP4c('dm',2,"To detect diabetic retinopathy, clients should have:","An annual dilated eye exam",["No eye exam","Exam every 10 years","Exam only when blind"],"Early detection prevents blindness.","ada");
+NP4c('endo',1,"Which finding suggests hyperthyroidism?","Weight loss and heat intolerance",["Weight gain and cold intolerance","Bradycardia","Constipation"],"Metabolism is increased.","ml_thy");
+NP4c('endo',1,"Which finding suggests hypothyroidism?","Cold intolerance and weight gain",["Heat intolerance","Tachycardia","Exophthalmos"],"Metabolism is slowed.","ml_thy");
+NP4c('endo',2,"Exophthalmos is most associated with:","Graves' disease",["Addison's disease","Cushing's syndrome","Myxedema"],"Graves' disease is autoimmune hyperthyroidism.","ml_thy");
+NP4c('endo',3,"A client in thyroid storm should NOT receive:","Aspirin",["Acetaminophen","Cooling blanket","Propranolol"],"Aspirin displaces thyroid hormone and raises temperature.","ml_thy");
+NP4c('endo',2,"Which equipment should be at the bedside after thyroidectomy?","Tracheostomy set and calcium gluconate",["Walker","Feeding pump","Bed alarm"],"Airway swelling and hypocalcemia may occur.","ml_thy");
+NP4c('endo',2,"Moon face, buffalo hump and hyperglycemia suggest:","Cushing's syndrome",["Addison's disease","Hypothyroidism","Acromegaly"],"Cortisol excess.","ml_thy");
+NP4c('endo',2,"Hyperkalemia, hyponatremia and bronze skin suggest:","Addison's disease",["Cushing's syndrome","Graves' disease","Pheochromocytoma"],"Adrenal insufficiency.","ml_thy");
+NP4c('endo',3,"A client with pheochromocytoma has paroxysmal hypertension. The nurse should avoid:","Palpating the abdomen",["Checking BP","Taking history","Resting"],"Palpation may trigger a hypertensive crisis.","ml_thy");
+NP4c('endo',2,"Diabetes insipidus is characterized by:","Polyuria with dilute urine",["Concentrated urine","Oliguria","Edema"],"ADH deficiency; treated with desmopressin.","ml_thy");
+NP4c('endo',2,"Primary hyperparathyroidism leads to:","Hypercalcemia",["Hypocalcemia","Hyponatremia","Hypokalemia"],"Excess PTH raises calcium; teach fluids to prevent kidney stones.","ml_thy");
+NP4c('endo',2,"Enlarged hands, feet and jaw in an adult suggest:","Acromegaly",["Addison's disease","Hypothyroidism","Gigantism"],"Excess growth hormone after growth plates close.","ml_thy");
+NP4c('sens',1,"A client with cataract typically reports:","Painless blurred vision",["Sudden pain","Halos with pain","Floaters only"],"The lens becomes cloudy.","ml_eye");
+NP4c('sens',2,"After cataract surgery, the client should:","Avoid bending and lifting",["Rub the eye","Lie on the operated side","Strain"],"Protect the eye and wear the shield.","ml_eye");
+NP4c('sens',2,"Glaucoma first causes loss of:","Peripheral vision",["Central vision","Color only","Near vision only"],"Raised intraocular pressure damages the optic nerve.","ml_eye");
+NP4c('sens',2,"A curtain-like shadow and flashes of light suggest:","Retinal detachment",["Cataract","Glaucoma","Conjunctivitis"],"Needs urgent evaluation.","ml_eye");
+NP4c('sens',2,"Loss of central vision with distorted lines suggests:","Macular degeneration",["Glaucoma","Cataract","Myopia"],"An Amsler grid detects distortion.","ml_eye");
+NP4c('sens',2,"In conductive hearing loss, the Weber test lateralizes to:","The affected ear",["The better ear","No ear","Both"],"Sound is heard louder in the affected ear.","ml_eye");
+NP4c('sens',2,"A child with ear pain and a bulging red tympanic membrane likely has:","Otitis media",["Otitis externa","Mastoiditis","Cerumen"],"Middle ear infection.","ml_ped");
+NP4c('sens',2,"Vertigo, tinnitus and hearing loss suggest Ménière's disease. Which diet is advised?","Low sodium",["High sodium","High fat","High sugar"],"Sodium restriction reduces fluid pressure.","ml_eye");
+NP4c('sens',1,"When communicating with a hearing-impaired client the nurse should:","Face the client and speak clearly",["Shout","Turn away","Speak quickly"],"Reduce noise and use gestures.","openrn");
+NP4c('sens',2,"Ear irrigation should be avoided when:","A perforated tympanic membrane is suspected",["Cerumen is present","The client is awake","The water is warm"],"Water may enter the middle ear.","ml_eye");
+NP4c('sens',2,"For a chemical eye splash the first action is to:","Irrigate with water immediately for at least 15 minutes",["Cover with patch","Apply ointment","Wait for the doctor"],"Immediate dilution limits damage.","ml_eye");
+NP4c('neuro',2,"Glasgow Coma Scale scores range from:","3 to 15",["0 to 10","1 to 20","5 to 25"],"A score of 8 or less indicates severe impairment.","ml_neuro");
+NP4c('neuro',2,"To lower intracranial pressure position the client:","With head of bed raised 30° and neck neutral",["Flat","Trendelenburg","With neck flexed"],"Promotes venous drainage.","ml_neuro");
+NP4c('neuro',3,"Cushing's triad consists of:","Hypertension, bradycardia and irregular respirations",["Hypotension, tachycardia, fever","Fever, rash, headache","Tachypnea, tachycardia, hypotension"],"A late sign of raised ICP.","ml_neuro");
+NP4c('neuro',2,"During a seizure the nurse should:","Protect the head and place the client on the side",["Restrain","Insert a spoon","Give water"],"Time the seizure.","ml_neuro");
+NP4c('neuro',3,"First-line drug for status epilepticus is:","Lorazepam IV",["Aspirin","Warfarin","Oral phenytoin"],"Benzodiazepines are given first.","ml_neuro");
+NP4c('neuro',3,"Before giving thrombolytics for stroke, the first priority is:","A CT scan to rule out hemorrhage",["Aspirin","Anticoagulants","Ambulation"],"Thrombolytics are dangerous in hemorrhagic stroke.","ml_neuro");
+NP4c('neuro',2,"A client with expressive aphasia should be asked:","Short simple questions allowing time to respond",["Complex questions","Questions answered by shouting","None"],"Be patient and use gestures.","ml_neuro");
+NP4c('neuro',2,"Resting tremor and pill-rolling with bradykinesia suggest:","Parkinson's disease",["Multiple sclerosis","Myasthenia gravis","Stroke"],"Treated with levodopa-carbidopa.","ml_neuro");
+NP4c('neuro',2,"Ptosis and muscle weakness worse at the end of the day suggest:","Myasthenia gravis",["Parkinson's disease","Stroke","Epilepsy"],"Fatigable weakness.","ml_neuro");
+NP4c('neuro',3,"A client with a high spinal injury has sudden hypertension, headache and a distended bladder. The first action is to:","Raise the head and check bladder and bowel",["Lay flat","Give fluids","Sedate"],"Autonomic dysreflexia requires removal of the trigger.","ml_neuro");
+NP4c('neuro',3,"Ascending symmetric weakness after a viral illness suggests Guillain-Barré. The priority is to monitor:","Respiratory function",["Appetite","Vision","Weight"],"Paralysis may reach respiratory muscles.","ml_neuro");
+NP5c('mh',1,"Which is an open-ended therapeutic question?","\"Tell me how you have been feeling.\"",["\"Are you sad?\"","\"Did you sleep?\"","\"Why are you upset?\""],"Open-ended questions invite description.","ml_mh");
+NP5c('mh',2,"Which response is non-therapeutic?","\"If I were you, I would quit.\"",["\"What are your thoughts?\"","\"You seem worried.\"","\"Tell me more.\""],"Giving advice removes the client's decision making.","ml_mh");
+NP5c('mh',2,"Client: \"I feel like nobody cares.\" Nurse: \"You feel nobody cares.\" This technique is:","Reflection",["Interpretation","Advice","Reassurance"],"Reflection repeats feelings.","ml_mh");
+NP5c('mh',2,"A man angry with his boss yells at his wife. This is:","Displacement",["Projection","Denial","Sublimation"],"Emotions are shifted to a safer target.","ml_mh");
+NP5c('mh',2,"A client who is hostile claims, \"Everyone here hates me.\" This is:","Projection",["Denial","Regression","Repression"],"Attributing one's feelings to others.","ml_mh");
+NP5c('mh',2,"A hospitalized child begins thumb-sucking again. This is:","Regression",["Repression","Denial","Compensation"],"Return to an earlier developmental behavior.","ml_mh");
+NP5c('mh',2,"After a positive cancer test, a client says, \"The result must be wrong.\" This is:","Denial",["Rationalization","Projection","Regression"],"Refusing to accept reality.","ml_mh");
+NP5c('mh',2,"A student who fails explains, \"The exam was unfair.\" This is:","Rationalization",["Denial","Sublimation","Reaction formation"],"Giving logical excuses.","ml_mh");
+NP5c('mh',2,"An aggressive person becomes a boxer. This is:","Sublimation",["Displacement","Projection","Repression"],"Redirecting urges into acceptable activity.","ml_mh");
+NP5c('mh',2,"Hallucinations and delusions are classified as:","Positive symptoms",["Negative symptoms","Mood symptoms","Side effects"],"Flat affect and avolition are negative symptoms.","ml_mh");
+NP5c('mh',2,"A client says, \"I hear voices telling me to run.\" The best reply is:","\"I do not hear the voices, but I know they seem real to you.\"",["\"There are no voices.\"","\"Yes, I hear them too.\"","\"Ignore it.\""],"Do not argue or agree.","ml_mh");
+NP5c('mh',2,"For a client with delusions of persecution the nurse should:","Avoid arguing and focus on the client's feelings",["Argue the delusion","Agree","Laugh"],"Arguing worsens mistrust.","ml_mh");
+NP5c('mh',3,"When a depressed client hints at suicide, the nurse should:","Ask directly about suicidal thoughts and plans",["Avoid the topic","Change the subject","Promise secrecy"],"Asking does not plant the idea.","ml_mh");
+NP5c('mh',3,"For a client at high risk of suicide the safest measure is:","Close one-to-one observation and a safe environment",["Routine rounds","Private room alone","Leave him free"],"Remove harmful objects and observe closely.","ml_mh");
+NP5c('mh',2,"For a client in mania, the best environment is:","A quiet low-stimulation room",["A busy day room","Group games","Bright music"],"Reduce stimulation; offer finger foods.","ml_mh");
+NP5c('mh',2,"A client with anorexia nervosa should be monitored after meals to:","Prevent purging",["Encourage exercise","Weigh hourly","Skip meals"],"Supervision and weight restoration are key.","ml_mh");
+NP5c('mh',2,"A client with OCD performs hand-washing rituals. Initially the nurse should:","Allow the ritual while setting gradual limits",["Forbid it","Ridicule it","Ignore it"],"Abruptly stopping increases anxiety.","ml_mh");
+NP5c('mh',3,"For a client with borderline personality disorder, the nurse should:","Set consistent limits and keep staff consistent",["Let the client choose rules","Give special favors","Take sides"],"Consistency reduces splitting.","ml_mh");
+NP5c('mh',2,"The contract, goals and confidentiality are set during which phase?","Orientation",["Working","Termination","Pre-orientation only"],"The orientation phase establishes the relationship.","ml_mh");
+NP5c('mh',2,"Cognitive behavioral therapy focuses on:","Changing negative thinking patterns",["Drug dosing","Hypnosis","Isolation"],"Thoughts affect feelings and behavior.","ml_mh");
+NP5c('mh',2,"Before electroconvulsive therapy the nurse should:","Ensure NPO status and consent",["Give a full meal","Restrain","Skip vital signs"],"Anesthesia is given; temporary memory loss may occur.","ml_mh");
+NP5c('mh',2,"In Freud's structure, the ego:","Mediates between the id and reality",["Seeks pleasure","Is the conscience","Is unconscious only"],"The id is instinctive; the superego is conscience.","ml_mh");
+NP5c('drug',2,"The therapeutic lithium level is about:","0.6–1.2 mEq/L",["3.0–4.0","0.1","5.0–6.0"],"Levels above 1.5 risk toxicity.","ml_mh");
+NP5c('drug',3,"A client on lithium has diarrhea and dehydration. The risk is:","Lithium toxicity",["Hypoglycemia","Hypertension","Infection"],"Sodium loss raises lithium retention.","ml_mh");
+NP5c('drug',3,"Agitation, fever, diaphoresis and tremors after adding another antidepressant suggest:","Serotonin syndrome",["Anaphylaxis","Stroke","Hypoglycemia"],"Stop the drug and notify the provider.","ml_mh");
+NP5c('drug',2,"Dry mouth with tricyclic antidepressants is relieved by:","Sipping water or sugarless gum",["Stopping the drug","Salt","Alcohol"],"Anticholinergic effect.","ml_mh");
+NP5c('drug',3,"Clozapine requires monitoring of:","White blood cell count",["Potassium","Hemoglobin A1c only","Calcium"],"Agranulocytosis is a risk.","ml_mh");
+NP5c('drug',2,"The antidote for benzodiazepine overdose is:","Flumazenil",["Naloxone","Atropine","Vitamin K"],"Competitive benzodiazepine antagonist.","ml_mh");
+NP5c('drug',2,"Involuntary lip smacking and tongue movements after long-term antipsychotics suggest:","Tardive dyskinesia",["Akathisia","Dystonia","Parkinsonism"],"Report and review the drug.","ml_mh");
+NP5c('drug',2,"A client taking disulfiram should avoid:","All alcohol including mouthwash and cough syrup",["Dairy","Fruit","Water"],"Alcohol causes severe nausea and flushing.","ml_mh");
+NP5c('drug',2,"A client on valproic acid should have which monitored?","Liver function and platelets",["Potassium","Vision","Sodium only"],"Hepatotoxicity and thrombocytopenia are risks.","ml_mh");
+NP5c('drug',2,"Which drug treats acute extrapyramidal symptoms?","Benztropine",["Haloperidol","Lithium","Fluoxetine"],"Anticholinergic.","ml_mh");
+NP5c('drug',3,"A client has respirations of 6 per minute after heroin use. Give:","Naloxone",["Flumazenil","Atropine","Vitamin K"],"Opioid antagonist.","ml_mh");
+NP5c('drug',2,"A child on methylphenidate should be monitored for:","Appetite loss and growth",["Hypotension","Weight gain","Drowsiness"],"Give in the morning.","ml_mh");
+NP5c('card',2,"The first medication for suspected myocardial infarction is:","Aspirin",["Acetaminophen","Warfarin","Heparin infusion only"],"Aspirin prevents platelet clumping.","aha");
+NP5c('card',2,"If chest pain is not relieved five minutes after the first sublingual nitroglycerin, the client should:","Call emergency services",["Wait an hour","Take ibuprofen","Lie flat"],"Unrelieved pain may be a heart attack.","aha");
+NP5c('card',2,"The most specific cardiac marker for MI is:","Troponin",["Amylase","Sodium","Bilirubin"],"Troponin rises within hours.","aha");
+NP5c('card',2,"ST-segment elevation on the ECG suggests:","STEMI",["Pulmonary embolism","Normal rhythm","Hypokalemia"],"Needs emergency reperfusion.","aha");
+NP5c('card',2,"Peripheral edema and neck vein distention suggest:","Right-sided heart failure",["Left-sided heart failure","Angina","Pneumonia"],"Left-sided failure causes crackles.","ml_hf");
+NP5c('card',2,"A client with heart failure should report weight gain of:","More than 1 kg in a day",["0.1 kg","Loss of 1 kg","None"],"Rapid gain indicates fluid retention.","ml_hf");
+NP5c('card',3,"Before giving digoxin the nurse should check:","Apical pulse for one full minute",["Temperature","Radial pulse for 15 seconds","Weight"],"Hold if the rate is below 60.","ml_hf");
+NP5c('card',2,"The first step of using an AED is:","Turn it on",["Remove pads","Wait for EMS","Check blood pressure"],"Then attach pads and follow prompts.","aha");
+NP5c('card',3,"A client with symptomatic bradycardia is given:","Atropine",["Adenosine","Lidocaine","Epinephrine only"],"Increases heart rate.","aha");
+NP5c('card',2,"Atrial fibrillation increases the risk of:","Stroke",["Cataract","Asthma","Ulcer"],"Anticoagulation is often needed.","aha");
+NP5c('shock',3,"For septic shock the initial fluid is:","Crystalloid bolus",["Dextrose in water","Blood","Albumin only"],"Give early IV fluids and antibiotics.","ssc");
+NP5c('shock',2,"Cardiogenic shock features:","Crackles, hypotension, cool skin",["Warm dry skin","Bradycardia","Polyuria"],"Pump failure.","aha");
+NP5c('shock',3,"Neurogenic shock is typified by:","Hypotension with bradycardia and warm dry skin",["Tachycardia","Fever","Cold sweats"],"Loss of sympathetic tone.","aha");
+NP5c('shock',2,"In hypovolemic shock the best position is:","Supine with legs raised",["Sitting up","Prone","Trendelenburg only head down"],"Improves venous return.","aha");
+NP5c('shock',2,"In compensated shock the earliest sign is:","Tachycardia and anxiety",["Hypotension","Coma","Anuria"],"BP falls late.","aha");
+NP5c('shock',3,"A target mean arterial pressure in shock is at least:","65 mm Hg",["30 mm Hg","40 mm Hg","120 mm Hg"],"Ensures organ perfusion.","ssc");
+NP5c('renal',2,"In the diuretic phase of AKI the nurse monitors for:","Dehydration and hypokalemia",["Fluid overload","Hyperkalemia","Anuria"],"Large urine output.","ml_kidney");
+NP5c('renal',2,"A prerenal cause of AKI is:","Hypovolemia",["Kidney stones","Glomerulonephritis","Prostate enlargement"],"Reduced blood flow to kidneys.","ml_kidney");
+NP5c('renal',2,"For a client with an AV fistula:","Avoid BP and venipuncture on that arm",["Take BP there","Start IV there","Apply tight sleeves"],"Check for thrill.","ml_kidney");
+NP5c('renal',2,"After hemodialysis the nurse monitors for:","Hypotension and bleeding",["Hypertension only","Hyperglycemia","Edema"],"Fluid and heparin effects.","ml_kidney");
+NP5c('renal',2,"Cloudy peritoneal dialysis effluent suggests:","Peritonitis",["Normal output","Dehydration","Anemia"],"Report fever and abdominal pain.","ml_kidney");
+NP5c('renal',2,"Which is the best lab indicator of renal function?","Serum creatinine and GFR",["Sodium","Hemoglobin","Calcium"],"Creatinine rises with kidney failure.","ml_kidney");
+NP5c('renal',2,"Hyperkalemia in kidney failure may be treated with:","Sodium polystyrene sulfonate",["Potassium chloride","Spironolactone","Banana"],"Binds potassium in the gut.","ml_kidney");
+NP5c('burn',2,"By the rule of nines, an entire adult leg is about:","18%",["9%","4.5%","27%"],"Each leg is 18%; each arm 9%; head 9%.","ml_burn");
+NP5c('burn',1,"The first step for a thermal burn is to:","Stop the burning process and cool with running water",["Apply butter","Apply ice","Pop blisters"],"Cool for about 20 minutes.","ml_burn");
+NP5c('burn',2,"For a dry chemical burn the nurse should:","Brush off powder then flush with water",["Wipe with a cloth","Apply ointment","Apply ice"],"Remove contaminated clothing.","ml_burn");
+NP5c('burn',3,"A target urine output during burn fluid resuscitation is about:","0.5–1 mL/kg/hour",["10 mL/hour","5 mL/hour","200 mL/hour"],"Adequate perfusion.","ml_burn");
+NP5c('burn',2,"A painless, leathery, white burn is:","Full-thickness",["Superficial","Superficial partial-thickness","Deep partial-thickness"],"Nerve endings are destroyed.","ml_burn");
+NP5c('burn',2,"A moist, blistered, very painful burn is:","Superficial partial-thickness",["Full-thickness","Superficial","Deep partial-thickness"],"Heals in 2–3 weeks.","ml_burn");
+NP5c('burn',3,"Before applying silver sulfadiazine the nurse asks about:","Sulfa allergy",["Penicillin","Latex only","Iodine"],"Cross-sensitivity.","ml_burn");
+NP5c('burn',2,"The diet for a burn client is:","High-protein and high-calorie",["Low-protein","Low-calorie","Clear fluids only"],"Healing increases metabolic needs.","ml_burn");
+NP5c('em',2,"In START triage, the red tag means:","Immediate treatment",["Minor","Expectant","Delayed"],"Black = deceased/expectant; yellow = delayed; green = minor.","aha");
+NP5c('em',1,"The first priority in emergency care is:","Airway",["Wound care","History","Paperwork"],"Airway, breathing, circulation.","aha");
+NP5c('em',2,"For a conscious adult choking the nurse should:","Give abdominal thrusts",["Pat on back only","Give water","Wait"],"Heimlich maneuver.","aha");
+NP5c('em',3,"For a choking infant give:","Five back blows and five chest thrusts",["Abdominal thrusts","Blind finger sweeps","Water"],"Abdominal thrusts are not used in infants.","aha");
+NP5c('em',2,"After a poisoning the nurse should:","Call the poison control center",["Induce vomiting","Give milk always","Wait"],"Vomiting is not routinely induced.","ml_poison");
+NP5c('em',3,"The antidote for organophosphate poisoning is:","Atropine",["Naloxone","Flumazenil","Vitamin K"],"Counters cholinergic effects.","ml_poison");
+NP5c('em',3,"The antidote for iron poisoning is:","Deferoxamine",["Naloxone","Atropine","Protamine"],"Chelating agent.","ml_poison");
+NP5c('em',2,"For a venomous snakebite the nurse should:","Immobilize the limb and transport promptly",["Apply a tourniquet","Cut the wound","Suck venom"],"Avoid harmful old practices.","ml_poison");
+NP5c('em',2,"Heat stroke is managed with:","Rapid cooling",["Hot drinks","Blankets","Alcohol"],"Hot dry skin and altered mentation.","ml_poison");
+NP5c('em',2,"For a hypothermic client the nurse should:","Rewarm gradually and handle gently",["Rub vigorously","Hot bath","Alcohol"],"Rough handling triggers arrhythmias.","aha");
+NP5c('em',2,"A near-drowning client who is not breathing needs first:","Rescue breaths",["Abdominal thrusts","Waiting","Warm blankets"],"Hypoxia is the main problem.","aha");
+NP5c('em',3,"Tracheal deviation, absent breath sounds and hypotension indicate:","Tension pneumothorax",["Asthma","Pneumonia","Anxiety"],"Needs needle decompression.","aha");
+NP5c('em',2,"For a suspected fracture the nurse should:","Immobilize the joints above and below",["Straighten forcefully","Massage","Apply heat"],"Check circulation, movement and sensation.","aha");
+NP5c('em',3,"For suspected spinal injury the nurse should:","Immobilize the spine and use jaw-thrust",["Flex the neck","Sit up","Roll quickly"],"Protect the cervical spine.","aha");
+
 /* ===== REVIEWER TOPICS (unofficial study notes; verify against current references and facility policy) =====
    T(id, area, title, summary, filipinoSummary, points[], memoryAid, table|null, svgKey, refIds[]) */
 const TOPICS = [];
@@ -1043,6 +2395,53 @@ function sb(x,y,w,h,txt,cls){cls=cls||'';const L=txt.split('|');const dark=/sv-(
 function ar(x1,y1,x2,y2){return `<line class="sv-l" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" marker-end="url(#ah)"/>`;}
 function lb(x,y,t,anchor){return `<text class="sv-s" x="${x}" y="${y}" text-anchor="${anchor||'middle'}">${t}</text>`;}
 
+/* ---- NP II reviewer expansion to 100 points ---- */
+function NP2pts(id,arr){const x=TOPICS.find(t=>t.id===id);x.pts.push(...arr)}
+NP2pts('ante',['Naegele\'s rule: subtract 3 months and add 7 days to the LMP.','Fundal height in cm roughly equals weeks from 20 to 34 weeks; the fundus is at the umbilicus at about 20 weeks.','GTPAL: gravida, term, preterm, abortions, living children.','Presumptive signs are subjective; probable signs include Chadwick\'s, Goodell\'s and Hegar\'s; positive signs include fetal heart tones.','Folic acid prevents neural tube defects; start before conception.','Iron is absorbed better with vitamin C; avoid taking with milk, tea or coffee.','Normal fetal heart rate is 110–160 beats per minute.','Quickening is felt at about 16–20 weeks.','WHO recommends at least eight antenatal contacts.']);
+NP2pts('labor',['First stage ends at 10 cm; phases are latent, active and transition (8–10 cm).','Cardinal movements: engagement, descent, flexion, internal rotation, extension, restitution, external rotation, expulsion.','Station 0 is at the ischial spines.','Late decelerations: uteroplacental insufficiency; turn left, give oxygen, stop oxytocin.','Early decelerations: head compression; benign.','Variable decelerations: cord compression; change position.','Prolapsed cord: knee-chest position and lift the presenting part.','After rupture of membranes, check the fetal heart rate first.','Contraction frequency is timed from the start of one to the start of the next.']);
+NP2pts('pp',['Boggy fundus: massage; empty the bladder.','Lochia: rubra, serosa, alba.','The fundus descends about 1 cm daily.','Uterine atony is the leading cause of early postpartum hemorrhage.','Give Rh immune globulin within 72 hours to Rh-negative mothers with Rh-positive infants.','Postpartum blues resolve within about 2 weeks; depression persists and needs referral.','Relieve engorgement by frequent feeding; continue breastfeeding with mastitis.','Ice packs to the perineum in the first 24 hours, then warm sitz baths.','Tachycardia is an early sign of hemorrhage.']);
+NP2pts('nb',['Apgar at 1 and 5 minutes: heart rate, respiration, tone, reflex irritability, color.','Dry and use skin-to-skin contact to prevent heat loss by evaporation.','Give vitamin K to prevent hemorrhagic disease; erythromycin ointment to prevent ophthalmia neonatorum.','Jaundice in the first 24 hours is pathologic.','Unang Yakap: dry, skin-to-skin, delay cord clamping 1–3 minutes, start breastfeeding.','Exclusive breastfeeding for 6 months.','Good latch: wide mouth, chin touching breast, lips flanged.','Newborn screening is done after 24 hours of life.','Normal newborn respiratory rate is 30–60 per minute.']);
+NP2pts('comp',['Preeclampsia: BP 140/90 mmHg or higher after 20 weeks with proteinuria.','Magnesium sulfate: monitor reflexes, respirations and urine output; antidote is calcium gluconate.','Quiet, dim environment and seizure precautions for preeclampsia.','Placenta previa: painless bright red bleeding; no vaginal exam.','Abruptio placentae: painful dark bleeding and a rigid abdomen.','Ectopic pregnancy: unilateral pain and shoulder pain on rupture.','Hyperemesis gravidarum: fluid and electrolyte imbalance.','Screen for gestational diabetes at 24–28 weeks.','Hydatidiform mole: grape-like vesicles and very high hCG.']);
+NP2pts('gd',['Birth weight doubles at 5–6 months and triples at 12 months.','Posterior fontanel closes at 2–3 months; anterior at 12–18 months.','Erikson: infant trust; toddler autonomy; preschool initiative; school-age industry; adolescent identity.','Piaget: sensorimotor (0–2), preoperational (2–7), concrete operational (7–11), formal operational (11+).','Object permanence develops in infancy.','Magical thinking occurs in the preschool years.','Conservation develops in school age.','Stranger anxiety appears at 6–8 months.','Separation anxiety: protest, despair, detachment.','Toilet training readiness at 18–24 months.','Social smile appears at about 2 months.']);
+NP2pts('ped',['IMCI general danger signs: cannot drink or breastfeed, vomits everything, convulsions, lethargy.','Fast breathing: 50 or more (2–12 months), 40 or more (12 months–5 years).','IMCI colors: pink urgent referral, yellow treatment, green home care.','Plan B ORS: 75 mL/kg over 4 hours.','Pneumonia without danger signs: oral amoxicillin.','Lactational amenorrhea: exclusive breastfeeding, amenorrhea, under 6 months.','Standard Days Method: fertile days 8–19 for cycles of 26–32 days.','Condoms protect against STIs.','Missed pill: take as soon as remembered.','Basal body temperature rises after ovulation.','Epiglottitis: do not examine the throat; prepare to secure the airway.','Breast self-exam 5–7 days after the start of menses.']);
+
+/* ---- NP III reviewer expansion to 100 points ---- */
+function NP3pts(id,arr){const x=TOPICS.find(t=>t.id===id);x.pts.push(...arr)}
+NP3pts('periop',['Surgeon obtains informed consent; nurse witnesses.','NPO before anesthesia lowers aspiration risk.','Remove dentures, jewelry and nail polish; keep ID and allergy bands.','Surgical safety checklist: sign in, time out before incision, sign out.','PACU priority: airway, breathing, circulation.','Shock signs: rapid weak pulse, low BP, cool clammy skin.','Evisceration: cover with moist sterile saline dressing and call the surgeon.','Increased pink drainage may signal dehiscence.','Early ambulation prevents clots and atelectasis.','Malignant hyperthermia: dantrolene.','Minimum urine output 30 mL/hour.','Post-spinal headache: lie flat, fluids.']);
+NP3pts('resp',['Pursed-lip breathing prolongs exhalation in COPD.','High Fowler\'s relieves dyspnea.','Normal SpO2 is 95–100%.','Disconnected chest tube: submerge end in sterile water.','Keep chest drainage below chest level.','Collect sputum before starting antibiotics.','Peak flow: green 80–100%, yellow 50–80%, red below 50%.','Albuterol is the rescue medicine.','PE: sudden dyspnea and pleuritic pain.','Suction 10–15 seconds, on withdrawal only.','Restlessness is the earliest sign of hypoxia.','Nasal cannula 1–6 L/min; no smoking near oxygen.','Nosebleed: lean forward and pinch for 10–15 minutes.']);
+NP3pts('fe',['Hypokalemia: weakness, U waves; hyperkalemia: peaked T waves.','Hyponatremia: confusion and seizures; hypernatremia: thirst and dry mucosa.','Hypocalcemia: Chvostek\'s and Trousseau\'s signs, tetany.','Hypercalcemia: constipation and weak reflexes.','Calcium and phosphorus have an inverse relationship.','0.45% NaCl is hypotonic; 0.9% NaCl and LR are isotonic; 3% NaCl is hypertonic.','3% saline: watch for pulmonary edema.','1 kg body weight gain is about 1 liter of fluid.','Fluid excess: crackles, JVD, bounding pulse.','Loop diuretics cause hypokalemia.','Low-sodium diet: avoid processed and canned foods.','Intake and output records guide fluid balance.','Daily weights are the most accurate fluid status indicator.']);
+NP3pts('ab',['Normal pH 7.35–7.45; PaCO2 35–45; HCO3 22–26.','Respiratory acidosis: low pH, high PaCO2 (hypoventilation).','Respiratory alkalosis: high pH, low PaCO2 (hyperventilation).','Metabolic acidosis: low pH, low HCO3 (diarrhea, DKA).','Metabolic alkalosis: high pH, high HCO3 (vomiting, NG suction).','Kussmaul breathing compensates for metabolic acidosis.','Normal pH with abnormal CO2 and HCO3 means full compensation.','ROME: respiratory opposite, metabolic equal.','PaO2 normal 80–100 mm Hg.','Coach slow breathing for anxiety-related hyperventilation.']);
+NP3pts('inf',['CD4 below 200 defines AIDS.','HIV is not spread by casual contact.','Positive HIV screening is confirmed with further testing.','Pneumocystis pneumonia is a common opportunistic infection.','TB skin test is type IV delayed hypersensitivity.','Latex allergy: use non-latex products.','SLE: butterfly rash; avoid sun.','RA: morning stiffness over an hour, symmetric joints.','Transplant clients: avoid crowds and report fever.','Cardinal signs of inflammation: redness, heat, swelling, pain, loss of function.','High eosinophils: allergy or parasites.','Sepsis: cultures and antibiotics promptly.','Vaccine = artificial active immunity.','Meningitis: droplet precautions.']);
+NP3pts('onc',['Primary intention: closed edges; secondary: open granulating wounds.','Pressure ulcer stage 3 shows fat; stage 4 shows muscle or bone.','Reposition every 2 hours.','TNM: tumor, nodes, metastasis.','Radiation skin care: keep markings, avoid harsh lotions.','Give antiemetics before chemotherapy.','Stomatitis: soft toothbrush, avoid alcohol mouthwash.','Thrombocytopenia: bleeding precautions, no IM injections.','Only 0.9% NaCl is used with blood products.','O negative is the universal donor; AB positive the universal recipient.','Malignant tumors invade and metastasize.','Give cancer pain analgesics around the clock.','Anemia: plan rest between activities.']);
+
+/* ---- NP IV and V reviewer expansion to 100 points ---- */
+function NP45pts(id,arr){const x=TOPICS.find(t=>t.id===id);x.pts.push(...arr)}
+NP45pts('nut',['BMI 18.5–24.9 normal; 25–29.9 overweight; 30 or more obese.','Kwashiorkor: protein deficiency with edema; marasmus: calorie deficiency with wasting.','Vitamin A deficiency causes night blindness; iodine deficiency causes goiter.','B12 deficiency causes pernicious anemia.','Iron sources: liver and red meat; take with vitamin C.','Verify enteral tube placement before feeding; head of bed 30–45°.','Never stop TPN abruptly; taper to avoid hypoglycemia.','Gout: limit purine-rich foods such as organ meats and sardines.','Dysphagia: upright position and modified consistency.','Folate from green leafy vegetables protects against neural tube defects.']);
+NP45pts('gi',['H. pylori ulcer: PPI plus two antibiotics.','Duodenal ulcer pain is relieved by food; gastric ulcer pain worsens with food.','Appendicitis: no heat, laxatives or enemas.','Sudden relief then rigid abdomen suggests perforation.','Intestinal obstruction: vomiting, distention, NG decompression.','A healthy stoma is pink to red and moist.','Ileostomy: watch fluid and electrolyte loss.','Crohn\'s disease: pain, diarrhea, weight loss.','Diverticulitis: low fiber in acute attack, high fiber after.','Confirm NG tube placement by X-ray.']);
+NP45pts('hep',['Hepatitis A is fecal-oral; hepatitis B is bloodborne.','Clay-colored stools and dark urine suggest biliary obstruction.','Ascites: daily weights, abdominal girth, low sodium.','Variceal bleeding: airway first.','Acute pancreatitis: NPO and pain control.','Side-lying with knees flexed eases pancreatic pain.','Gallstones: low-fat diet.','Avoid alcohol and hepatotoxic drugs in cirrhosis.','Health workers need hepatitis B vaccine.']);
+NP45pts('dm',['Type 1: autoimmune beta-cell destruction; type 2: insulin resistance.','Classic signs: polyuria, polydipsia, polyphagia.','HbA1c reflects 2–3 months; 6.5% or higher supports diabetes.','Hypoglycemia: tremors, sweating, confusion; treat with fast sugar or glucagon.','Rapid-acting insulin within 15 minutes of meals.','Store unopened insulin in the refrigerator.','Rotate injection sites.','Sick days: continue insulin, check glucose, drink fluids.','Foot care: inspect daily, dry between toes, never barefoot.','DKA: IV isotonic fluids first, then insulin.','Annual dilated eye exam.']);
+NP45pts('endo',['Hyperthyroidism: weight loss, heat intolerance, tachycardia.','Hypothyroidism: weight gain, cold intolerance, bradycardia.','Graves\' disease: exophthalmos.','Thyroid storm: avoid aspirin.','After thyroidectomy: keep airway and calcium gluconate at bedside.','Cushing\'s: moon face, buffalo hump, hyperglycemia.','Addison\'s: bronze skin, hypotension, hyperkalemia.','Pheochromocytoma: avoid abdominal palpation.','Diabetes insipidus: polyuria with dilute urine; desmopressin.','Hyperparathyroidism: hypercalcemia; encourage fluids.']);
+NP45pts('sens',['Cataract: painless blurred vision.','After cataract surgery: avoid bending and lifting; wear shield.','Glaucoma: loss of peripheral vision.','Retinal detachment: curtain-like shadow; urgent care.','Macular degeneration: central vision loss.','Conductive loss: Weber lateralizes to the affected ear.','Otitis media: bulging red tympanic membrane.','Ménière\'s: low-sodium diet.','Speak clearly and face a hearing-impaired client; do not shout.','Chemical eye splash: irrigate at least 15 minutes.']);
+NP45pts('neuro',['GCS ranges 3–15.','ICP: head up 30°, neck neutral.','Cushing\'s triad: hypertension, bradycardia, irregular respirations.','Seizure: protect head, side-lying, time it.','Status epilepticus: IV lorazepam.','Stroke: CT first to rule out hemorrhage.','Expressive aphasia: short simple questions.','Parkinson\'s: tremor, bradykinesia, rigidity.','Myasthenia gravis: weakness worse at end of day.','Autonomic dysreflexia: raise head, check bladder and bowel.']);
+NP45pts('mh',['Use open-ended questions; avoid advice and "why" questions.','Reflection repeats the client\'s feelings.','Defense mechanisms: displacement, projection, regression, denial, rationalization, sublimation.','Hallucinations and delusions are positive symptoms; flat affect is negative.','Do not argue with delusions or hallucinations; acknowledge feelings.','Ask directly about suicide; use close observation.','Mania: low-stimulation environment, finger foods.','Anorexia: supervise after meals.','OCD: allow rituals while setting gradual limits.','Borderline personality: consistent limits.','Orientation phase sets the contract.','CBT changes negative thinking.','ECT: NPO and consent; temporary memory loss.','Freud: id, ego, superego.','Therapeutic use of silence allows reflection.','Use clear, simple language with anxious clients.','Panic attack: stay with the client, calm voice.','Maintain confidentiality except for safety risks.','Least restrictive measures first before restraint.','Milieu therapy uses the environment for healing.']);
+NP45pts('drug',['Lithium 0.6–1.2 mEq/L; keep sodium and fluids adequate.','Serotonin syndrome: agitation, fever, tremor.','TCAs: dry mouth, constipation.','Clozapine: monitor WBC.','Flumazenil reverses benzodiazepines.','Tardive dyskinesia: lip smacking; report.','Disulfiram: avoid all alcohol.','Valproate: monitor liver and platelets.','Benztropine treats EPS.','Naloxone reverses opioids.','Methylphenidate: morning dose; monitor growth.']);
+NP45pts('card',['Aspirin first for suspected MI.','Troponin is the most specific marker.','ST elevation suggests STEMI.','Left HF: crackles; right HF: edema and JVD.','Report weight gain over 1 kg in a day.','Digoxin: check apical pulse for one minute.','AED: turn on, attach pads, follow prompts.','Atropine for symptomatic bradycardia.','Atrial fibrillation raises stroke risk.']);
+NP45pts('shock',['Septic shock: early fluids and antibiotics.','Cardiogenic shock: crackles and hypotension.','Neurogenic shock: bradycardia with warm dry skin.','Hypovolemic shock: supine, legs raised.','Early shock: tachycardia and anxiety.','Target MAP of 65 mm Hg or more.']);
+NP45pts('renal',['AKI diuretic phase: watch dehydration and hypokalemia.','Prerenal AKI: hypovolemia.','No BP or venipuncture on the AV fistula arm.','Post-dialysis: monitor BP and bleeding.','Cloudy PD fluid: peritonitis.','Serum creatinine and GFR measure renal function.','Sodium polystyrene sulfonate lowers potassium.']);
+NP45pts('burn',['Rule of nines: leg 18%, arm 9%, head 9%.','Stop the burning process and cool with running water.','Chemical burn: brush off powder, flush with water.','Target urine output 0.5–1 mL/kg/hour.','Full-thickness: painless, leathery.','Superficial partial: blisters and pain.','Silver sulfadiazine: check sulfa allergy.','High-protein, high-calorie diet.']);
+NP45pts('em',['START: red immediate, yellow delayed, green minor, black expectant.','Airway comes first.','Adult choking: abdominal thrusts.','Infant choking: back blows and chest thrusts.','Poisoning: call poison control; do not induce vomiting.','Organophosphate: atropine; iron: deferoxamine.','Snakebite: immobilize, no tourniquet.','Heat stroke: cool rapidly.','Hypothermia: rewarm gradually.','Tension pneumothorax: needle decompression.']);
+
+/* ---- NP I reviewer expansion to 100 points ---- */
+function NP1pts(id,arr){const x=TOPICS.find(t=>t.id===id);x.pts.push(...arr)}
+NP1pts('phc',['Alma-Ata Declaration (1978) made primary health care the key to Health for All.','Levels of care: primary (barangay health station, rural health unit), secondary (district/provincial hospital), tertiary (medical center).','RA 7160 (Local Government Code) devolved basic health services to local government units.','RA 11223 (Universal Health Care Act) automatically enrolls all Filipinos in PhilHealth.','Health promotion builds healthy habits (exercise, nutrition, no smoking) and is part of primary prevention.','Community organizing phases: integration, organization-building, education and training, sustenance.','The public health nurse supervises rural health midwives, who guide barangay health workers.','Equity: bring services to underserved groups such as island and mountain communities.','Intersectoral collaboration: DOH with DepEd, DILG, DSWD and others on one health goal.','Self-reliance: community members plan and manage their own health projects.']);
+NP1pts('epi',['Incidence rate = new cases ÷ population at risk × 1,000 (or other base).','Crude death rate = all deaths ÷ midyear population × 1,000.','Infant mortality rate = deaths under 1 year ÷ live births × 1,000.','Maternal mortality ratio = maternal deaths ÷ live births × 100,000.','Sensitivity = true positives identified; specificity = true negatives identified.','Cohort studies follow exposed and unexposed groups forward; case-control studies look back from outcome.','Epidemiologic triad: agent, host, environment; descriptive epidemiology: person, place, time.','Outbreak steps: verify diagnosis, confirm outbreak, define cases, describe, test hypotheses, control, report.','Point-source outbreak: sudden cluster after one shared exposure (such as one meal).','Simple random sampling gives every member an equal chance of selection.']);
+NP1pts('cd',['Dengue: use paracetamol for fever; avoid aspirin and NSAIDs.','Dengue vector: day-biting Aedes mosquitoes breeding in clean stagnant water.','Dengue warning signs: persistent vomiting, severe abdominal pain, mucosal bleeding, lethargy.','TB regimen: 2 months isoniazid, rifampicin, pyrazinamide, ethambutol; then 4 months isoniazid and rifampicin.','Isoniazid: give pyridoxine (B6) for neuropathy risk; monitor for hepatotoxicity.','Ethambutol: report blurred vision or color-vision changes (optic neuritis).','Collect sputum in the early morning for best yield.','Leptospirosis spreads through flood water contaminated by animal urine; doxycycline prophylaxis for high-risk exposure.','Animal bite: wash with soap and running water for at least 15 minutes, then refer for assessment.','Category III rabies exposure (transdermal bite): wound care, vaccine and immunoglobulin.','Malaria: night-biting Anopheles; use insecticide-treated nets.','Schistosomiasis: avoid contact with snail-infested water; treatment is praziquantel.','Measles: Koplik spots, airborne precautions, vitamin A supplementation.','Diarrhea: oral rehydration solution with zinc; assess for dehydration signs.']);
+NP1pts('imm',['Keep vaccines at 2–8 °C; check temperature twice daily.','Freeze-sensitive: hepatitis B, pentavalent, tetanus toxoid; protect from freezing.','BCG is given intradermally; hepatitis B birth dose within 24 hours.','Measles-containing vaccine: first dose at 9 months, second at 12 months.','Observe clients for at least 15 minutes after vaccination.','True contraindications: anaphylaxis to a previous dose or component; avoid live vaccines in pregnancy and severe immunodeficiency.','Vaccine vial monitor: inner square darker than outer circle means discard.','Document vaccine, lot number, site and date; report adverse events following immunization.']);
+NP1pts('fam',['Foreseeable crisis: anticipated stress points such as marriage or childbirth.','Health threat: conditions likely to lead to disease, such as poor sanitation.','Health deficit: actual illness or failure to maintain health.','Genogram diagrams family members over generations; ecomap shows links with outside systems.','Bag technique prevents cross-contamination during home visits.','Begin each visit by greeting the family and establishing rapport.','Readiness to learn: relieve pain and urgent needs before teaching.','Evaluate psychomotor learning by return demonstration; teach-back confirms understanding.','Adults learn best when content links to experience and immediate needs.']);
+NP1pts('prof',['Autonomy: informed consent respects the client\'s decision.','The delegating nurse remains accountable for delegated tasks.','Never post identifiable client information online without consent (RA 10173).',]);
+NP1pts('prof',["NCDs: hypertension is BP 140/90 mmHg or higher on repeated measurements; teach less salt, exercise and no smoking.","Diabetes: fasting plasma glucose 126 mg/dL or higher is diagnostic; teach foot care and diet.","Cancer warning signs: CAUTION (change in bowel/bladder, a sore that does not heal, unusual bleeding, thickening or lump, indigestion, obvious change in wart or mole, nagging cough).","Chest pain with sweating and shortness of breath needs immediate emergency referral.","Research: the independent variable is manipulated; the dependent variable is measured.","Research ethics: obtain voluntary informed consent before enrolling participants."]);
+NP1pts('ic',['Hand hygiene breaks the mode-of-transmission link in the chain of infection.','Use soap and water for visible soil and C. difficile; alcohol rub otherwise.','Put on PPE in order: gown, mask or respirator, eye protection, gloves.','Take off gloves first, then gown, eye protection, and mask last.','Airborne: TB, measles, varicella (N95, negative-pressure room); droplet: pertussis, influenza.','Do not recap needles; discard sharps in a puncture-resistant container.','Standard precautions apply to all clients regardless of diagnosis.']);
+
 const GAL = [];
 GAL.push({id:'chain',title:'Chain of infection',vb:'0 0 600 330',tid:'ic',refs:['cdc_sp','who_hh'],
  alt:'Circular flow diagram of six linked boxes: infectious agent, reservoir, portal of exit, mode of transmission, portal of entry, and susceptible host, with arrows showing each step leading to the next and back to the agent.',
@@ -1195,7 +2594,7 @@ async function loadState(){for(const k of Object.keys(S)){S[k]=await DB.get(k,S[
  if(!Array.isArray(S.cases))S.cases=[];if(!Array.isArray(S.procs))S.procs=[];if(!S.notes||typeof S.notes!=='object')S.notes={};if(!Array.isArray(S.saved))S.saved=[];if(!Array.isArray(S.history))S.history=[];if(!S.seen||typeof S.seen!=='object')S.seen={}}
 
 /* ---------- preferences + theme ---------- */
-const DEFAULT_PREFS={lang:'en',theme:'auto',accent:'#0f6b73',bg:null,size:100};
+const DEFAULT_PREFS={lang:'en',theme:'auto',accent:'#0f6b73',bg:null,size:100,lists:null};
 let P=Object.assign({},DEFAULT_PREFS,LS.get('prefs',{}));
 const savePrefs=()=>LS.set('prefs',P);
 const ACCENTS=[['Ocean teal','#0f6b73'],['Blue','#1f5fa8'],['Forest','#2e6b3f'],['Plum','#6b3f8c'],['Rose','#a23b5a'],['Amber brown','#8a5200'],['Slate','#3d5566'],['High-contrast blue','#00408a']];
@@ -1701,8 +3100,9 @@ ACT.quizmiss=()=>{const q=STUDY.q;const miss=q.order.filter((k,j)=>q.res[j]===fa
 ACT.exportproc=el=>{const p=S.procs.find(x=>x.id===el.dataset.arg);download((p.title||'steps').replace(/[^\w\-]+/g,'_')+'.txt','text/plain',p.title+'\n(Not clinically verified — compare with your instructor’s checklist and facility policy.)\n\n'+p.steps.map((s,i)=>(i+1)+'. '+s.text+(s.unsure?'  [needs review]':'')).join('\n')+'\n')};
 
 /* ===================== CASE LOG ===================== */
-const SETTINGS_LIST=['Community / barangay','Hospital ward','Outpatient clinic','Operating room','Emergency / ICU','Delivery room / OB','Nursery / pediatrics','School / workplace','Simulation lab','Other'];
-const ROLES=['Observer','Assisting','Performing under supervision','Leading care (student nurse)','Other'];
+const DEF_SETTINGS=['Community / barangay','Hospital ward','Outpatient clinic','Operating room','Emergency / ICU','Delivery room / OB','Nursery / pediatrics','School / workplace','Simulation lab','Other'];
+const DEF_ROLES=['Observer','Assisting','Performing under supervision','Leading care (student nurse)','Other'];
+const listOf=k=>{const v=P.lists&&P.lists[k];return Array.isArray(v)&&v.length?v:(k==='settings'?DEF_SETTINGS:DEF_ROLES)};
 let CASEF={q:'',setting:'',role:'',skill:'',from:'',to:''};
 const skillsOf=c=>String(c.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
 const privacyNotice=()=>`<div class="notice" role="note">${ic('alert')}<div><b>${t('Protect patient privacy.','Protektahan ang privacy ng pasyente.')}</b> ${t('Do not enter patient names, initials, birth dates, addresses, hospital numbers, photos or any detail that could identify a person. Describe the case generally (e.g. “adult client with post-operative pain”).','Huwag maglagay ng pangalan, initials, kapanganakan, tirahan, hospital number, litrato o anumang detalyeng makakakilala sa tao. Ilarawan nang pangkalahatan (hal. “adult na kliyenteng may post-operative pain”).')}</div></div>`;
@@ -1724,8 +3124,8 @@ function vCases(){
  <div class="row" style="margin:.8rem 0"><button class="btn" data-act="addcase">${ic('plus')}${t('Add case','Magdagdag ng kaso')}</button><button class="btn sec" data-act="expcases" data-arg="csv" ${S.cases.length?'':'disabled'}>${ic('down')}${t('Export CSV','I-export ang CSV')}</button><button class="btn sec" data-act="expcases" data-arg="json" ${S.cases.length?'':'disabled'}>${ic('down')}${t('Export JSON','I-export ang JSON')}</button></div>
  <form class="panel grid2" onsubmit="return false" data-chg="casefilter" data-inp="casefilter" role="search" aria-label="${t('Search and filter cases','Maghanap at mag-filter ng kaso')}">
   <div><label class="f" for="cf-q">${t('Search','Hanapin')}</label><input id="cf-q" type="search" name="q" value="${esc(CASEF.q)}" placeholder="${t('title, skill, reflection…','pamagat, kasanayan, repleksyon…')}"></div>
-  <div><label class="f" for="cf-s">${t('Setting','Lugar')}</label><select id="cf-s" name="setting"><option value="">${t('All','Lahat')}</option>${SETTINGS_LIST.map(s=>`<option ${CASEF.setting===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div>
-  <div><label class="f" for="cf-r">${t('Role','Papel')}</label><select id="cf-r" name="role"><option value="">${t('All','Lahat')}</option>${ROLES.map(s=>`<option ${CASEF.role===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div>
+  <div><label class="f" for="cf-s">${t('Setting','Lugar')}</label><select id="cf-s" name="setting"><option value="">${t('All','Lahat')}</option>${listOf('settings').map(s=>`<option ${CASEF.setting===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div>
+  <div><label class="f" for="cf-r">${t('Role','Papel')}</label><select id="cf-r" name="role"><option value="">${t('All','Lahat')}</option>${listOf('roles').map(s=>`<option ${CASEF.role===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div>
   <div><label class="f" for="cf-k">${t('Skill practiced','Kasanayan')}</label><select id="cf-k" name="skill"><option value="">${t('All','Lahat')}</option>${skills.map(s=>`<option ${CASEF.skill===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div>
   <div><label class="f" for="cf-f">${t('From date','Mula petsa')}</label><input id="cf-f" type="date" name="from" value="${esc(CASEF.from)}"></div>
   <div><label class="f" for="cf-t">${t('To date','Hanggang petsa')}</label><input id="cf-t" type="date" name="to" value="${esc(CASEF.to)}"></div>
@@ -1737,10 +3137,10 @@ CHG.casefilter=readCaseFilter;INP.casefilter=el=>{if(el.type==='search')readCase
 ACT.casereset=()=>{CASEF={q:'',setting:'',role:'',skill:'',from:'',to:''};ROUTE_NOFOCUS=true;vCases()};
 const ID_RE=/\b(mr|mrs|ms|miss|sir|ma'am)\.?\s+[A-Z][a-z]+|\bpatient(?:'s)?\s+name\b|\b\d{6,}\b|\b(mrn|hospital\s*(no|number)|birth\s*date|date of birth|dob)\b/i;
 function openCaseForm(c){const isNew=!c;c=c||{date:today(),title:'',setting:'',role:'',skills:'',reflection:'',lessons:'',notes:''};
- const opt=(arr,v)=>`<option value="">${t('Choose…','Pumili…')}</option>`+arr.map(s=>`<option ${v===s?'selected':''}>${esc(s)}</option>`).join('');
+ const opt=(arr,v)=>`<option value="">${t('Choose…','Pumili…')}</option>`+(v&&!arr.includes(v)?[...arr,v]:arr).map(s=>`<option ${v===s?'selected':''}>${esc(s)}</option>`).join('');
  return dlg(`<h2>${isNew?t('Add case','Magdagdag ng kaso'):t('Edit case','I-edit ang kaso')}</h2>${privacyNotice()}<form id="caseform" class="stack">
   <div class="grid2"><div><label class="f" for="c-date">${t('Date','Petsa')} *</label><input id="c-date" name="date" type="date" required value="${esc(c.date)}"></div><div><label class="f" for="c-title">${t('Case or procedure title','Pamagat ng kaso o prosedura')} *</label><input id="c-title" name="title" type="text" required maxlength="140" value="${esc(c.title)}" placeholder="${t('e.g. Post-operative wound care','hal. Post-operative wound care')}"></div>
-  <div><label class="f" for="c-set">${t('Setting','Lugar')}</label><select id="c-set" name="setting">${opt(SETTINGS_LIST,c.setting)}</select></div><div><label class="f" for="c-role">${t('My role','Aking papel')}</label><select id="c-role" name="role">${opt(ROLES,c.role)}</select></div></div>
+  <div><label class="f" for="c-set">${t('Setting','Lugar')}</label><select id="c-set" name="setting">${opt(listOf('settings'),c.setting)}</select></div><div><label class="f" for="c-role">${t('My role','Aking papel')}</label><select id="c-role" name="role">${opt(listOf('roles'),c.role)}</select></div></div>
   <div><label class="f" for="c-sk">${t('Skills practiced (comma-separated)','Kasanayang ginawa (pinaghihiwalay ng kuwit)')}</label><input id="c-sk" name="skills" type="text" value="${esc(c.skills)}" placeholder="vital signs, dressing change, health teaching"></div>
   <div><label class="f" for="c-ref">${t('Reflection','Repleksyon')}</label><textarea id="c-ref" name="reflection">${esc(c.reflection)}</textarea></div>
   <div><label class="f" for="c-les">${t('Lessons learned','Mga natutunan')}</label><textarea id="c-les" name="lessons">${esc(c.lessons)}</textarea></div>
@@ -1776,6 +3176,9 @@ function vSettings(){
   <div class="row"><button class="btn ghost" data-act="resetappearance">${t('Reset appearance to default','I-reset ang hitsura')}</button></div>
   <div class="preview" aria-label="${t('Live preview','Live preview')}"><h3>${t('Preview','Preview')}</h3><p>${t('Body text looks like this, with an','Ganito ang itsura ng teksto, may')} <a href="#/settings" onclick="return false">${t('accent link','accent link')}</a>.</p><div class="row"><button class="btn" type="button">${t('Primary button','Pangunahing button')}</button><button class="btn sec" type="button">${t('Secondary','Pangalawa')}</button><span class="chip ok">${t('Correct','Tama')}</span><span class="chip warn">${t('Flagged','Naka-flag')}</span><span class="chip bad">${t('Missed','Mali')}</span></div></div>
   <div id="contrast">${contrastHTML()}</div></div></div>
+ <div class="sect"><h2>${t('Case log dropdowns','Mga dropdown ng case log')}</h2><p class="muted small">${t('Customize the choices shown in the case log. Enter one choice per line. Existing cases keep their saved values.','I-customize ang mga pagpipilian sa case log. Isang pagpipilian bawat linya. Mananatili ang naka-save na halaga ng mga dating kaso.')}</p>
+  <div class="grid2"><div><label class="f" for="cl-settings">${t('Setting choices','Mga pagpipilian sa Lugar')}</label><textarea id="cl-settings" rows="8">${esc(listOf('settings').join('\n'))}</textarea></div><div><label class="f" for="cl-roles">${t('Role choices','Mga pagpipilian sa Papel')}</label><textarea id="cl-roles" rows="8">${esc(listOf('roles').join('\n'))}</textarea></div></div>
+  <div class="row" style="margin-top:.5rem"><button class="btn" data-act="savelists">${ic('check')}${t('Save dropdown choices','I-save ang mga pagpipilian')}</button><button class="btn ghost" data-act="resetlists">${t('Reset to defaults','I-reset sa default')}</button></div></div>
  <div class="sect"><h2>${t('Your data on this device','Iyong data sa device na ito')}</h2>
   <div class="notice info" role="note">${ic('info')}<div>${t('Notes, case log, saved questions, quiz progress, preferences and return-demonstration step sets (including photos) are stored only in this browser on this device (IndexedDB and localStorage). They do not sync automatically and are not uploaded anywhere. Clearing browser data, using private browsing, or switching browser or device will remove or hide them — export a backup regularly.','Ang mga tala, case log, naka-save na tanong, progreso, setting at return-demo step sets (kasama ang larawan) ay nasa browser at device na ito lamang (IndexedDB at localStorage). Hindi ito nagsi-sync at hindi ina-upload. Mawawala ang mga ito kapag nilinis ang browser data, private browsing, o lumipat ng browser/device — mag-export ng backup nang madalas.')}</div></div>
   <p class="small" id="storstat">${t('Checking storage…','Sinusuri ang storage…')}</p>
@@ -1789,6 +3192,8 @@ async function storageStatus(){let est='';try{if(navigator.storage&&navigator.st
  const el=$('#storstat');if(el)el.innerHTML=`${t('Large records & photos (IndexedDB)','Malalaking record at larawan (IndexedDB)')}: <b>${store.idb?t('available','available'):t('unavailable — kept in memory only','hindi available — nasa memorya lamang')}</b> · ${t('Preferences (localStorage)','Preferences (localStorage)')}: <b>${store.ls?t('available','available'):t('unavailable','hindi available')}</b>.${est}`}
 CHG.lang=el=>{P.lang=el.value;savePrefs();renderShell();ROUTE_NOFOCUS=true;vSettings();toast(t('Language saved','Na-save ang wika'))};
 CHG.theme=el=>{P.theme=el.value;P.bg=null;savePrefs();applyTheme();ROUTE_NOFOCUS=true;vSettings();toast(t('Appearance updated (background reset to match)','Na-update ang hitsura (nag-reset ang background)'))};
+ACT.savelists=()=>{const rd=id=>{const seen=new Set();return ($('#'+id).value||'').split('\n').map(x=>x.trim().slice(0,60)).filter(x=>x&&!seen.has(x.toLowerCase())&&seen.add(x.toLowerCase())).slice(0,40)};const a=rd('cl-settings'),b=rd('cl-roles');P.lists={settings:a.length?a:null,roles:b.length?b:null};savePrefs();ROUTE_NOFOCUS=true;vSettings();toast(t('Dropdown choices saved','Na-save ang mga pagpipilian'))};
+ACT.resetlists=()=>{P.lists=null;savePrefs();ROUTE_NOFOCUS=true;vSettings();toast(t('Dropdowns reset to defaults','Na-reset ang mga dropdown'))};
 ACT.accentpreset=el=>{P.accent=el.dataset.arg;savePrefs();applyTheme();ROUTE_NOFOCUS=true;vSettings();const b=$('#accent-presets [aria-pressed=true]');b&&b.focus()};
 ACT.bgpreset=el=>{P.bg=el.dataset.arg;savePrefs();applyTheme();ROUTE_NOFOCUS=true;vSettings();const b=$('#bg-presets [aria-pressed=true]');b&&b.focus()};
 ACT.bgdefault=()=>{P.bg=null;savePrefs();applyTheme();ROUTE_NOFOCUS=true;vSettings()};
