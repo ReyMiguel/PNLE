@@ -2946,7 +2946,7 @@ function vSteps(arg){
  <div class="row" style="margin:1rem 0"><a class="btn" href="#/steps/new">${ic('camera')}${t('New step set from photos or text','Bagong step set mula sa larawan o teksto')}</a></div>
  <div class="sect"><h2>${t('My step sets','Aking mga step set')}</h2>${list.length?list.map(p=>`<div class="case"><div class="row sp"><div><h3>${esc(p.title)}</h3><div class="small muted">${p.steps.length} ${t('steps','hakbang')} · ${t('updated','na-update')} ${esc(new Date(p.updated).toLocaleDateString())}${p.steps.some(s=>s.unsure)?' · <span class="chip warn">'+t('has steps needing review','may hakbang na kailangang suriin')+'</span>':''}</div></div><div class="row"><a class="btn sm" href="#/steps/${p.id}">${ic('eye')}${t('Study','Pag-aralan')}</a><a class="btn sm sec" href="#/steps/edit:${p.id}">${ic('pencil')}${t('Edit','I-edit')}</a><button class="btn sm ghost" data-act="delproc" data-arg="${p.id}">${ic('trash')}${t('Delete','Burahin')}</button></div></div></div>`).join(''):`<div class="empty">${ic('camera')}<p>${t('No step sets yet. Create one from a photo of your notes, or type the steps.','Wala pang step set. Gumawa mula sa larawan ng tala o i-type ang mga hakbang.')}</p></div>`}</div>`;
 }
-const newDraft=()=>({procId:null,title:'',items:[],steps:[],warnings:[],stage:'input',ocrBusy:false,oldImages:[]});
+const newDraft=()=>({procId:null,title:'',meta:null,items:[],steps:[],warnings:[],stage:'input',ocrBusy:false,oldImages:[]});
 ACT.delproc=async el=>{const p=S.procs.find(x=>x.id===el.dataset.arg);if(!p)return;if(!await confirmDlg({title:t('Delete this step set?','Buburahin ang step set?'),body:`<p><b>${esc(p.title)}</b> ${t('and its saved photos will be removed from this device.','at ang mga naka-save na larawan ay aalisin sa device na ito.')}</p>`,ok:t('Delete','Burahin'),danger:true}))return;
  for(const id of p.imageIds||[])await DB.delImage(id);S.procs=S.procs.filter(x=>x.id!==p.id);await persist('procs');toast(t('Step set deleted','Nabura ang step set'));route()};
 
@@ -2955,14 +2955,14 @@ function renderDraft(focus){
  if(d.stage==='edit')return renderStepEditor(focus);
  $('#main').innerHTML=`<p class="small"><a href="#/steps">${ic('left')}${t('My step sets','Aking mga step set')}</a></p><h1>${t('New step set','Bagong step set')}</h1>${ocrNotice()}
  <div class="stack"><div><label class="f" for="dtitle">${t('Procedure title','Pamagat ng prosedura')}</label><input id="dtitle" type="text" value="${esc(d.title)}" data-inp="dtitle" placeholder="${t('e.g. Hand hygiene with soap and water','hal. Hand hygiene gamit ang sabon at tubig')}"></div>
- <div><label class="f" for="dfiles">${t('Photos of your notes or procedure steps (one or more)','Larawan ng iyong tala o hakbang (isa o higit pa)')}</label><input id="dfiles" type="file" accept="image/*" multiple data-chg="addimgs"><p class="small muted">${t('JPG, PNG, WebP, GIF and BMP work in most browsers. HEIC photos may not open — convert them or type the text instead.','Gumagana ang JPG, PNG, WebP, GIF at BMP sa karamihan ng browser. Maaaring hindi mabuksan ang HEIC — i-convert o i-type ang teksto.')}</p></div>
+ <div><label class="f" for="dfiles">${t('Photos of your notes or procedure steps (one or more)','Larawan ng iyong tala o hakbang (isa o higit pa)')}</label><input id="dfiles" type="file" accept="image/*" multiple data-chg="addimgs"> <input id="dcam" class="sr-only" type="file" accept="image/*" capture="environment" data-chg="addimgs"><label class="btn sec sm" for="dcam">${ic('camera')}${t('Take a photo','Kumuha ng larawan')}</label><p class="small muted">${t('Checklist forms (tables with a Procedure column): photograph one page at a time, flat and square, with the whole table in the frame and no shadow over the text. You can add every page in any order; the steps are put in order for you.','Mga checklist form (may Procedure column): isang pahina bawat kuha, patag at tuwid, kita ang buong table at walang anino. Maaaring idagdag ang lahat ng pahina sa kahit anong ayos; aayusin ang mga hakbang.')}</p><p class="small muted">${t('JPG, PNG, WebP, GIF and BMP work in most browsers. HEIC photos may not open — convert them or type the text instead.','Gumagana ang JPG, PNG, WebP, GIF at BMP sa karamihan ng browser. Maaaring hindi mabuksan ang HEIC — i-convert o i-type ang teksto.')}</p></div>
  <div class="row"><button class="btn sec" data-act="addmanual">${ic('plus')}${t('Type or paste text instead','Mag-type o mag-paste ng teksto')}</button>${d.items.some(i=>i.file)?`<button class="btn" data-act="ocrall" ${d.ocrBusy?'disabled':''}>${ic('search')}${d.ocrBusy?t('Reading…','Binabasa…'):t('Read text from all photos','Basahin ang teksto ng lahat ng larawan')}</button>`:''}</div></div>
  <div class="sect"><h2>${t('Photos and extracted text','Mga larawan at nakuhang teksto')}</h2>${d.items.length?d.items.map((it,n)=>itemHTML(it,n)).join(''):`<div class="empty">${ic('image')}<p>${t('Nothing added yet. Choose photos above, or add a text box to type your steps.','Wala pang naidagdag. Pumili ng larawan sa itaas o magdagdag ng text box.')}</p></div>`}</div>
  ${d.items.length?`<div class="row" style="margin-top:1rem"><button class="btn" data-act="buildsteps">${ic('check')}${t('Create numbered steps from this text','Gumawa ng may bilang na hakbang mula sa teksto')}</button></div><p class="small muted">${t('Nothing is filled in for you: unreadable or low-confidence lines are marked “needs review”, and possible gaps in numbering are flagged.','Walang awtomatikong idinadagdag: minamarkahan ang hindi malinaw na linya at ang posibleng nawawalang bilang.')}</p>`:''}`;
  if(focus){const f=$(focus);f&&f.focus()}
 }
 function itemHTML(it,n){
- const stTxt=it.status==='loading'?t('Loading OCR library…','Nilo-load ang OCR library…'):it.status==='reading'?t('Reading text…','Binabasa ang teksto…'):it.status==='done'?t('Text extracted — please proofread.','Nakuha ang teksto — paki-proofread.'):it.status==='error'?'':t('Not read yet.','Hindi pa nababasa.');
+ const stTxt=it.status==='loading'?t('Loading OCR library…','Nilo-load ang OCR library…'):it.status==='reading'?t('Reading text…','Binabasa ang teksto…'):it.status==='done'?(it.form?t('Checklist form detected: one step per row, header and signature boxes skipped — please proofread.','Nakita ang checklist form: isang hakbang bawat hilera, nilaktawan ang header at pirma — paki-proofread.'):t('Text extracted — please proofread.','Nakuha ang teksto — paki-proofread.')):it.status==='error'?'':t('Not read yet.','Hindi pa nababasa.');
  return `<div class="case" data-item="${it.id}"><div class="imgrow"><div>${it.url?`<img src="${it.url}" alt="${t('Your uploaded photo','Iyong in-upload na larawan')} ${n+1}: ${esc(it.name)}">`:`<div class="empty small">${t('Typed text (no photo)','Na-type na teksto (walang larawan)')}</div>`}</div>
  <div><div class="row sp"><b>${it.file?t('Photo','Larawan')+' '+(n+1)+' — '+esc(it.name):t('Typed text','Na-type na teksto')}</b><button class="btn sm ghost" data-act="rmitem" data-arg="${it.id}" aria-label="${t('Remove','Alisin')} ${n+1}">${ic('trash')}${t('Remove','Alisin')}</button></div>
  ${it.file?`<div class="prog" style="margin:.4rem 0"><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(it.pct)}" aria-label="${t('OCR progress','Progreso ng OCR')}"><i id="pgi-${it.id}" style="width:${it.pct}%"></i></div><span class="small" id="pgt-${it.id}">${Math.round(it.pct)}%</span></div><div class="small" id="st-${it.id}" aria-live="polite">${esc(stTxt)}</div>
@@ -2970,11 +2970,116 @@ function itemHTML(it,n){
  <label class="f" for="txt-${it.id}" style="margin-top:.6rem">${t('Extracted / typed text (edit freely)','Nakuha / na-type na teksto (maaaring i-edit)')}</label><textarea id="txt-${it.id}" rows="7" data-inp="itemtext" data-arg="${it.id}" placeholder="${t('One step per line. Numbering is optional.','Isang hakbang bawat linya. Opsyonal ang bilang.')}">${esc(it.text)}</textarea></div></div></div>`;
 }
 INP.dtitle=el=>{DRAFT.title=el.value};
+const mk=()=>DRAFT.meta||(DRAFT.meta={purpose:'',goal:'',equipment:[]});
+INP.metapur=el=>{mk().purpose=el.value};INP.metagoal=el=>{mk().goal=el.value};INP.metaeq=el=>{mk().equipment=el.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)};
 INP.itemtext=el=>{const it=DRAFT.items.find(x=>x.id===el.dataset.arg);if(it)it.text=el.value};
 function drawResize(src,max){const w=src.width||src.naturalWidth,h=src.height||src.naturalHeight,k=Math.min(1,max/Math.max(w,h));const c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);g.drawImage(src,0,0,c.width,c.height);return c}
 async function loadBitmap(file){if('createImageBitmap' in window){try{return await createImageBitmap(file)}catch(e){}}
  return new Promise((res,rej)=>{const im=new Image(),u=URL.createObjectURL(file);im.onload=()=>{URL.revokeObjectURL(u);res(im)};im.onerror=()=>{URL.revokeObjectURL(u);rej(new Error('This image format cannot be opened by your browser (for example HEIC). Convert it to JPG or PNG, or type the steps instead.'))};im.src=u})}
 const canvasBlob=(c,type,q)=>new Promise(res=>c.toBlob(res,type,q));
+/* ---- checklist-form scanner: ruled "procedure | done | not done | remarks" tables ---- */
+const FS=(()=>{
+ const grayOf=c=>{const w=c.width,h=c.height,d=c.getContext('2d').getImageData(0,0,w,h).data,g=new Uint8Array(w*h);for(let i=0,j=0;i<g.length;i++,j+=4)g[i]=(d[j]*77+d[j+1]*150+d[j+2]*29)>>8;return{g,w,h}};
+ /* adaptive threshold (local mean via integral image): 1 = ink. Copes with shadows, glare and uneven phone-camera light */
+ function binarize(g,w,h){const s=Math.max(25,(Math.min(w,h)/18)|0)|1,r=s>>1,W=w+1,I=new Float64Array(W*(h+1));
+  for(let y=0;y<h;y++){let row=0;for(let x=0;x<w;x++){row+=g[y*w+x];I[(y+1)*W+x+1]=I[y*W+x+1]+row}}
+  const b=new Uint8Array(w*h);
+  for(let y=0;y<h;y++){const y0=Math.max(0,y-r),y1=Math.min(h,y+r+1);for(let x=0;x<w;x++){const x0=Math.max(0,x-r),x1=Math.min(w,x+r+1);const m=(I[y1*W+x1]-I[y0*W+x1]-I[y1*W+x0]+I[y0*W+x0])/((x1-x0)*(y1-y0));b[y*w+x]=g[y*w+x]<m*.82?1:0}}
+  return b}
+ /* page tilt in radians: the angle that makes the ink rows line up best (horizontal-projection sharpness) */
+ function skew(b,w,h){const x0=(w*.08)|0,x1=(w*.9)|0;let n=0;for(let y=0;y<h;y++)for(let x=x0;x<x1;x+=2)if(b[y*w+x])n++;
+  const xs=new Int32Array(n),ys=new Int32Array(n);let k=0;for(let y=0;y<h;y++)for(let x=x0;x<x1;x+=2)if(b[y*w+x]){xs[k]=x;ys[k]=y;k++}
+  const score=a=>{const t=Math.tan(a),off=Math.ceil(w*Math.abs(t))+4,hist=new Float32Array(h+2*off+8);for(let i=0;i<n;i++){const yy=(ys[i]-xs[i]*t+off)|0;if(yy>=0&&yy<hist.length)hist[yy]++}let s=0;for(let i=0;i<hist.length;i++)s+=hist[i]*hist[i];return s};
+  let best=0,bs=-1;for(let a=-4;a<=4.001;a+=.2){const s=score(a*Math.PI/180);if(s>bs){bs=s;best=a}}
+  const c=best;for(let a=c-.2;a<=c+.2001;a+=.04){const s=score(a*Math.PI/180);if(s>bs){bs=s;best=a}}
+  return best*Math.PI/180}
+ /* Line finder that tolerates warped/tilted printed rules: scan in short bands, find peaks in each band, then link the peaks into tracks */
+ function bandPeaks(b,w,h,vert,from,to,lo,hi,BS,minFrac){ // vert: look for vertical lines, bands of BS rows; else horizontal lines, bands of BS columns
+  const bands=[];const nb=Math.floor(((vert?h:w)-0)/BS);const x0=vert?0:from,span=vert?0:0;
+  const rng0=vert?0:from,rng1=vert?h:to;
+  for(let s=rng0;s+BS<=rng1;s+=BS){const N=hi-lo,cnt=new Int32Array(N);
+   for(let k=s;k<s+BS;k++){for(let i=lo;i<hi;i++){let ink=0;for(let d=-1;d<=1&&!ink;d++){const ii=i+d;if(ii<0||ii>=(vert?w:h))continue;if(b[vert?(k*w+ii):(ii*w+k)])ink=1}cnt[i-lo]+=ink}}
+   const pk=[];let i=0;while(i<N){if(cnt[i]>=BS*minFrac){let j=i,sw=0,st=0;while(j<N&&cnt[j]>=BS*minFrac){sw+=cnt[j]*(j+lo);st+=cnt[j];j++}pk.push({c:sw/st,wd:j-i});i=j}else i++}
+   bands.push({s,pk})}
+  return bands}
+ function track(bands,tol,maxW){const tr=[];for(let k=0;k<bands.length;k++){for(const p of bands[k].pk){if(p.wd>maxW)continue;let t=null,bd=tol+1;for(const q of tr){if(k-q.last<=2){const d=Math.abs(q.pts[q.pts.length-1][1]-p.c);if(d<bd){bd=d;t=q}}}
+    if(t){t.pts.push([bands[k].s+(bands[1]?bands[1].s-bands[0].s:0)/2,p.c]);t.last=k;t.wd=Math.max(t.wd,p.wd)}else tr.push({pts:[[bands[k].s+(bands[1]?bands[1].s-bands[0].s:0)/2,p.c]],last:k,wd:p.wd,first:k})}}
+  return tr}
+ const interp=(pts,x)=>{if(x<=pts[0][0])return pts[0][1];for(let i=1;i<pts.length;i++)if(x<=pts[i][0]){const a=pts[i-1],b=pts[i];return a[1]+(b[1]-a[1])*(x-a[0])/(b[0]-a[0]||1)}return pts[pts.length-1][1]};
+ function findTable(b,w,h){const BS=40;
+  const vb=bandPeaks(b,w,h,true,0,h,(w*.04)|0,(w*.97)|0,BS,.8),vt=track(vb,4,12).filter(t=>t.pts.length>=Math.max(4,Math.ceil(h*.12/BS)));
+  if(vt.length<2)return null;const mx=Math.max(...vt.map(t=>t.pts.length)),main=vt.filter(t=>t.pts.length>=mx*.5).map(t=>({x:t.pts.reduce((a,p)=>a+p[1],0)/t.pts.length,y0:t.pts[0][0]-BS/2,y1:t.pts[t.pts.length-1][0]+BS/2,wd:t.wd,pts:t.pts})).sort((a,b)=>a.x-b.x);
+  if(main.length<2)return null;const L=main[0],R=main[1];const yTop=Math.min(L.y0,R.y0),yBot=Math.max(L.y1,R.y1);
+  const xa=Math.round(L.x+Math.max(4,L.wd/2+3)),xb=Math.round(R.x-Math.max(4,R.wd/2+3));if(xb-xa<w*.15)return null;
+  const hb=bandPeaks(b,w,h,false,xa,xb,Math.max(0,(yTop-12)|0),Math.min(h,(yBot+12)|0),BS,.8);const ht=track(hb,6,14);
+  const need=Math.floor(hb.length*.8),rules=ht.filter(t=>t.pts.length>=need).map(t=>({pts:t.pts,hh:Math.max(1,Math.round((t.wd-2)/2)),y:t.pts.reduce((a,p)=>a+p[1],0)/t.pts.length})).sort((a,b)=>a.y-b.y);
+  const flat=y=>({pts:[[xa,y],[xb,y]],hh:3,y,synth:1});
+  if(!rules.length||rules[0].y-yTop>14)rules.unshift(flat(yTop));if(yBot-rules[rules.length-1].y>14)rules.push(flat(yBot));
+  return{xa,xb,xL:L.x,xR:R.x,yTop,yBot,rules,w,h}}
+ const ruleY=(r,x)=>interp(r.pts,x);
+ function cropCanvas(b,w,x0,y0,x1,y1,pad,scale,blank){const cw=x1-x0,ch=y1-y0,W=cw+2*pad,H=ch+2*pad,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d'),im=g.createImageData(W,H),d=im.data;d.fill(255);
+  for(let x=0;x<cw;x++){const X=x0+x;const bl=blank?blank.map(r=>{const y=ruleY(r,X);return[y-r.hh,y+r.hh]}):null;
+   for(let y=0;y<ch;y++){const Y=y0+y;if(Y<0||Y>=ch+y0)continue;let skip=false;if(bl)for(const r of bl)if(Y>=r[0]&&Y<=r[1]){skip=true;break}if(skip)continue;if(X>=0&&b[Y*w+X]){const p=((y+pad)*W+x+pad)*4;d[p]=d[p+1]=d[p+2]=0}}}
+  g.putImageData(im,0,0);if(scale===1)return c;const o=document.createElement('canvas');o.width=Math.round(W*scale);o.height=Math.round(H*scale);const og=o.getContext('2d');og.imageSmoothingEnabled=true;og.imageSmoothingQuality='high';og.drawImage(c,0,0,o.width,o.height);return o}
+ /* src = canvas (already size-limited). Returns null when no ruled procedure table is found. */
+ function prep(src,opts){opts=opts||{};let c=src,{g,w,h}=grayOf(c),b=binarize(g,w,h);const ang=skew(b,w,h);
+  if(Math.abs(ang)>.0025){const c2=document.createElement('canvas');c2.width=w;c2.height=h;const x=c2.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.imageSmoothingQuality='high';x.translate(w/2,h/2);x.rotate(-ang);x.drawImage(c,-w/2,-h/2);c=c2;({g,w,h}=grayOf(c));b=binarize(g,w,h)}
+  const T=findTable(b,w,h);if(!T||T.rules.length<3)return{ok:false,angle:ang,T};
+  const pad=14,scale=opts.scale||1.5,R=T.rules,ya=Math.round(Math.max(...R[0].pts.map(p=>p[1]))+R[0].hh+1),yb=Math.round(Math.min(...R[R.length-1].pts.map(p=>p[1]))-R[R.length-1].hh-1);
+  const lastSyn=!!R[R.length-1].synth,col=cropCanvas(b,w,T.xa,ya,T.xb,lastSyn?yb+16:yb,pad,scale,R.filter(r=>!r.synth));
+  const headH=Math.round(Math.min(...R[0].pts.map(p=>p[1]))-8);let head=null;if(headH>=90)head=cropCanvas(b,w,(w*.06)|0,0,(w*.95)|0,headH,pad,scale,null);
+  return{ok:true,angle:ang,T,col,head,pad,scale,colY0:ya,colX0:T.xa,w,h}}
+ /* ---------- text side (pure functions) ---------- */
+ const clean=s=>String(s||'').replace(/[|_¦]+/g,' ').replace(/\s+[~\-—=]+\s*$/,'').replace(/\s+/g,' ').trim();
+ const LEAD=/^(?:\d{1,2}|[lI|!])\s*[\.\):\-]\s*/;
+ function leadNum(s){const m=s.match(/^[^A-Za-z0-9]{0,2}(\d{1,2})\s*[\.\):\-]?\s*(?=\S)/);if(m&&/^[^A-Za-z0-9]{0,2}\d{1,2}\s*[\.\):\-]/.test(s)||m&&/^\d{1,2}\s+[A-Z]/.test(s))return +m[1];if(/^[lI|!]\s*[\.\)]\s+\S/.test(s))return 1;return null}
+ const stripLead=s=>s.replace(/^[^A-Za-z0-9]{0,2}\d{1,2}\s*[\.\):\-]\s*/,'').replace(LEAD,'').replace(/^[\.\):\-\s]+(?=[A-Za-z“"(])/,'').trim();
+ /* OCR lines (with bboxes in the cropped image) → one entry per ruled row */
+ function rowsFromLines(lines,info){
+  const R=info.T.rules,sc=info.scale,pad=info.pad;
+  const rows=R.slice(0,-1).map(()=>({ls:[]}));
+  for(const l of lines){const t=clean(l.text);if(!t)continue;const cx=(l.bbox.x0+l.bbox.x1)/2/sc-pad+info.colX0,cy=(l.bbox.y0+l.bbox.y1)/2/sc-pad+info.colY0;
+   let r=-1;for(let i=0;i<rows.length;i++){if(cy>=ruleY(R[i],cx)&&cy<ruleY(R[i+1],cx)){r=i;break}}
+   if(r<0){let bd=1e9;rows.forEach((x,i)=>{const d=Math.min(Math.abs(cy-ruleY(R[i],cx)),Math.abs(cy-ruleY(R[i+1],cx)));if(d<bd){bd=d;r=i}});if(bd>40)continue}
+   rows[r].ls.push({t,c:l.confidence==null?80:l.confidence,y:cy})}
+  let out=[];rows.forEach(r=>{if(!r.ls.length)return;r.ls.sort((a,b)=>a.y-b.y);
+   /* a row that holds several numbered lines (a missed rule) is split on the number sequence */
+   let cur=null,last=null;for(const l of r.ls){const n=leadNum(l.t);
+    if(cur&&n!=null&&last!=null&&n===last+1){out.push(cur);cur=null}
+    if(!cur){cur={num:n,ls:[l]};}else cur.ls.push(l);
+    if(n!=null)last=n}
+   if(cur)out.push(cur)});
+  out=out.map(r=>{let tx=stripLead(r.ls.map(l=>l.t).join(' ')),cf=r.ls.reduce((a,l)=>a+l.c,0)/r.ls.length;if(r.num==null){const t2=tx.replace(/^\S{1,5}[\.\)]\s+(?=\S)/,'');if(t2!==tx||/^[^A-Za-z]/.test(tx)){tx=t2;cf=Math.min(cf,55)}}return{num:r.num,text:tx,conf:cf,first:r.ls[0].t}});
+  /* header row ("PROCEDURE | Done | Not done | Remarks") is not a step */
+  out=out.filter(r=>!(r.num==null&&/^\W*(procedures?|steps?|nursing (action|care)|action)\b/i.test(r.first)));
+  /* a lower-case fragment with no number belongs to the step above it */
+  const numbered=out.filter(r=>r.num!=null).length;
+  if(numbered>=Math.ceil(out.length*.5)){const m=[];for(const r of out){if(m.length&&r.num==null&&/^[a-z]/.test(r.text)){const p=m[m.length-1];p.text+=' '+r.text;p.conf=Math.min(p.conf,r.conf)}else m.push(r)}out=m}
+  /* numbers: trust the consensus of the sequence over single OCR misreads (5 read as 3, a lost 11, …) */
+  const freq={};out.forEach((r,i)=>{if(r.num!=null){const o=r.num-i;freq[o]=(freq[o]||0)+1}});
+  let off2=null,bc=0;for(const k in freq)if(freq[k]>bc){bc=freq[k];off2=+k}
+  const hasSeq=off2!=null&&(bc>=2||out.length===1);
+  out.forEach((r,i)=>{r.n=hasSeq?i+off2:null;r.fixed=hasSeq&&r.num!==r.n});
+  return out}
+ const rowsToText=rows=>rows.map(r=>(r.n!=null?r.n+'. ':'')+r.text).join('\n');
+ const small=/^(a|an|and|as|at|by|for|from|in|of|on|or the|to|via|with|the)$/i;
+ const titleCase=s=>{const w=s.toLowerCase().split(' ');return w.map((x,i)=>i&&small.test(x)?x:x.charAt(0).toUpperCase()+x.slice(1)).join(' ')};
+ function parseHeader(lines){const L=lines.map(l=>clean(typeof l==='string'?l:l.text)).filter(Boolean);let title='',purpose='',goal='',eq=[],mode='';
+  const skip=/^(student|instructor|date|score|name)\b/i;
+  for(const s of L){
+   if(/^purpose\b/i.test(s)){mode='p';purpose=s.replace(/^purpose\W*/i,'');continue}
+   if(/^goals?\b/i.test(s)){mode='g';goal=s.replace(/^goals?\W*/i,'');continue}
+   if(/^equipment|^materials|^supplies/i.test(s)){mode='e';continue}
+   if(mode==='e'){const t=s.replace(/^[•●·▪*\-–]\s*|^[eo0]\s+(?=[A-Z])/,'').trim();if(t.length>2)eq.push(t);continue}
+   if(mode==='p'){purpose+=(purpose?' ':'')+s;continue}
+   if(mode==='g'){goal+=(goal?' ':'')+s;continue}
+   if(skip.test(s))continue;
+   const letters=s.replace(/[^A-Za-z]/g,'');if(letters.length>=6&&letters===letters.toUpperCase()&&s.length<90)title+=(title?' ':'')+s}
+  return{title:title?titleCase(title):'',purpose:purpose.trim(),goal:goal.trim(),equipment:eq}}
+ return{prep,rowsFromLines,rowsToText,parseHeader,binarize,grayOf,skew,findTable,leadNum,stripLead,titleCase,ruleY}
+})();
+const getLines=d=>{if(d&&Array.isArray(d.lines)&&d.lines.length)return d.lines;const o=[];((d&&d.blocks)||[]).forEach(b=>(b.paragraphs||[]).forEach(p=>(p.lines||[]).forEach(l=>o.push(l))));return o};
+const setPsm=async(w,m)=>{try{await w.setParameters({tessedit_pageseg_mode:m})}catch(e){}};
 CHG.addimgs=async el=>{const files=Array.from(el.files||[]);if(!files.length)return;let bad=0;
  for(const f of files){if(!/^image\//.test(f.type)&&!/\.(jpe?g|png|gif|webp|bmp|heic|heif)$/i.test(f.name)){bad++;continue}
   DRAFT.items.push({id:uid(),name:f.name,file:f,url:URL.createObjectURL(f),text:'',lines:[],status:'idle',pct:0,err:''})}
@@ -2995,13 +3100,22 @@ async function runOCR(items){
  let cur=null;
  try{worker=await Tesseract.createWorker('eng',1,{logger:m=>{if(!cur)return;if(m.status==='recognizing text'){cur.pct=Math.round(m.progress*100);const b=$('#pgi-'+cur.id);if(b)b.style.width=cur.pct+'%';const tt=$('#pgt-'+cur.id);if(tt)tt.textContent=cur.pct+'%'}}})}
  catch(e){items.forEach(i=>{i.status='error';i.err=OCR_FAIL+' ('+(e&&e.message||'worker error')+')'});DRAFT.ocrBusy=false;renderDraft();return}
- for(const it of items){cur=it;it.status='reading';renderDraft();
-  try{const bm=await loadBitmap(it.file);const c=drawResize(bm,2200);const {data}=await worker.recognize(c);
-   it.lines=(data.lines||[]).map(l=>({t:(l.text||'').replace(/\s+/g,' ').trim(),c:l.confidence})).filter(l=>l.t);
-   it.text=it.lines.length?it.lines.map(l=>l.t).join('\n'):(data.text||'').trim();
-   if(!it.text.trim()){it.status='error';it.err=t('No readable text was found in this photo. Try a sharper, well-lit photo, or type the steps below.','Walang nabasang teksto sa larawang ito. Subukan ang mas malinaw at maliwanag na larawan, o i-type sa ibaba.')}
-   else{it.status='done';it.pct=100}}
+ for(const it of items){cur=it;it.status='reading';it.form=false;it.rows=null;it.meta=null;it.firstNum=undefined;renderDraft();
+  try{const bm=await loadBitmap(it.file);const c=drawResize(bm,2200);let done=false;
+   /* 1) checklist-form mode: ruled "procedure | done | not done | remarks" tables (return-demo checklists) */
+   try{const fp=FS.prep(c);if(fp&&fp.ok){await setPsm(worker,'6');const r1=await worker.recognize(fp.col);const rows=FS.rowsFromLines(getLines(r1.data),fp);
+     if(rows.length>=2){let meta=null;if(fp.head){try{await setPsm(worker,'4');const r2=await worker.recognize(fp.head);meta=FS.parseHeader(getLines(r2.data))}catch(e){}}
+      it.lines=rows.map(r=>({t:(r.n!=null?r.n+'. ':'')+r.text,c:r.conf}));it.text=FS.rowsToText(rows);it.meta=meta;it.form=true;it.firstNum=rows[0].n==null?undefined:rows[0].n;it.status='done';it.pct=100;done=true}}}catch(e){done=false}
+   await setPsm(worker,'3');
+   /* 2) any other photo (plain notes): normal full-page reading */
+   if(!done){const {data}=await worker.recognize(c);
+    it.lines=getLines(data).map(l=>({t:(l.text||'').replace(/\s+/g,' ').trim(),c:l.confidence})).filter(l=>l.t);
+    it.text=it.lines.length?it.lines.map(l=>l.t).join('\n'):(data.text||'').trim();
+    if(!it.text.trim()){it.status='error';it.err=t('No readable text was found in this photo. Try a sharper, well-lit photo, or type the steps below.','Walang nabasang teksto sa larawang ito. Subukan ang mas malinaw at maliwanag na larawan, o i-type sa ibaba.')}
+    else{it.status='done';it.pct=100}}}
   catch(e){it.status='error';it.err=(e&&e.message||'Recognition failed')+' — '+t('you can type the steps below instead.','maaari mong i-type ang mga hakbang sa ibaba.')}}
+ /* pages may be added in any order: put checklist pages in step order */
+ {const idx=[],pg=[];DRAFT.items.forEach((x,i)=>{if(x.form&&x.firstNum!=null){idx.push(i);pg.push(x)}});pg.sort((a,b)=>a.firstNum-b.firstNum);idx.forEach((i,k)=>{DRAFT.items[i]=pg[k]})}
  try{await worker.terminate()}catch(e){}
  DRAFT.ocrBusy=false;renderDraft();
 }
@@ -3009,7 +3123,7 @@ ACT.ocrall=()=>runOCR(DRAFT.items.filter(i=>i.file));
 ACT.ocrone=el=>runOCR(DRAFT.items.filter(i=>i.id===el.dataset.arg));
 
 function parseSteps(items){
- const out=[],warn=[];const numRe=/^\s*(?:step\s*)?(\d{1,2})\s*[\.\):\-]\s+(.*)$/i,bulRe=/^\s*[-•*·▪●]\s+(.*)$/;
+ const out=[],warn=[];const numRe=/^\s*(?:step\s*)?(\d{1,2})\s*[\.\):\-]\s*(?!\d)(\S.*)$/i,bulRe=/^\s*[-•*·▪●]\s+(.*)$/;
  const lines=[];items.forEach(it=>{const low=new Set((it.lines||[]).filter(l=>l.c<70).map(l=>l.t));String(it.text||'').split(/\r?\n/).forEach(raw=>{const s=raw.replace(/\s+/g,' ').trim();if(s)lines.push({s,unsure:low.has(s)})})});
  const numbered=lines.filter(l=>numRe.test(l.s)).length;let nums=[];
  if(numbered>=2){let curS=null;lines.forEach(l=>{const m=l.s.match(numRe);if(m){curS={id:uid(),text:m[2].trim(),unsure:l.unsure};nums.push(+m[1]);out.push(curS)}else if(curS){curS.text+=' '+l.s;curS.unsure=curS.unsure||l.unsure}else{out.push({id:uid(),text:l.s,unsure:true})}});
@@ -3018,12 +3132,15 @@ function parseSteps(items){
  out.forEach(s=>{if(s.text.length<4)s.unsure=true});
  return {steps:out,warn};
 }
-ACT.buildsteps=()=>{const {steps,warn}=parseSteps(DRAFT.items);if(!steps.length){toast(t('There is no text yet. Read a photo or type your steps first.','Wala pang teksto. Basahin ang larawan o i-type ang mga hakbang.'),'bad');return}
+ACT.buildsteps=()=>{const {steps,warn}=parseSteps(DRAFT.items);
+ {const M={purpose:'',goal:'',equipment:[]};let tt='';DRAFT.items.forEach(i=>{const m=i.meta;if(!m)return;if(!tt&&m.title)tt=m.title;if(!M.purpose&&m.purpose)M.purpose=m.purpose;if(!M.goal&&m.goal)M.goal=m.goal;if(!M.equipment.length&&(m.equipment||[]).length)M.equipment=m.equipment.slice()});if(!DRAFT.title.trim()&&tt)DRAFT.title=tt;if(M.purpose||M.goal||M.equipment.length)DRAFT.meta=M}
+if(!steps.length){toast(t('There is no text yet. Read a photo or type your steps first.','Wala pang teksto. Basahin ang larawan o i-type ang mga hakbang.'),'bad');return}
  DRAFT.steps=steps;DRAFT.warnings=warn;DRAFT.stage='edit';renderDraft()};
 function renderStepEditor(focus){
  const d=DRAFT,un=d.steps.filter(s=>s.unsure).length;
  $('#main').innerHTML=`<p class="small"><a href="#/steps">${ic('left')}${t('My step sets','Aking mga step set')}</a></p><h1>${d.procId?t('Edit steps','I-edit ang mga hakbang'):t('Check and edit your steps','Suriin at i-edit ang mga hakbang')}</h1>${ocrNotice()}
  <div><label class="f" for="dtitle">${t('Procedure title','Pamagat ng prosedura')}</label><input id="dtitle" type="text" value="${esc(d.title)}" data-inp="dtitle"></div>
+ <details style="margin:.6rem 0"><summary>${t('Purpose, goal and equipment (optional)','Layunin, goal at kagamitan (opsyonal)')}</summary><div class="inner stack"><div><label class="f" for="mpur">${t('Purpose','Layunin')}</label><textarea id="mpur" rows="2" data-inp="metapur">${esc((d.meta&&d.meta.purpose)||'')}</textarea></div><div><label class="f" for="mgoal">${t('Goal','Goal')}</label><textarea id="mgoal" rows="2" data-inp="metagoal">${esc((d.meta&&d.meta.goal)||'')}</textarea></div><div><label class="f" for="meq">${t('Equipment needed (one per line)','Kagamitan (isa bawat linya)')}</label><textarea id="meq" rows="4" data-inp="metaeq">${esc(((d.meta&&d.meta.equipment)||[]).join('\n'))}</textarea></div></div></details>
  ${d.warnings.map(w=>`<div class="notice" role="note">${ic('alert')}<div>${esc(w)}</div></div>`).join('')}
  ${un?`<div class="notice" role="status">${ic('alert')}<div><b>${un}</b> ${t('step(s) are marked “needs review” because the text was unclear or short. Check each against your photo, fix it, then untick the box.','hakbang ang may markang “kailangang suriin” dahil malabo o maikli ang teksto. Ihambing sa larawan, ayusin, at tanggalin ang tsek.')}</div></div>`:''}
  <div id="steplist" aria-label="${t('Steps','Mga hakbang')}">${d.steps.map((s,i)=>stepRow(s,i,d.steps.length)).join('')}</div>
@@ -3049,14 +3166,14 @@ ACT.saveprocs=async()=>{const d=DRAFT;d.steps=d.steps.filter(s=>s.text.trim());i
  const now=Date.now();const imageIds=d.procId?(d.oldImages||[]):[];let p=d.procId&&S.procs.find(x=>x.id===d.procId);
  const id=p?p.id:uid();let imgFail=false;
  if(!d.procId){for(const it of d.items){if(!it.file)continue;try{const bm=await loadBitmap(it.file);const c=drawResize(bm,1600);const blob=await canvasBlob(c,'image/jpeg',.85);const iid=uid();const ok=await DB.putImage({id:iid,procId:id,name:it.name,type:'image/jpeg',blob});if(ok)imageIds.push(iid);else imgFail=true}catch(e){imgFail=true}}}
- const rec={id,title:(d.title||'').trim()||t('Untitled procedure','Prosedurang walang pamagat'),created:p?p.created:now,updated:now,steps:d.steps.map(s=>({id:s.id,text:s.text.trim(),unsure:!!s.unsure})),imageIds,source:d.items.some(i=>i.file)?'ocr':'manual'};
+ const rec={id,title:(d.title||'').trim()||t('Untitled procedure','Prosedurang walang pamagat'),created:p?p.created:now,updated:now,steps:d.steps.map(s=>({id:s.id,text:s.text.trim(),unsure:!!s.unsure})),imageIds,meta:d.meta&&(d.meta.purpose||d.meta.goal||(d.meta.equipment||[]).length)?d.meta:null,source:d.items.some(i=>i.file)?'ocr':'manual'};
  if(p)Object.assign(p,rec);else S.procs.push(rec);
  const ok=await persist('procs');
  if(!ok&&store.idb)toast(t('The browser could not save this step set. Export a backup and free some storage.','Hindi na-save ng browser ang step set. Mag-export ng backup at magbakante ng espasyo.'),'bad',8000);
  else toast(imgFail?t('Steps saved. Some photos could not be kept.','Na-save ang mga hakbang. May larawang hindi nai-save.'):t('Step set saved on this device.','Na-save ang step set sa device na ito.'));
  DRAFT.items.forEach(i=>i.url&&URL.revokeObjectURL(i.url));DRAFT=null;STUDY={mode:'cards',i:0,shown:1,hide:false,checks:{},q:null};go('#/steps/'+id)};
 function editExisting(id){const p=S.procs.find(x=>x.id===id);if(!p){location.hash='#/steps';return}
- DRAFT={procId:p.id,title:p.title,items:[],steps:p.steps.map(s=>({...s})),warnings:[],stage:'edit',ocrBusy:false,oldImages:p.imageIds||[]};renderStepEditor()}
+ DRAFT={procId:p.id,title:p.title,meta:p.meta?{...p.meta,equipment:(p.meta.equipment||[]).slice()}:null,items:[],steps:p.steps.map(s=>({...s})),warnings:[],stage:'edit',ocrBusy:false,oldImages:p.imageIds||[]};renderStepEditor()}
 
 /* ---- study modes ---- */
 async function renderStudy(id){
@@ -3080,6 +3197,7 @@ async function renderStudy(id){
   else{const k=q.order[q.i];const prev=k>0?p.steps[k-1]:null;
    body=`<p class="small muted">${t('Question','Tanong')} ${q.i+1} ${t('of','sa')} ${q.order.length}</p><div class="card-step"><div class="num">${prev?t('What comes after step','Ano ang kasunod ng hakbang')+' '+k+'?':t('What is the first step?','Ano ang unang hakbang?')}</div>${prev?`<div class="muted" style="margin-top:.4rem">${esc(prev.text)}</div>`:''}<label class="f" for="qans" style="margin-top:.8rem">${t('Your recall (optional — type it, or say it aloud)','Iyong naalala (opsyonal — i-type o bigkasin)')}</label><textarea id="qans" rows="2"></textarea>${q.rev?`<div class="notice good" style="margin-top:.8rem" role="status">${ic('check')}<div><b>${t('Step','Hakbang')} ${k+1}:</b> ${esc(p.steps[k].text)}</div></div><div class="row"><button class="btn" data-act="quizrate" data-arg="1">${ic('check')}${t('I remembered it','Naalala ko')}</button><button class="btn sec" data-act="quizrate" data-arg="0">${t('I missed it','Hindi ko naalala')}</button></div>`:`<div><button class="btn sec" data-act="quizshow" style="margin-top:.8rem">${ic('eye')}${t('Show answer','Ipakita ang sagot')}</button></div>`}</div>`}}
  $('#main').innerHTML=`<p class="small"><a href="#/steps">${ic('left')}${t('My step sets','Aking mga step set')}</a></p><h1>${esc(p.title)}</h1><div class="notice" role="note">${ic('alert')}<div><b>${t('Not clinically verified.','Hindi na-verify sa klinika.')}</b> ${t('Compare these steps with your instructor’s checklist and current facility policy.','Ihambing ang mga hakbang sa checklist ng guro at kasalukuyang patakaran ng pasilidad.')}</div></div>
+ ${p.meta?`<details style="margin:.6rem 0" open><summary>${t('Purpose, goal and equipment','Layunin, goal at kagamitan')}</summary><div class="inner">${p.meta.purpose?`<p><b>${t('Purpose','Layunin')}:</b> ${esc(p.meta.purpose)}</p>`:''}${p.meta.goal?`<p><b>${t('Goal','Goal')}:</b> ${esc(p.meta.goal)}</p>`:''}${(p.meta.equipment||[]).length?`<p><b>${t('Equipment','Kagamitan')}:</b></p><ul>${p.meta.equipment.map(e=>`<li>${esc(e)}</li>`).join('')}</ul>`:''}</div></details>`:''}
  <div class="tabs" role="group" aria-label="${t('Study mode','Paraan ng pag-aaral')}">${tabs.map(([k,l])=>`<button data-act="studymode" data-arg="${k}" aria-pressed="${m===k}">${l}</button>`).join('')}</div>${body}
  <div class="row" style="margin-top:1.5rem"><a class="btn sm sec" href="#/steps/edit:${p.id}">${ic('pencil')}${t('Edit steps','I-edit ang mga hakbang')}</a><button class="btn sm ghost" data-act="exportproc" data-arg="${p.id}">${ic('down')}${t('Download as text','I-download bilang teksto')}</button></div>
  ${p.imageIds&&p.imageIds.length?`<details id="srcimgs" data-arg="${p.id}"><summary>${t('Original photos','Orihinal na larawan')} (${p.imageIds.length})</summary><div class="inner" id="srcimgbox"><span class="muted small">${t('Open to load.','Buksan para i-load.')}</span></div></details>`:''}`;
@@ -3097,7 +3215,7 @@ ACT.quizshow=()=>{STUDY.q.rev=true;rs()};
 ACT.quizrate=el=>{const q=STUDY.q;q.res[q.i]=el.dataset.arg==='1';q.i++;q.rev=false;rs()};
 ACT.quizrestart=()=>{STUDY.q=null;rs()};
 ACT.quizmiss=()=>{const q=STUDY.q;const miss=q.order.filter((k,j)=>q.res[j]===false);STUDY.q={i:0,rev:false,res:[],order:miss};rs()};
-ACT.exportproc=el=>{const p=S.procs.find(x=>x.id===el.dataset.arg);download((p.title||'steps').replace(/[^\w\-]+/g,'_')+'.txt','text/plain',p.title+'\n(Not clinically verified — compare with your instructor’s checklist and facility policy.)\n\n'+p.steps.map((s,i)=>(i+1)+'. '+s.text+(s.unsure?'  [needs review]':'')).join('\n')+'\n')};
+ACT.exportproc=el=>{const p=S.procs.find(x=>x.id===el.dataset.arg);download((p.title||'steps').replace(/[^\w\-]+/g,'_')+'.txt','text/plain',p.title+'\n(Not clinically verified — compare with your instructor’s checklist and facility policy.)\n\n'+(p.meta?(p.meta.purpose?'Purpose: '+p.meta.purpose+'\n':'')+(p.meta.goal?'Goal: '+p.meta.goal+'\n':'')+((p.meta.equipment||[]).length?'Equipment: '+p.meta.equipment.join('; ')+'\n':'')+'\n':'')+p.steps.map((s,i)=>(i+1)+'. '+s.text+(s.unsure?'  [needs review]':'')).join('\n')+'\n')};
 
 /* ===================== CASE LOG ===================== */
 const DEF_SETTINGS=['Community / barangay','Hospital ward','Outpatient clinic','Operating room','Emergency / ICU','Delivery room / OB','Nursery / pediatrics','School / workplace','Simulation lab','Other'];
