@@ -26,6 +26,22 @@ jobs:
         run: npx @capacitor/assets generate --android --iconBackgroundColor '#0f6b73' --iconBackgroundColorDark '#0f6b73'
       - name: Sync web assets and plugins
         run: npx cap sync android
+      - name: Use the permanent signing key (so new APKs install over old ones)
+        env:
+          KS_B64: ${{ secrets.PNLE_KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KS_B64" ]; then
+            mkdir -p ~/.android
+            echo "$KS_B64" | base64 -d > ~/.android/debug.keystore
+            echo "Using permanent keystore"
+          else
+            echo "::warning::PNLE_KEYSTORE_BASE64 secret not set - APK gets a random key and cannot update over an older install"
+          fi
+      - name: Raise versionCode every build (Android refuses updates that do not)
+        run: |
+          VN="${GITHUB_REF_NAME#v}"
+          sed -i "s/versionCode 1/versionCode ${{ github.run_number }}/; s/versionName \"1.0\"/versionName \"${VN:-1.0}\"/" android/app/build.gradle
+          grep -n "versionCode\|versionName" android/app/build.gradle
       - name: Build debug-signed APK
         working-directory: android
         run: |
